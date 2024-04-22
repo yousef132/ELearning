@@ -1,0 +1,50 @@
+﻿@model E_Learning.Models.UpdateInstructorViewModel
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "_AdminLayout";
+
+}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section">Update Instructor</h2>
+    </div>
+</div>
+<form asp-action="Update" enctype="multipart/form-data">
+    <div class="row justify-content-around">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="ImagePath" hidden class="form-control" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img class="cover-preview" src="~/assets/Images/User/@Model.ImagePath" alt="Cover" style="max-width:100%;"/>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,56 @@
+﻿@model SignupViewModel
+
+@{
+    ViewData["Title"] = "Signup";
+    Layout = "_AuthenticationLayout";
+}
+<div class="row mt-5">
+    <div class="col-md-4">
+        <form asp-action="Signup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsAgree" /> @Html.DisplayNameFor(model => model.IsAgree)
+                </label>
+            </div>
+            <div class="d-flex align-items-center">
+
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+                <div class="form-group mt-3">
+                    <a asp-action="Login" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-4">
+        <img src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7965.jpg?w=740&t=st=1710799800~exp=1710800400~hmac=ed9de4389a9d81307044efeede8e90c13eea10c50a8961e1f26d8682fab61994" style="max-width:100%"/>
+
+    </div>
+
+</div>
+
+
+

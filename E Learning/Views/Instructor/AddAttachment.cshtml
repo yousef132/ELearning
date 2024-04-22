@@ -1,0 +1,29 @@
+﻿
+@model List<Lecture>
+@{
+	Layout = "_InstructorLayout";
+}
+
+@for (int i= 0;i<Model.Count;i++)
+{
+	<div class="d-flex ">
+		<div >
+			@i+1
+		</div>
+		<div>
+			@Model[i].Name
+		</div>
+		<div>
+			<a class="btn btn-warning" asp-controller="Lecture" asp-action="Update" asp-route-id="@Model[i].Id">Update</a>
+		</div>
+		<div>
+			<a class="btn btn-danger" asp-controller="Lecture" asp-action="Delete" asp-route-id="">Delete</a>
+		</div>
+		<div>
+			@Model[i].Name
+		</div>
+		<div>
+			@Model[i].Name
+		</div>
+	</div>
+}

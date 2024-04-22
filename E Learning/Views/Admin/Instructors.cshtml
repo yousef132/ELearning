@@ -1,0 +1,102 @@
+﻿@model IList<ApplicationUser>
+@{
+	Layout = "_AdminLayout";
+}
+
+
+@if (TempData["Delete"] is not null)
+{
+	<div class="position-fixed top-0 start-0 p-3">
+		<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+				<div class="toast-body">
+					@TempData["Delete"]
+				</div>
+				<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+
+
+}
+@if (TempData["Update"] is not null)
+{
+	<div class="position-fixed top-0 start-0 p-3">
+		<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+				<div class="toast-body">
+					@TempData["Update"]
+				</div>
+				<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+
+
+}
+@if (TempData["Add"] is not null)
+{
+	<div class="position-fixed top-0 start-0 p-3">
+		<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+				<div class="toast-body">
+					@TempData["Add"]
+				</div>
+				<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+
+
+}
+
+<div class="row justify-content-center">
+	<div class="col-md-6 text-center mb-5">
+		<h2 class="heading-section">Instructors</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-wrap">
+			<table class="table table-responsive-xl">
+				<thead>
+					<tr>
+
+						<th>Image</th>
+						<th>Email</th>
+						<th>Username</th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var inst in Model)
+					{
+						<tr>
+
+							<td>
+								<img src="~/assets/Images/User/@inst.ImagePath" style="    height: 60px;
+    width: 60px;
+    border-radius: 50%;" />
+
+							</td>
+							<td>
+								@inst.Email
+							</td>
+							<td>@inst.DisplayName</td>
+							<td>
+								<a class="btn btn-warning" asp-controller="Admin" asp-action="Update" asp-route-id="@inst.Id">Update</a>
+
+							</td>
+							<td>
+								<a class="btn btn-danger" asp-controller="Admin" asp-action="Delete" asp-route-id="@inst.Id">Delete</a>
+
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

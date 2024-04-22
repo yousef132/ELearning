@@ -1,0 +1,26 @@
+﻿@model IReadOnlyList<Course>
+@{
+    Layout = "_InstructorLayout";
+}
+<div class="container mt-4">
+
+
+    <div class="row">
+        @foreach (var course in Model)
+        {
+            <div class="col-auto mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/assets/Images/course/@course.ImagePath" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">@course.Name</h4>
+                        <a asp-action="Update" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-success">Update</a>
+                        <a asp-action="AddAttachment" asp-controller="Instructor" asp-route-id="@course.Id" class="btn btn-primary">New Section</a>
+                        <a asp-action="Delete" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-warning">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

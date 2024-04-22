@@ -1,0 +1,14 @@
+D:\project\E Learning\ELearning.Data\bin\Debug\net8.0\ELearning.Data.deps.json
+D:\project\E Learning\ELearning.Data\bin\Debug\net8.0\ELearning.Data.runtimeconfig.json
+D:\project\E Learning\ELearning.Data\bin\Debug\net8.0\ELearning.Data.dll
+D:\project\E Learning\ELearning.Data\bin\Debug\net8.0\ELearning.Data.pdb
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.csproj.AssemblyReference.cache
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.AssemblyInfoInputs.cache
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.AssemblyInfo.cs
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.csproj.CoreCompileInputs.cache
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.dll
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\refint\ELearning.Data.dll
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.pdb
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ELearning.Data.genruntimeconfig.cache
+D:\project\E Learning\ELearning.Data\obj\Debug\net8.0\ref\ELearning.Data.dll

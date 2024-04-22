@@ -1,0 +1,15 @@
+D:\project\E Learning\ELearning.Repository\bin\Debug\net8.0\ELearning.Repository.deps.json
+D:\project\E Learning\ELearning.Repository\bin\Debug\net8.0\ELearning.Repository.dll
+D:\project\E Learning\ELearning.Repository\bin\Debug\net8.0\ELearning.Repository.pdb
+D:\project\E Learning\ELearning.Repository\bin\Debug\net8.0\ELearning.Data.dll
+D:\project\E Learning\ELearning.Repository\bin\Debug\net8.0\ELearning.Data.pdb
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.csproj.AssemblyReference.cache
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.AssemblyInfoInputs.cache
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.AssemblyInfo.cs
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.csproj.CoreCompileInputs.cache
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearnin.76F86BD2.Up2Date
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.dll
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\refint\ELearning.Repository.dll
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ELearning.Repository.pdb
+D:\project\E Learning\ELearning.Repository\obj\Debug\net8.0\ref\ELearning.Repository.dll

@@ -1,0 +1,14 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_Learning.Models
+{
+    public class InstructorViewModel
+    {
+        public string Name { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
+
+        //public string Title { get; set; }
+
+    }
+}

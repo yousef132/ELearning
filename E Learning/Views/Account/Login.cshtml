@@ -1,0 +1,53 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_AuthenticationLayout";
+}
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <form asp-action="Login">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+                <div class="d-flex mt-3">
+                    <div class="form-group">
+                        <a asp-action="SignUp" class="btn btn-primary">SignUp</a>
+
+                    </div>
+                    <div class="form-group" style="margin-left:10px;">
+                        <a asp-action="ForgetPassword" class="btn btn-primary">Forget Password</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <img src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg?w=740&t=st=1713531439~exp=1713532039~hmac=97c7f1f0d36fa7ac33a13a229dd2d9f655901bd48e58af8ba31d33976fb77c12" style="max-width:100%;" />
+
+        </div>
+    </div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
