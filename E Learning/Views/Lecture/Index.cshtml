@@ -1,0 +1,49 @@
+﻿@model Course
+@{
+	ViewData["Title"] = "ManageLecture";
+	Layout = "_InstructorLayout";
+}
+
+<div class="row mx-0 justify-content-center pt-5">
+	<div class="col-lg-6">
+		<div class="section-title text-center position-relative mb-4">
+			<h1 class="display-4">@Model.Name Course Lectures</h1>
+		</div>
+	</div>
+</div>
+<a class="btn btn-success mb-3" asp-controller="Lecture" asp-action="Create" asp-route-courseId="@Model.Id">Create New Lecture</a>
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-wrap">
+			<table class="table table-responsive-xl">
+				<thead>
+					<tr>
+						<th>Lecture</th>
+						<th>Update</th>
+						<th>Delete</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var Lecture in Model.Lectures)
+					{
+						<tr>
+							<td>
+								@Lecture.Name
+							</td>
+
+							<td>
+								<a class="btn btn-warning" asp-controller="Lecture" asp-action="Update" asp-route-id="@Lecture.Id">Update</a>
+
+							</td>
+							<td>
+								<a class="btn btn-danger" asp-controller="Lecture" asp-action="Delete" asp-route-id="@Lecture.Id">Delete</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

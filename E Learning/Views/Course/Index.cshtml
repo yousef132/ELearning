@@ -1,0 +1,148 @@
+﻿@model IReadOnlyList<Course>
+
+    <div class="container"  style="height:900px;" >
+        <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header">
+
+            <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar" aria-expanded="true" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()"> <span class="fas fa-angle-left" id="filter-angle"></span> <span id="btn-txt">Hide filters</span> </button>
+
+            <div class="input-group rounded" style="margin-left:20px;">
+                <input id="name" type="search" class="form-control rounded " placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+               <a onclick="FilterSearchCourses()" style="cursor:pointer;">
+                <span class="input-group-text border-0" id="search-addon" style="margin: 0px 10px;height: 100%;" onclick="FilterSearchCourses()">
+                    <i class="fas fa-search"></i>
+                </span>
+               </a>
+            </div>
+            <!--pagination-->
+
+            @* <div class="ml-auto mt-3 mr-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"> <a class="page-link" href="#" aria-label="Previous">1<span aria-hidden="true" class="font-weight-bold">&lt;</span> <span class="sr-only">Previous</span> </a> </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">..</a></li>
+                        <li class="page-item"><a class="page-link" href="#">24</a></li>
+                        <li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true" class="font-weight-bold">&gt;</span> <span class="sr-only">Next</span> </a> </li>
+                    </ul>
+                </nav>
+            </div> *@
+        </div>
+
+        <div id="content" class="my-5">
+            <div id="filterbar" class="collapse show" >
+                <div class="box border-bottom">
+                    <div class="box-label text-uppercase d-flex align-items-center">Language <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box" aria-expanded="true" aria-controls="inner-box" id="out" onclick="outerFilter()"> <span class="fas fa-plus"></span> </button> </div>
+                    <div id="inner-box" class="mt-2 mr-1 collapse show" style="">
+                        <div class="my-1"> <label class="tick">English <input type="checkbox" name="language" value="English" class=""> <span class="check"></span> </label> </div>
+                        <div class="my-1"> <label class="tick">Arabic <input type="checkbox" name="language" value="Arabic" class="">  <span class="check"></span> </label> </div>
+                        <div class="my-1"> <label class="tick">French  <input type="checkbox" name="language" value="French" class=""> <span class="check"></span> </label> </div>
+                        <div class="my-1"> <label class="tick">Spanish  <input type="checkbox" name="language" value="Spanish" class=""> <span class="check"></span> </label> </div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="box-label text-uppercase d-flex align-items-center">Level <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box2" aria-expanded="true" aria-controls="inner-box2"><span class="fas fa-plus"></span></button> </div>
+                    <div id="inner-box2" class="mt-2 mr-1 collapse show" style="">
+                        <div class="my-1"> <label class="tick">Beginner<input type="checkbox" name="level" value="Beginner" class="">   <span class="check"></span> </label> </div>
+                        <div class="my-1"> <label class="tick">Medeuim  <input type="checkbox" name="level" value="Medeuim" class="">   <span class="check"></span> </label> </div>
+                        <div class="my-1"> <label class="tick">Advanced  <input type="checkbox" name="level" value="Advanced" class=""> <span class="check"></span> </label> </div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="box-label text-uppercase d-flex align-items-center">price <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#price" aria-expanded="true" aria-controls="price"><span class="fas fa-plus"></span></button> </div>
+                    <div class="d-flex justify-content-around mt-2" style="max-width:90%;">
+                        <input id="minPrice" placeholder="min" type="number" class="form-control " style="max-width:40%;" />
+                    <input id="maxPrice" placeholder="max" type="number" class="form-control " style="max-width:40%;" />
+                    </div>
+                </div>
+            <div class="box border-bottom" style="position: relative;left: 50%;transform: translateX(-25%);">
+                    <label class="btn btn-success form-check-label active"> <input class="form-check-input" type="radio" checked onclick="FilterSearchCourses()">Apply </label>
+                </div>
+
+
+
+
+            </div>
+            <div id="products">
+                <partial name="FilterSearchCourses" model="@Model" />
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts
+{
+    <script>
+        function AddToCart(courseId) {
+            $.ajax({
+                url: "/cart/AddCourse",
+                data: { "CourseId": courseId },
+                success: function (result) {
+                    console.log(result.status);
+
+                    if (result.status === true) {
+                        toastr.success(result.message, 'Success Alert', { timeOut: 3000 });
+                    }
+                    else {
+                        toastr.error(result.message, 'Error', { timeOut: 3000 });
+                    }
+                }
+            });
+        }
+
+        function FilterSearchCourses(pageIndex) {
+
+
+
+
+            var languages = [];
+            $("input[name='language']:checked").each(function () {
+                languages.push($(this).val());
+            });
+
+            var levels = [];
+            $("input[name='level']:checked").each(function () {
+                levels.push($(this).val());
+            });
+
+            var minPrice = $("#minPrice").val();
+            var maxPrice = $("#maxPrice").val();
+            var name = $("#name").val();
+
+            // Client-side validation for min and max prices
+            if (minPrice > maxPrice) {
+                // Display an error message or alert
+                toastr.error('Minimum price must be less than maximum price.', 'Error', { timeOut: 3000 });
+                return; // Exit the function
+            }
+            if (pageIndex === undefined) {
+                pageIndex = 1;
+            }
+
+            var courseSpecs = {
+                Languages: languages,
+                Levels: levels,
+                MinPrice: minPrice,
+                MaxPrice: maxPrice,
+                Name: name,
+                PageIndex: pageIndex
+            };
+            var products = document.getElementById("products");
+
+            
+            console.log(courseSpecs);
+            $.ajax({
+                url: "/course/FilterSearchCourses",
+                type: 'POST',
+                dataType: 'json',
+                data: courseSpecs,
+                success: function (result) {
+                    products.innerHTML = result;
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                    products.innerHTML = xhr.responseText;
+                }
+            });
+        }
+    </script>
+}
