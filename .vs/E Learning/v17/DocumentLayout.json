@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "E Learning\\Views\\Course\\Index.cshtml",
               "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Course\\Index.cshtml",
               "RelativeToolTip": "E Learning\\Views\\Course\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-30T21:42:29.67Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "E Learning\\Controllers\\CartController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T21:21:14.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T21:21:14.314Z"
             }
           ]
         }
