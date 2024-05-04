@@ -1,6 +1,6 @@
 ﻿using E_Learning.Models;
 using ELearning.BLL.Specifications.CourseSpecification;
-using ELearning.Data.Context;
+using ELearning.DAL.Context.Identity;
 using ELearning.Data.Entities;
 using ELearning.Helper;
 using Microsoft.AspNetCore.Authorization;
@@ -65,8 +65,8 @@ namespace E_Learning.Controllers
 		
         public async Task<IActionResult> Courses()
 		{
-			var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
-			var courses = await GetUserCourses(userId);
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var courses = await GetUserCourses(userId);
 			return View(courses);
 		}
 

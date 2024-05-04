@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Store.Data.Entities
+namespace ELearning.Data.Entities
 {
 	public class Cart
 	{

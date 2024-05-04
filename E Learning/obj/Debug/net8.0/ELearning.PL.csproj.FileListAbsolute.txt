@@ -262,3 +262,4 @@ D:\project\E Learning\E Learning\bin\Debug\net8.0\Source.dll
 D:\project\E Learning\E Learning\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 D:\project\E Learning\E Learning\bin\Debug\net8.0\StackExchange.Redis.dll
 D:\project\E Learning\E Learning\bin\Debug\net8.0\Stripe.net.dll
+D:\project\E Learning\E Learning\bin\Debug\net8.0\AutoMapper.dll

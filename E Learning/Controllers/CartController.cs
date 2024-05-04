@@ -1,19 +1,23 @@
-﻿using ELearning.Data.Entities;
+﻿using AutoMapper;
+using ELearning.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Store.Data.Entities;
 using Store.Repository.Interfaces;
 using System.Security.Claims;
 
 namespace E_Learning.Controllers
 {
+	[Authorize]
     public class CartController : Controller
 	{
 		private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
 
-		public CartController(IUnitOfWork unitOfWork)
+        public CartController(IUnitOfWork unitOfWork,IMapper mapper)
         {
 			this.unitOfWork = unitOfWork;
-		}
+            this.mapper = mapper;
+        }
         public async Task<IActionResult> Index()
 		{
 			return View(await GetCart());
@@ -35,15 +39,15 @@ namespace E_Learning.Controllers
 			 return View();
 		}
 
-
 		public async Task<IActionResult> AddCourse(int courseId)
 		{
 			var cart = await GetCart();
 
-            bool inCart = cart.Courses.Any(c => c.Id == courseId);
+			// check if course in cart
+            bool inCart = unitOfWork.CartRepository.InCart(cart,courseId);
 
             if (inCart)
-                return Json(new { status = false });
+                return Json(new { status = false, message = "Course Already In Cart" });
 
             var course = await unitOfWork
 							  .Reposirory<Course>()
@@ -51,21 +55,15 @@ namespace E_Learning.Controllers
 			if (course == null)
 				return BadRequest();
 
-			var cartCourse = new CartCourse
-			{
-				Name = course.Name,
-				Id = course.Id,
-				Price = course.Price,
-				ImagePath = course.ImagePath,
-				Description = course.Description,	
-			};
+			var cartCourse =  mapper.Map<CartCourse>(course);
+
 			cart.ShopingPrice += cartCourse.Price;
 
-			cart.Courses.Add(cartCourse);
+			unitOfWork.CartRepository.AddToCart(cart,cartCourse);
 
 			await unitOfWork.CartRepository.UpdateBasketAsync(cart);
 
-			return Json(new { status = true } );
+			return Json(new { status = true ,message = "Course Added To Cart"} );
 		}
 		
 		public async Task<IActionResult> DeleteCourse(int courseId)
@@ -77,18 +75,12 @@ namespace E_Learning.Controllers
 			if (course == null)
 				return NotFound();
 
-			var cartCourse = new CartCourse
-			{
-				Id = course.Id,
-				Name = course.Name,
-				Price = course.Price,
-				ImagePath = course.ImagePath,
-				Description = course.Description
+			var cartCourse = mapper.Map<CartCourse>(course);
 
-			};
 			cart.ShopingPrice -= cartCourse.Price;
-            // removing course from cart, it handles all cases whether the course is in the cart or not 
-            cart.Courses = cart.Courses.Where(c => c.Id != cartCourse.Id).ToList();
+
+			// removing course from cart, it handles all cases whether the course is in the cart or not 
+			unitOfWork.CartRepository.RemoveFromCart(cart, cartCourse.Id);
 
 			await unitOfWork.CartRepository.UpdateBasketAsync(cart);
 			return Json(new { status = true });

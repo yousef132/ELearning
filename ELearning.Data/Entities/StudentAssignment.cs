@@ -1,10 +1,10 @@
-﻿using ELearning.Data.Context;
+﻿using ELearning.DAL.Context.Identity;
 
 namespace ELearning.Data.Entities
 {
     public class StudentAssignment
     {
-        // Student Submit Many Assignments
+        // Student Submit Many Assignments & Assignment Submitted By Many Students
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
         public int AssignmentId { get; set; }

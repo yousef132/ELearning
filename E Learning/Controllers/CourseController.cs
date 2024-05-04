@@ -1,11 +1,15 @@
-﻿using E_Commerce.Helper;
+﻿using AutoMapper;
+using E_Commerce.Helper;
 using E_Learning.Models;
 using ELearning.BLL.Specifications.CourseSpecification;
+using ELearning.Data.Context;
 using ELearning.Data.Entities;
 using ELearning.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Store.Repository.Interfaces;
+using System.Drawing;
 using System.Security.Claims;
 
 namespace E_Learning.Controllers
@@ -13,17 +17,28 @@ namespace E_Learning.Controllers
     public class CourseController : Controller 
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
 
-        public CourseController(IUnitOfWork unitOfWork)
+        public CourseController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> Index(CourseSpecifications courseSpecs)
         {
-            return View(await GetCoursesWithSpecs(courseSpecs));
+            var courses = await GetCoursesWithSpecs(courseSpecs);
+            int pageSize = 6;
+            return View(PaginatedList<Course>.CreateAsync(courses, 1, pageSize));
         }
 
+        public async Task<IActionResult> CourseContent(int id)
+        {
+
+            var specs = new CourseWithSpecifications(id);
+            var course = await unitOfWork.Reposirory<Course>().GetWithSpecificationsByIdAsync(specs);
+            return View(course);
+        }
         private async Task<IReadOnlyList<Course>> GetCoursesWithSpecs(CourseSpecifications courseSpecs)
         {
 
@@ -36,15 +51,15 @@ namespace E_Learning.Controllers
         }
         public async Task <IActionResult> FilterSearchCourses(SpecificationsViewModel courseSpecs)
         {
-            var specs = new CourseSpecifications
-            {
-                Levels = courseSpecs.Levels,
-                Languages = courseSpecs.Languages,
-                MinPrice = courseSpecs.MinPrice,
-                MaxPrice = courseSpecs.MaxPrice,
-                Name = courseSpecs.Name,
-            };
-            return PartialView(await GetCoursesWithSpecs(specs));
+
+            var specs = mapper.Map<CourseSpecifications>(courseSpecs);
+
+            if (courseSpecs.PageIndex < 1)
+                courseSpecs.PageIndex = 1;
+
+            var courses = await GetCoursesWithSpecs(specs);
+            int pageSize = 6;
+            return PartialView(PaginatedList<Course>.CreateAsync(courses, courseSpecs.PageIndex, pageSize));
         }
 
         public async Task<IActionResult> Details (int Id)
@@ -60,6 +75,9 @@ namespace E_Learning.Controllers
             return View(course);    
         }
 
+      
+        //CRUD Operations
+        
         [Authorize(Roles = Roles.Instructor)]
         public IActionResult Add()
         {
@@ -68,30 +86,23 @@ namespace E_Learning.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> Add(CourseViewModel course)
+        public async Task<IActionResult> Add(CourseViewModel courseModel)
         {
             if (ModelState.IsValid)
             {
-                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-                var courser = new Course()
-                {
-                    Name = course.Name,
-                    Duration = new TimeSpan(course.Duration,0,0),
-                    SkillLevel = course.SkillLevel,
-                    Price = course.Price,
-                    Language = course.Language,
-                    Description = course.Description,
-                    ImagePath = DocumentSetting.UploadFile(course.Image, "Images","course"),
-                    UserId= userId
-                };
-                TempData["AddCourse"] = "Course Added Successfully";
-                await unitOfWork.Reposirory<Course>().AddAsync(courser);
+                var course = mapper.Map<Course>(courseModel);
+
+                course.ImagePath = DocumentSetting.UploadFile(courseModel.Image, "Images", "course");
+                course.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                await unitOfWork.Reposirory<Course>().AddAsync(course);
                 await unitOfWork.CompleteAsync();
                 return RedirectToAction("Courses", "Instructor");
             }
-            return View(course);
+            return View(courseModel);
         }
+        [Authorize(Roles = Roles.Instructor)]
 
         public async Task<IActionResult> Delete(int id)
         {
@@ -104,6 +115,7 @@ namespace E_Learning.Controllers
             await unitOfWork.CompleteAsync();
             return RedirectToAction("Courses", "Instructor");
         }
+        [Authorize(Roles = Roles.Instructor)]
 
         public async Task<IActionResult> Update(int id)
         {
@@ -111,19 +123,11 @@ namespace E_Learning.Controllers
 
 			if (course == null)
 				return NotFound();
-
-            var courseModel = new CourseViewModel
-            {
-                Name = course.Name,
-                Description = course.Description,
-                Price = course.Price,
-                Duration = ((int)course.Duration.TotalHours),
-                Language = course.Language,
-                SkillLevel = course.SkillLevel,
-            };
-
+            //course -> courseviewmodel
+            var courseModel = mapper.Map<CourseViewModel>(course);
             return View(courseModel);
 		}
+        [Authorize(Roles = Roles.Instructor)]
 
         [HttpPost]
         public async Task<IActionResult>  Update(CourseViewModel model)
@@ -131,22 +135,13 @@ namespace E_Learning.Controllers
             
             if (ModelState.IsValid)
             {
-                var course = new Course
-                {
-                    Name = model.Name,  
-                    Description = model.Description,
-                    Price = model.Price,
-                    Duration =new TimeSpan(model.Duration,0,0),
-                    Language = model.Language,
-                    SkillLevel = model.SkillLevel,
-                };
+                var course = mapper.Map<Course>(model);
                 unitOfWork.Reposirory<Course>().Update(course);
                 await unitOfWork.CompleteAsync();
                 return RedirectToAction("Courses", "Instructor");
             }
 
             return View(model);
-
         }
 
 

@@ -45,7 +45,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("LectureId");
 
-                    b.ToTable("Assignments", (string)null);
+                    b.ToTable("Assignments");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Attachment", b =>
@@ -75,7 +75,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("LectureId");
 
-                    b.ToTable("Attachments", (string)null);
+                    b.ToTable("Attachments");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Course", b =>
@@ -89,9 +89,6 @@ namespace ELearning.Data.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeSpan>("Duration")
-                        .HasColumnType("time");
 
                     b.Property<string>("ImagePath")
                         .IsRequired()
@@ -120,7 +117,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Exam", b =>
@@ -131,7 +128,7 @@ namespace ELearning.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("LectureId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -140,9 +137,9 @@ namespace ELearning.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("LectureId");
 
-                    b.ToTable("Exams", (string)null);
+                    b.ToTable("Exams");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Lecture", b =>
@@ -167,7 +164,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Lectures", (string)null);
+                    b.ToTable("Lectures");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Question.BaseQuestion", b =>
@@ -192,7 +189,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("ExamId");
 
-                    b.ToTable("BaseQuestions", (string)null);
+                    b.ToTable("BaseQuestions");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentAssignment", b =>
@@ -213,7 +210,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("AssignmentId");
 
-                    b.ToTable("StudentAssignments", (string)null);
+                    b.ToTable("StudentAssignments");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentCourse", b =>
@@ -227,10 +224,6 @@ namespace ELearning.Data.Migrations
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -241,7 +234,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("StudentCourses", (string)null);
+                    b.ToTable("StudentCourses");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentExam", b =>
@@ -262,7 +255,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("ExamId");
 
-                    b.ToTable("StudentExams", (string)null);
+                    b.ToTable("StudentExams");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentQuestion", b =>
@@ -280,7 +273,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("BaseQuestionId");
 
-                    b.ToTable("StudentQuestions", (string)null);
+                    b.ToTable("StudentQuestions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -490,7 +483,7 @@ namespace ELearning.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ELearning.Data.Context.ApplicationUser", b =>
+            modelBuilder.Entity("ELearning.DAL.Context.Identity.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -513,7 +506,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("ELearning.Data.Entities.Assignment.TimedEntity#ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
+                    b.OwnsOne("ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
                         {
                             b1.Property<int>("AssignmentId")
                                 .HasColumnType("int");
@@ -529,7 +522,7 @@ namespace ELearning.Data.Migrations
 
                             b1.HasKey("AssignmentId");
 
-                            b1.ToTable("Assignments", (string)null);
+                            b1.ToTable("Assignments");
 
                             b1.WithOwner()
                                 .HasForeignKey("AssignmentId");
@@ -554,7 +547,7 @@ namespace ELearning.Data.Migrations
 
             modelBuilder.Entity("ELearning.Data.Entities.Course", b =>
                 {
-                    b.HasOne("ELearning.Data.Context.ApplicationUser", "User")
+                    b.HasOne("ELearning.DAL.Context.Identity.ApplicationUser", "User")
                         .WithMany("TeacherCourses")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -565,13 +558,13 @@ namespace ELearning.Data.Migrations
 
             modelBuilder.Entity("ELearning.Data.Entities.Exam", b =>
                 {
-                    b.HasOne("ELearning.Data.Entities.Course", "Course")
+                    b.HasOne("ELearning.Data.Entities.Lecture", "Lecture")
                         .WithMany("Exams")
-                        .HasForeignKey("CourseId")
+                        .HasForeignKey("LectureId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("ELearning.Data.Entities.Exam.TimedEntity#ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
+                    b.OwnsOne("ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
                         {
                             b1.Property<int>("ExamId")
                                 .HasColumnType("int");
@@ -587,13 +580,13 @@ namespace ELearning.Data.Migrations
 
                             b1.HasKey("ExamId");
 
-                            b1.ToTable("Exams", (string)null);
+                            b1.ToTable("Exams");
 
                             b1.WithOwner()
                                 .HasForeignKey("ExamId");
                         });
 
-                    b.Navigation("Course");
+                    b.Navigation("Lecture");
 
                     b.Navigation("TimedEntity")
                         .IsRequired();
@@ -618,7 +611,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsMany("ELearning.Data.Entities.Question.BaseQuestion.Choices#ELearning.Data.Entities.Choice", "Choices", b1 =>
+                    b.OwnsMany("ELearning.Data.Entities.Choice", "Choices", b1 =>
                         {
                             b1.Property<int>("BaseQuestionId")
                                 .HasColumnType("int");
@@ -638,7 +631,7 @@ namespace ELearning.Data.Migrations
 
                             b1.HasKey("BaseQuestionId", "Id");
 
-                            b1.ToTable("Choices", (string)null);
+                            b1.ToTable("Choices");
 
                             b1.WithOwner()
                                 .HasForeignKey("BaseQuestionId");
@@ -657,7 +650,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ELearning.Data.Context.ApplicationUser", "User")
+                    b.HasOne("ELearning.DAL.Context.Identity.ApplicationUser", "User")
                         .WithMany("StudentAssignments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -676,7 +669,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ELearning.Data.Context.ApplicationUser", "User")
+                    b.HasOne("ELearning.DAL.Context.Identity.ApplicationUser", "User")
                         .WithMany("StudentCourses")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -695,7 +688,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ELearning.Data.Context.ApplicationUser", "User")
+                    b.HasOne("ELearning.DAL.Context.Identity.ApplicationUser", "User")
                         .WithMany("StudentExams")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -714,7 +707,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ELearning.Data.Context.ApplicationUser", "User")
+                    b.HasOne("ELearning.DAL.Context.Identity.ApplicationUser", "User")
                         .WithMany("StudentQuestions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -783,8 +776,6 @@ namespace ELearning.Data.Migrations
 
             modelBuilder.Entity("ELearning.Data.Entities.Course", b =>
                 {
-                    b.Navigation("Exams");
-
                     b.Navigation("Lectures");
 
                     b.Navigation("StudentCourses");
@@ -802,6 +793,8 @@ namespace ELearning.Data.Migrations
                     b.Navigation("Assignments");
 
                     b.Navigation("Attachments");
+
+                    b.Navigation("Exams");
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Question.BaseQuestion", b =>
@@ -809,7 +802,7 @@ namespace ELearning.Data.Migrations
                     b.Navigation("StudentQuestions");
                 });
 
-            modelBuilder.Entity("ELearning.Data.Context.ApplicationUser", b =>
+            modelBuilder.Entity("ELearning.DAL.Context.Identity.ApplicationUser", b =>
                 {
                     b.Navigation("StudentAssignments");
 

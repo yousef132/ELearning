@@ -8,6 +8,8 @@ namespace ELearning.Data.Entities.Question
 {
     public class BaseQuestion:BaseEntity
     {
+        public string Name { get; set; }
+
         // Id + ExamId => PK
         public Answer RightAnswer { get; set; }
         // own choices

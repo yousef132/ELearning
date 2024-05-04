@@ -1,4 +1,4 @@
-﻿using ELearning.Data.Context;
+﻿using ELearning.DAL.Context.Identity;
 
 namespace ELearning.Data.Entities
 {

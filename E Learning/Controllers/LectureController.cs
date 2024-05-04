@@ -19,14 +19,45 @@ namespace E_Learning.Controllers
 		}
         public async Task<IActionResult> Index(int id)//course id
 		{
-
 			var specs = new CourseWithSpecifications(id);
-			// courser Data With Included Lectures
+			// course Data With Included Lectures
 			var course = await unitOfWork.Reposirory<Course>().GetWithSpecificationsByIdAsync(specs);
 			TempData["CourseId"] = id;
+
 			if (course == null)
 				return NotFound();
+
 			return View(course);
+		}
+
+		public IActionResult LectureContentView(int id)//LectureId
+		{
+			return View(id);
+		}
+		
+		public IActionResult LectureAssignments(int id)//LectureId
+		{
+			var assignments = unitOfWork.LectureComponentsRepository<Assignment>().GetItemsByLectureId(id);
+							
+
+			return View(assignments);
+		}
+		public IActionResult lectureExam(int id)//LectureId
+		{
+			var assignments = unitOfWork
+							.LectureComponentsRepository<Exam>()
+							.GetItemsByLectureId(id);
+
+			return View(assignments);
+		}
+		
+		public IActionResult LectureContent(int id)//LectureId
+		{
+			var assignments = unitOfWork
+							.LectureComponentsRepository<Attachment>()
+							.GetItemsByLectureId(id);
+
+			return View(assignments);
 		}
 
 
@@ -73,6 +104,7 @@ namespace E_Learning.Controllers
 					CreatedAt = DateTime.Now,
 					CourseId = model.CourseId,
 				};
+				
 				await unitOfWork.Reposirory<Lecture>().AddAsync(lecture);
 				await unitOfWork.CompleteAsync();
 
@@ -81,7 +113,7 @@ namespace E_Learning.Controllers
 					Path = DocumentSetting.UploadFile(model.File, "Videos", "Lectures"),
 					LectureId = lecture.Id,
 					Type  = Path.GetExtension(model.File.FileName),
-                    Name = model.FileName,
+                    Name = model.Name,
 				};
 
 				await unitOfWork.Reposirory<Attachment>().AddAsync(attachment);
@@ -91,28 +123,5 @@ namespace E_Learning.Controllers
 			}
 			return View(model);
 		}
-
-
-
-		//[HttpGet]
-		//public async Task<IActionResult> Update(int id)
-		//{
-
-		//	var specs = new CourseWithSpecifications(id);
-		//	// courser Data With Included Lectures
-		//	var course = await unitOfWork.Reposirory<Course>().GetWithSpecificationsByIdAsync(specs);
-
-		//	if (course == null)
-		//		return NotFound();
-
-		//	return View(course);
-		//}
-
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//public ActionResult ManageLecture(AttachmentViewModel model)
-		//{
-		//	return View();
-		//}
 	}
 }

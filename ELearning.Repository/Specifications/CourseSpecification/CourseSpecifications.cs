@@ -14,8 +14,8 @@ namespace ELearning.BLL.Specifications.CourseSpecification
 		public int? CourseId { get; set; }
 
 
-		public int PageSize { get; set; } = 6;
-        public int PageIndex { get; set; } = 1;
+		//public int PageSize { get; set; } = 6;
+  //      public int PageIndex { get; set; } = 1;
 
 
 

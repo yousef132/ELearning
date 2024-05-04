@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7UgKsQ1wZLw=",
+  "dgSpecHash": "jZz92zZtxE8=",
   "success": true,
   "projectFilePath": "D:\\project\\E Learning\\E Learning\\ELearning.PL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Youssif\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Youssif\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Youssif\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Youssif\\.nuget\\packages\\braintreehttp-dotnet\\0.3.0\\braintreehttp-dotnet.0.3.0.nupkg.sha512",

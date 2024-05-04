@@ -11,6 +11,15 @@ namespace Store.Repository.Interfaces
         ICacheRepository cacheRepository { get; set; }
 		ICartRepository CartRepository { get; set; }
 
-		Task<int> CompleteAsync();
+        //ILectureComponentsRepository<TEntity> LectureComponentsRepository where TEntity : BaseEntity; // Read-only
+        // ILectureComponentsRepository<BaseEntity> LectureComponentsRepository { get; set; } // Read-only
+
+        ILectureComponentsRepository<TEntity> LectureComponentsRepository<TEntity>() where TEntity : BaseEntity; 
+
+
+        Task<int> CompleteAsync();
+
+
     }
+
 }

@@ -15,8 +15,7 @@ namespace Store.Repository.Repositories
             this.context = context;
         }
         public async Task AddAsync(TEntity entity)
-         => await context.Set<TEntity>().AddAsync(entity);
-
+            => await context.Set<TEntity>().AddAsync(entity);
 
         public async Task<TEntity> GetByIdAsync(int Id)
             => await context.Set<TEntity>().FindAsync(Id);
@@ -33,12 +32,10 @@ namespace Store.Repository.Repositories
             => await ApplySpecs(specs).FirstOrDefaultAsync();
 
         public async Task<IReadOnlyList<TEntity>> GetWithSpecificationsAllAsync(ISpecification<TEntity> specs)
-        => await ApplySpecs(specs).ToListAsync();
+            => await ApplySpecs(specs).ToListAsync();
 
         private IQueryable<TEntity> ApplySpecs(ISpecification<TEntity> specs)
             => SpecificationEvaluater<TEntity>.GetQuery(context.Set<TEntity>(), specs);
 
-        //public async Task<int> CountSpecificationAsync(ISpecification<TEntity> specs)
-        //    => await ApplySpecs(specs).CountAsync();    
     }
 }

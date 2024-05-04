@@ -18,18 +18,17 @@ namespace E_Learning.Controllers
         {
             this.unitOfWork = unitOfWork;
         }
+        [Authorize(Roles = Roles.Admin)]
         public IActionResult Index()
 		{
 			return View();
 		}
-
         public async Task<IActionResult> GetCourses()
         {
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
             var courses = await GetUserCourses(userId);
             return View(courses);
         }
-
         public async Task<IReadOnlyList<Course>> GetUserCourses(string userId)
         {
             var specs = new StudentCourseSpecifications(userId);

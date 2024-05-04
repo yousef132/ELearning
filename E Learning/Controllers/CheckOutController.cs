@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ELearning.Data.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Store.Repository.Interfaces;
 using Stripe;
 using Stripe.Checkout;
@@ -29,12 +31,13 @@ namespace E_Learning.Controllers
                 CancelUrl = domain + "CheckOut/PaymentFailed",
                 LineItems = new List<SessionLineItemOptions>(),
                 Mode= "payment",
-               CustomerEmail = userEmail
+                CustomerEmail = userEmail
             };
 
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
             var cart = await unitOfWork.CartRepository.GetBasketAsync(userId);
+            var courses = new List<int>();
             foreach (var cartItem in cart.Courses)
             {
                 var sessionLineItem = new SessionLineItemOptions
@@ -46,13 +49,15 @@ namespace E_Learning.Controllers
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
                             Name = cartItem.Name,
-                            Images = new List<string> { cartItem.ImagePath }
+                            Images = new List<string> { cartItem.ImagePath },
                         }
                     },
                     Quantity =1 ,
                 };
                 options.LineItems.Add(sessionLineItem);
+                courses.Add(cartItem.Id);
             }
+            TempData[userId] = courses;
 
             var service = new SessionService();
             Session session = service.Create(options);
@@ -64,7 +69,7 @@ namespace E_Learning.Controllers
         }
 
 
-        public IActionResult OrderConfirmation()
+        public async Task<IActionResult> OrderConfirmation()
         {
             var service = new SessionService();
             Session session = service.Get(TempData["Session"].ToString());
@@ -74,7 +79,15 @@ namespace E_Learning.Controllers
             {
                 var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-                unitOfWork.CartRepository.DeleteBasketAsync(userId);
+                var courses = TempData[userId] as IEnumerable<int>; ;
+
+                foreach (var courseId in courses)
+                {
+                    await unitOfWork.Reposirory<StudentCourse>().AddAsync(new StudentCourse { CourseId = courseId, UserId = userId });
+                    await unitOfWork.CompleteAsync();
+                }
+                
+                await unitOfWork.CartRepository.DeleteBasketAsync(userId);
 
                 return View();
             }

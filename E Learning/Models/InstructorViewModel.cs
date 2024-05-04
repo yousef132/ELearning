@@ -4,7 +4,7 @@ namespace E_Learning.Models
 {
     public class InstructorViewModel
     {
-        public string Name { get; set; }
+        public string DisplayName { get; set; }
         [EmailAddress]
         public string Email { get; set; }
 

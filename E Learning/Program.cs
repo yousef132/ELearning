@@ -1,5 +1,8 @@
+using AutoMapper;
 using E_Learning.DataSeeding;
+using E_Learning.Mapper.Instructor;
 using ELearning.BLL.Interfaces;
+using ELearning.DAL.Context.Identity;
 using ELearning.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +10,7 @@ using StackExchange.Redis;
 using Store.Repository.BasketRepository;
 using Store.Repository.Interfaces;
 using Store.Repository.Repositories;
+using Stripe;
 using System;
 
 namespace E_Learning
@@ -26,6 +30,8 @@ namespace E_Learning
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<ICacheRepository, CacheRepository>();
             builder.Services.AddScoped<ICartRepository, CartRepository>();
+            builder.Services.AddAutoMapper(typeof(InstructorProfile));
+            builder.Services.AddScoped(typeof(ILectureComponentsRepository<>), typeof(LectureComponentsRepository<>));
             builder.Services.AddTransient<IConnectionMultiplexer>(config =>
             {
                 var configuraion = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));
@@ -68,10 +74,6 @@ namespace E_Learning
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Account}/{action=Login}/{id?}");
-
-            //app.MapControllerRoute(
-            //    name: "Admin",
-            //    pattern: "{controller=Admin}/{action=Dashboard}/{id?}");
 
             app.Run();
         }

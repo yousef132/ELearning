@@ -1,4 +1,4 @@
-﻿namespace Store.Data.Entities
+﻿namespace ELearning.Data.Entities
 {
 	public class CartCourse
 	{

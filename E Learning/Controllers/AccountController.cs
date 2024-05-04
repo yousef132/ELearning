@@ -1,5 +1,4 @@
 ﻿using E_Commerce.Helper;
-using ELearning.Data.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ELearning.Helper;
@@ -7,6 +6,7 @@ using ELearning.Models;
 using System.Security.Claims;
 using Store.Repository.BasketRepository;
 using Store.Repository.Interfaces;
+using ELearning.DAL.Context.Identity;
 namespace E_Learning.Controllers
 {
     public class AccountController : Controller
