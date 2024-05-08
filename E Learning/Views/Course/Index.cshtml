@@ -2,24 +2,34 @@
 <div class="container" style="height:900px;">
     <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header">
 
-        <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar" aria-expanded="true" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()"> <span class="fas fa-angle-left" id="filter-angle"></span> <span id="btn-txt">Hide filters</span> </button>
+        <button class="btn btn-hide text-uppercase" type="button" style="background-color:#2878EB;" data-toggle="collapse" data-target="#filterbar" aria-expanded="true" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()"> <span class="fas fa-angle-left" id="filter-angle"></span> <span id="btn-txt">Hide filters</span> </button>
 
         <div class="input-group rounded" style="margin-left:20px;">
             <input id="name" type="search" class="form-control rounded "  placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
             <a onclick="FilterSearchCourses()" style="cursor:pointer;">
                 <span class="input-group-text border-0" id="search-addon" style="margin: 0px 10px;height: 100%;" >
                     <i class="fas fa-search"></i>
-
                 </span>
             </a>
         </div>
     </div>
 
     <div id="content" class="my-5">
-        <div id="filterbar" class="collapse show">
+        <div id="filterbar" style="border:none" class="collapse show">
+
+            <div class="box border-bottom">
+                <div class="box-label text-uppercase d-flex align-items-center">Order By <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box" aria-expanded="true" aria-controls="inner-box" id="out" onclick="outerFilter()"> </button> </div>
+
+                <div id="inner-box"  class="mt-2 mr-1 collapse show" style="height:fit-content;overflow:hidden;">
+                    <select id="sort"  class="form-control">
+                        <option value="Name">Name</option>
+                        <option value="Price">Price</option>
+                    </select>
+                </div>
+            </div>
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Language <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box" aria-expanded="true" aria-controls="inner-box" id="out" onclick="outerFilter()"> <span class="fas fa-plus"></span> </button> </div>
-                <div id="inner-box" class="mt-2 mr-1 collapse show" style="">
+                <div id="inner-box" class="mt-2 mr-1 collapse show" style="height:fit-content;overflow:hidden;">
                     <div class="my-1"> <label class="tick">English <input type="checkbox" name="language" value="English" class=""> <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Arabic <input type="checkbox" name="language" value="Arabic" class="">  <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">French  <input type="checkbox" name="language" value="French" class=""> <span class="check"></span> </label> </div>
@@ -28,7 +38,7 @@
             </div>
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Level <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box2" aria-expanded="true" aria-controls="inner-box2"><span class="fas fa-plus"></span></button> </div>
-                <div id="inner-box2" class="mt-2 mr-1 collapse show" style="">
+                <div id="inner-box2" class="mt-2 mr-1 collapse show" style="height:fit-content;overflow:hidden;">
                     <div class="my-1"> <label class="tick">Beginner<input type="checkbox" name="level" value="Beginner" class="">   <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Medeuim  <input type="checkbox" name="level" value="Medeuim" class="">   <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Advanced  <input type="checkbox" name="level" value="Advanced" class=""> <span class="check"></span> </label> </div>
@@ -36,7 +46,7 @@
             </div>
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">price <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#price" aria-expanded="true" aria-controls="price"><span class="fas fa-plus"></span></button> </div>
-                <div class="d-flex justify-content-around mt-2" style="max-width:90%;">
+                <div class="d-flex justify-content-around mt-2" style="height:fit-content;overflow:hidden;max-width:90%;" >
                     <input id="minPrice" placeholder="min" type="number" class="form-control " style="max-width:40%;" />
                     <input id="maxPrice" placeholder="max" type="number" class="form-control " style="max-width:40%;" />
                 </div>
@@ -44,7 +54,6 @@
             <div class="box border-bottom" style="position: relative;left: 50%;transform: translateX(-50%); width:fit-content">
                 <label class="btn btn-success form-check-label active"> <input class="form-check-input" type="radio" checked onclick="FilterSearchCourses()">Apply </label>
             </div>
-
         </div>
         <div id="products">
             <partial name="FilterSearchCourses" model="@Model" />
@@ -87,6 +96,7 @@
             var minPrice = $("#minPrice").val();
             var maxPrice = $("#maxPrice").val();
             var name = $("#name").val();
+            var sort = $("#sort").val();
 
             // Client-side validation for min and max prices
             if (minPrice > maxPrice) {
@@ -106,7 +116,8 @@
                 MinPrice: minPrice,
                 MaxPrice: maxPrice,
                 Name: name,
-                PageIndex: pageIndex
+                PageIndex: pageIndex,
+                Sort: sort
             };
             var products = document.getElementById("products");
 

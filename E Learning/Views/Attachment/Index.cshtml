@@ -1,0 +1,41 @@
+﻿@model ICollection<ELearning.Data.Entities.Attachment>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "_InstructorLayout";
+}
+<h1>Attchments</h1>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-wrap">
+			<table class="table table-responsive-xl">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var attachment in Model)
+					{
+						<tr>
+							<td>
+								@attachment.Name
+							</td>
+							<td>
+								<a class="btn btn-warning" asp-controller="Attachment" asp-action="Update" asp-route-id="@attachment.Id">Update</a>
+							</td>
+							<td>
+								<a class="btn btn-danger" asp-controller="Attachment" asp-action="Delete" asp-route-id="@attachment.Id">Delete</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+

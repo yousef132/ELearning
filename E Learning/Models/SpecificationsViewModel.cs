@@ -10,5 +10,6 @@ namespace E_Learning.Models
         public int MaxPrice { get; set; }
         public string Name { get; set; }
         public int PageIndex { get; set; } = 1;
+        public string Sort { get; set; }
     }
 }

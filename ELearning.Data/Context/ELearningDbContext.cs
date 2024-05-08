@@ -24,17 +24,18 @@ namespace ELearning.Data.Context
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+
         }
         public DbSet<Course> Courses { get; set; }   
         public DbSet<BaseQuestion> BaseQuestions { get; set; }   
         public DbSet<Assignment> Assignments { get; set; }   
         public DbSet<Attachment> Attachments { get; set; }   
-        public DbSet<Choice> Choices { get; set; }   
         public DbSet<Exam> Exams { get; set; }   
         public DbSet<StudentCourse> StudentCourses { get; set; }   
         public DbSet<StudentAssignment> StudentAssignments { get; set; }   
         public DbSet<StudentExam> StudentExams { get; set; }   
-        public DbSet<StudentQuestion> StudentQuestions { get; set; }   
+        public DbSet<StudentAnswer> StudentQuestions { get; set; }   
         public DbSet<Lecture> Lectures { get; set; }   
     }
 }

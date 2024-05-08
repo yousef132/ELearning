@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using E_Commerce.Helper;
 using E_Learning.Models;
+using ELearning.BLL.Specifications;
 using ELearning.BLL.Specifications.CourseSpecification;
+using ELearning.BLL.Specifications.StudentCourseSpecification;
 using ELearning.Data.Context;
 using ELearning.Data.Entities;
 using ELearning.Helper;
@@ -28,7 +30,7 @@ namespace E_Learning.Controllers
         public async Task<IActionResult> Index(CourseSpecifications courseSpecs)
         {
             var courses = await GetCoursesWithSpecs(courseSpecs);
-            int pageSize = 6;
+            int pageSize = 4;
             return View(PaginatedList<Course>.CreateAsync(courses, 1, pageSize));
         }
 
@@ -58,7 +60,7 @@ namespace E_Learning.Controllers
                 courseSpecs.PageIndex = 1;
 
             var courses = await GetCoursesWithSpecs(specs);
-            int pageSize = 6;
+            int pageSize = 4;
             return PartialView(PaginatedList<Course>.CreateAsync(courses, courseSpecs.PageIndex, pageSize));
         }
 
@@ -75,9 +77,21 @@ namespace E_Learning.Controllers
             return View(course);    
         }
 
-      
-        //CRUD Operations
-        
+
+        public async Task<IActionResult> GetCoureParticipants(int courseId)
+        {
+            ViewBag.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var specs = new StudentCourseSpecification() {  CourseId = courseId }; 
+            var studentCourseSpecs = new StudentWithCourseWtihSpecification(specs); 
+            var studentCourses =await unitOfWork.Reposirory<StudentCourse>().GetWithSpecificationsAllAsync(studentCourseSpecs);
+ 
+            return PartialView(studentCourses);
+        }
+
+
+        #region CRUD Operations
+
         [Authorize(Roles = Roles.Instructor)]
         public IActionResult Add()
         {
@@ -143,6 +157,7 @@ namespace E_Learning.Controllers
 
             return View(model);
         }
+        #endregion
 
 
     }

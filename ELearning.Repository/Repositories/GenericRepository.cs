@@ -37,5 +37,8 @@ namespace Store.Repository.Repositories
         private IQueryable<TEntity> ApplySpecs(ISpecification<TEntity> specs)
             => SpecificationEvaluater<TEntity>.GetQuery(context.Set<TEntity>(), specs);
 
+        public TEntity GetById(int Id)
+              =>  context.Set<TEntity>().Find(Id);
+
     }
 }

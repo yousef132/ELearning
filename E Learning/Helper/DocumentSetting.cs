@@ -31,8 +31,10 @@
 			var path =  Path.Combine(folderpath, fileurl);
 
 			File.Delete(path);
-
 		}
-
+		public static string GetPath (string fileName)
+			=> Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/assets/Videos/Lectures/{fileName}");
+			
+		
 	}
 }

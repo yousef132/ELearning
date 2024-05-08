@@ -12,19 +12,24 @@ namespace Store.Repository.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ELearningDbContext context;
-		public ICacheRepository cacheRepository { get; set; }
 		public ICartRepository CartRepository { get; set; }
+        public IAttachmentRepository AttachmentRepository { get ; set ; }
+        public IExamRepository ExamRepository { get ; set ; }
+        public IAssignmentRepository AssignmentRepository { get ; set ; }
 
         private Hashtable repositories;
 
         public UnitOfWork(ELearningDbContext context,
-            ICacheRepository cacheRepository,
-			ICartRepository cartRepository
-            )
+			ICartRepository cartRepository,
+            IAttachmentRepository attachmentRepository,
+            IExamRepository examRepository,
+            IAssignmentRepository assignmentRepository)
 		{
 			this.context = context;
-			this.cacheRepository = cacheRepository;
-			CartRepository = cartRepository;
+			this.CartRepository = cartRepository;
+            this.AssignmentRepository = assignmentRepository;
+            this.ExamRepository = examRepository;
+            this.AttachmentRepository = attachmentRepository;
         }
 
 		public async Task<int> CompleteAsync() => await context.SaveChangesAsync();
@@ -47,9 +52,5 @@ namespace Store.Repository.Repositories
             return (IGenericRepository<TEntity>)repositories[entityKey];
         }
 
-        public ILectureComponentsRepository<TEntity> LectureComponentsRepository<TEntity>() where TEntity : BaseEntity
-        {
-            return new LectureComponentsRepository<TEntity>(context);
-        }
     }
 }

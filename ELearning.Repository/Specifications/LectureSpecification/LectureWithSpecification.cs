@@ -14,8 +14,6 @@ namespace ELearning.BLL.Specifications.LectureSpecification
 			: base(lec => lec.Id == lectureId)
 		{
 			AddInclude(lec => lec.Attachments);
-			AddInclude(lec => lec.Exams);
-			AddInclude(lec => lec.Assignments);
 		}
 	}
 }

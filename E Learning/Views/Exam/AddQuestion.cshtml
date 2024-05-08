@@ -1,0 +1,67 @@
+﻿@model E_Learning.Controllers.QuestionViewModel
+
+@{
+    ViewData["Title"] = "AddQuestion";
+    Layout = "_InstructorLayout";
+}
+
+<h1>AddQuestion</h1>
+
+<h4>QuestionViewModel</h4>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+    </div>
+    <form asp-action="AddQuestion">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input hidden asp-for="ExamId" class="form-control" />
+
+        <div class="form-group">
+            <label asp-for="Text" class="control-label"></label>
+            <input asp-for="Text" class="form-control" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Choice1" class="control-label"></label>
+            <input asp-for="Choice1" class="form-control" />
+            <span asp-validation-for="Choice1" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Choice2" class="control-label"></label>
+            <input asp-for="Choice2" class="form-control" />
+            <span asp-validation-for="Choice2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Choice3" class="control-label"></label>
+            <input asp-for="Choice3" class="form-control" />
+            <span asp-validation-for="Choice3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Choice4" class="control-label"></label>
+            <input asp-for="Choice4" class="form-control" />
+            <span asp-validation-for="Choice4" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnswerChoice" class="control-label"></label>
+            <select class="form-select" asp-for="AnswerChoice" data-placeholder="Select Choice">
+                <option value="1">Choice 1</option>
+                <option value="2">Choice 2</option>
+                <option value="3">Choice 3</option>
+                <option value="4">Choice 4</option>
+            </select>
+            <span asp-validation-for="AnswerChoice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

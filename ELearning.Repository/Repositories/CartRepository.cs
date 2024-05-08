@@ -9,9 +9,9 @@ namespace Store.Repository.BasketRepository
 	public class CartRepository : ICartRepository
 	{
 		private readonly IDatabase database;
-		private readonly ICacheRepository cacheRepository;
+		private readonly ICacheRepository<Cart> cacheRepository;
 
-		public CartRepository(IConnectionMultiplexer redis, ICacheRepository cacheRepository)
+		public CartRepository(IConnectionMultiplexer redis, ICacheRepository<Cart> cacheRepository)
 		{
 			database = redis.GetDatabase();
 			this.cacheRepository = cacheRepository;
@@ -23,10 +23,10 @@ namespace Store.Repository.BasketRepository
 		{
 			//var data = await database.StringGetAsync(id);
 			var data = await cacheRepository.GetCacheResponseAsync(id);
-			if (string.IsNullOrEmpty(data))
+			if (data is null)
 				return new Cart() { Id = id };
 
-			return JsonSerializer.Deserialize<Cart>(data);
+			return data;
 		}
 
 		public async Task<Cart> UpdateBasketAsync(Cart cart)
@@ -50,6 +50,6 @@ namespace Store.Repository.BasketRepository
 			=> cart.Courses.Add(course);
 
         public void RemoveFromCart(Cart cart, int courseId)
-			=> cart.Courses = cart.Courses.Where(course=>course.Id == courseId).ToList();
+			=> cart.Courses = cart.Courses.Where(course=>course.Id != courseId).ToList();
     }
 }

@@ -14,7 +14,6 @@ namespace E_Learning.Controllers
 
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IConfiguration configuration;
-        private readonly ICartRepository cartRepository;
         private readonly IUnitOfWork unitOfWork;
 
         public SignInManager<ApplicationUser> SignInManager { get; set; }
@@ -23,13 +22,11 @@ namespace E_Learning.Controllers
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IConfiguration configuration,
-            ICartRepository cartRepository,
             IUnitOfWork unitOfWork)
         {
             this.userManager = userManager;
             SignInManager = signInManager;
             this.configuration = configuration;
-            this.cartRepository = cartRepository;
             this.unitOfWork = unitOfWork;
         }
         public IActionResult Signup()

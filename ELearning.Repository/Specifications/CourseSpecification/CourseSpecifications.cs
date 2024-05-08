@@ -26,10 +26,6 @@ namespace ELearning.BLL.Specifications.CourseSpecification
 		public List<string> Categories { get; set; } = new List<string>();
         public int MinPrice { get; set; }
 		public int MaxPrice { get; set; }
-
-
-
-
-
+		public string Sort {  get; set; }
     }
 }

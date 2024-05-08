@@ -1,0 +1,13 @@
+﻿@model Lecture
+@{
+	Layout = "_InstructorLayout";
+}
+@* <a class="btn btn-success mb-3" asp-controller="Attachment" asp-action="Create" asp-route-id="@Model.Id">Create New Attachment</a>
+<a class="btn btn-primary mb-3" asp-controller="Exam" asp-action="Create" asp-route-id="@Model.Id">Create New Exam</a>
+<a class="btn btn-danger mb-3" asp-controller="Assignment" asp-action="Create" asp-route-id="@Model.Id">Create New Assignment</a>
+
+ *@
+
+<a class="btn btn-success mb-3" asp-controller="Assignment" asp-action="Index" asp-route-id="@Model.Id"> Assignment</a>
+<a class="btn btn-primary mb-3" asp-controller="Exam" asp-action="Index" asp-route-id="@Model.Id"> Exam</a>
+<a class="btn btn-danger mb-3" asp-controller="Attachment" asp-action="Index" asp-route-id="@Model.Id"> Attachment</a>

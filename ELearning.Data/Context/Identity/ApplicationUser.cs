@@ -17,7 +17,7 @@ namespace ELearning.DAL.Context.Identity
         public ICollection<StudentAssignment> StudentAssignments { get; set; }
         // student courses
         public ICollection<StudentExam> StudentExams { get; set; }
-        public ICollection<StudentQuestion> StudentQuestions { get; set; }
+        public ICollection<StudentAnswer> StudentQuestions { get; set; }
 
         public string ImagePath { get; set; }
         public string DisplayName { get; set; }

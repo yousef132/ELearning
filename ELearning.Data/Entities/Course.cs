@@ -27,6 +27,8 @@ namespace ELearning.Data.Entities
         public ICollection<StudentCourse> StudentCourses { get; set; }
         
         public ICollection<Lecture> Lectures { get; set; }
+        public ICollection<Exam> Exams { get; set; }
+		public ICollection<Assignment> Assignments { get; set; }
 
-    }
+	}
 }

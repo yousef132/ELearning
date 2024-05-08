@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ELearning.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00e84bcc75e03da53d909ac349cba3ffc6301ffe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+debefc5bba4592cc333393bcd6a5aaad7ab814d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ELearning.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ELearning.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

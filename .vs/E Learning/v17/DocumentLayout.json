@@ -1,7 +1,60 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\project\\E Learning\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\configurations\\studentexamconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\configurations\\studentexamconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\configurations\\studentquestionconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\configurations\\studentquestionconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\configurations\\studentcourseconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\configurations\\studentcourseconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\configurations\\examconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\configurations\\examconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\configurations\\assignmentconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\configurations\\assignmentconigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\entities\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\entities\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|d:\\project\\e learning\\elearning.data\\entities\\studentexam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DE93701-A2FC-4318-ADDD-E9E55D3AF293}|ELearning.Data\\ELearning.DAL.csproj|solutionrelative:elearning.data\\entities\\studentexam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\exam\\courseexams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\exam\\courseexams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\exam\\startexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\exam\\startexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +75,169 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentQuestionConigurations.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\StudentQuestionConigurations.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Configurations\\StudentQuestionConigurations.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\StudentQuestionConigurations.cs",
+              "RelativeToolTip": "ELearning.Data\\Configurations\\StudentQuestionConigurations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T11:29:08.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentExamConigurations.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\StudentExamConigurations.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Configurations\\StudentExamConigurations.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\StudentExamConigurations.cs",
+              "RelativeToolTip": "ELearning.Data\\Configurations\\StudentExamConigurations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T11:29:07.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentCourseConigurations.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\StudentCourseConigurations.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Configurations\\StudentCourseConigurations.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\StudentCourseConigurations.cs",
+              "RelativeToolTip": "ELearning.Data\\Configurations\\StudentCourseConigurations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T11:29:06.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExamConigurations.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\ExamConigurations.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Configurations\\ExamConigurations.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\ExamConigurations.cs",
+              "RelativeToolTip": "ELearning.Data\\Configurations\\ExamConigurations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T11:29:05.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AssignmentConigurations.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\AssignmentConigurations.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Configurations\\AssignmentConigurations.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Configurations\\AssignmentConigurations.cs",
+              "RelativeToolTip": "ELearning.Data\\Configurations\\AssignmentConigurations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T11:29:01.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Assignment.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Entities\\Assignment.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Entities\\Assignment.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Entities\\Assignment.cs",
+              "RelativeToolTip": "ELearning.Data\\Entities\\Assignment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T11:28:24.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Course\\Index.cshtml",
+              "RelativeDocumentMoniker": "E Learning\\Views\\Course\\Index.cshtml",
+              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Course\\Index.cshtml",
+              "RelativeToolTip": "E Learning\\Views\\Course\\Index.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAA4AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T20:42:52.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "E Learning\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "E Learning\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABQAAAAAAAAAAAAswCIAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T16:51:26.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StartExam.cshtml",
+              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Exam\\StartExam.cshtml",
+              "RelativeDocumentMoniker": "E Learning\\Views\\Exam\\StartExam.cshtml",
+              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Exam\\StartExam.cshtml",
+              "RelativeToolTip": "E Learning\\Views\\Exam\\StartExam.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T16:49:09.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CourseExams.cshtml",
+              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Exam\\CourseExams.cshtml",
+              "RelativeDocumentMoniker": "E Learning\\Views\\Exam\\CourseExams.cshtml",
+              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Exam\\CourseExams.cshtml",
+              "RelativeToolTip": "E Learning\\Views\\Exam\\CourseExams.cshtml",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAWwBUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T16:47:00.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StudentExam.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Data\\Entities\\StudentExam.cs",
+              "RelativeDocumentMoniker": "ELearning.Data\\Entities\\StudentExam.cs",
+              "ToolTip": "D:\\project\\E Learning\\ELearning.Data\\Entities\\StudentExam.cs",
+              "RelativeToolTip": "ELearning.Data\\Entities\\StudentExam.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T16:35:22.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExamController.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Controllers\\ExamController.cs",
+              "RelativeDocumentMoniker": "E Learning\\Controllers\\ExamController.cs",
+              "ToolTip": "D:\\project\\E Learning\\E Learning\\Controllers\\ExamController.cs",
+              "RelativeToolTip": "E Learning\\Controllers\\ExamController.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAWwIEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T16:34:10.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "E Learning\\Controllers\\CourseController.cs",
+              "ToolTip": "D:\\project\\E Learning\\E Learning\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "E Learning\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAApwFIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T16:33:37.759Z"
             }
           ]
         }

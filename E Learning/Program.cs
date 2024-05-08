@@ -2,6 +2,7 @@ using AutoMapper;
 using E_Learning.DataSeeding;
 using E_Learning.Mapper.Instructor;
 using ELearning.BLL.Interfaces;
+using ELearning.BLL.Repositories;
 using ELearning.DAL.Context.Identity;
 using ELearning.Data.Context;
 using Microsoft.AspNetCore.Identity;
@@ -28,10 +29,15 @@ namespace E_Learning
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-            builder.Services.AddScoped<ICacheRepository, CacheRepository>();
+            builder.Services.AddScoped(typeof(ICacheRepository<>), typeof(CacheRepository<>));
+
+            //builder.Services.AddScoped<ICacheRepository, CacheRepository>();
             builder.Services.AddScoped<ICartRepository, CartRepository>();
+            builder.Services.AddScoped<IAttachmentRepository, AttachmentRepository>();
+            builder.Services.AddScoped<IExamRepository, ExamRepository>();
+            builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
             builder.Services.AddAutoMapper(typeof(InstructorProfile));
-            builder.Services.AddScoped(typeof(ILectureComponentsRepository<>), typeof(LectureComponentsRepository<>));
+
             builder.Services.AddTransient<IConnectionMultiplexer>(config =>
             {
                 var configuraion = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));

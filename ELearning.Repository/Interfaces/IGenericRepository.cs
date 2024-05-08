@@ -8,6 +8,7 @@ namespace Store.Repository.Interfaces
     public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         Task<TEntity> GetByIdAsync(int Id);
+        TEntity GetById(int Id);
         Task<IReadOnlyList<TEntity>> GetAllAsync(); 
         Task<TEntity> GetWithSpecificationsByIdAsync(ISpecification<TEntity> specs);
         Task<IReadOnlyList<TEntity>> GetWithSpecificationsAllAsync(ISpecification<TEntity> specs); 

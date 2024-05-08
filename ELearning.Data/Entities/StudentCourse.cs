@@ -11,5 +11,7 @@ namespace ELearning.Data.Entities
         public Course Course { get; set; }
 
         public int CourseId { get; set; }
+
+        public double TotalMark { get; set; }
     }
 }

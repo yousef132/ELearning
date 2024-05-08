@@ -8,13 +8,14 @@ namespace Store.Repository.Interfaces
     {
 
         IGenericRepository<TEntity> Reposirory<TEntity>() where TEntity : BaseEntity;
-        ICacheRepository cacheRepository { get; set; }
 		ICartRepository CartRepository { get; set; }
 
         //ILectureComponentsRepository<TEntity> LectureComponentsRepository where TEntity : BaseEntity; // Read-only
         // ILectureComponentsRepository<BaseEntity> LectureComponentsRepository { get; set; } // Read-only
 
-        ILectureComponentsRepository<TEntity> LectureComponentsRepository<TEntity>() where TEntity : BaseEntity; 
+        IAttachmentRepository AttachmentRepository { get; set; }
+        IExamRepository ExamRepository { get; set; }
+        IAssignmentRepository AssignmentRepository { get; set; }
 
 
         Task<int> CompleteAsync();

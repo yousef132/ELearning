@@ -1,5 +1,6 @@
 ﻿using ELearning.BLL.Specifications;
 using ELearning.BLL.Specifications.CourseSpecification;
+using ELearning.BLL.Specifications.ExamSpecificatoin;
 using ELearning.Data.Entities;
 using ELearning.Helper;
 using Microsoft.AspNetCore.Authorization;
@@ -37,6 +38,8 @@ namespace E_Learning.Controllers
 
             return courses.Select(c => c.Course).ToList();
         }
+
+        
         //public IActionResult Details()
         //{
         //    var studentCourses = GetCourses();  

@@ -2,7 +2,7 @@
 
 namespace ELearning.Data.Entities
 {
-    public class StudentExam
+    public class StudentExam:BaseEntity
     {
         public ApplicationUser User { get; set; }
         public string UserId { get; set; }
@@ -13,7 +13,5 @@ namespace ELearning.Data.Entities
 
         public Exam Exam { get; set; }
         public int ExamId { get; set; }
-
-
     }
 }

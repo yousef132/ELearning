@@ -3,12 +3,6 @@ using Microsoft.AspNetCore.Identity;
 
 namespace ELearning.Data.Entities
 {
-    public enum AttachmentType
-    {
-        Image,
-        Video,
-        Pdf,
-    }
     public class Attachment:BaseEntity
     {
         public string Name { get; set; }

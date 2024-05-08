@@ -1,0 +1,44 @@
+﻿@model IReadOnlyList<StudentCourse>
+
+<div class="container">
+    <table class="table" style="color:black;">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Total Marks
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.User.Id == ViewBag.UserId)
+                {
+                    <tr style="background-color:#95dcff;">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalMark)
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalMark)
+                        </td>
+                    </tr>
+                }
+               
+            }
+        </tbody>
+    </table>
+</div>

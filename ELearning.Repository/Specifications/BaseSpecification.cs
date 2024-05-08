@@ -33,12 +33,5 @@ namespace ELearning.BLL.Specifications
         protected void AddOrderByDescending(Expression<Func<T, object>> OrderByDescending)
             => this.OrderByDescending = OrderByDescending;
 
-
-        protected void ApplyPgination(int skip, int take)
-        {
-            Skip = skip;
-            Take = take;
-            IsPaginated = true;
-        }
     }
 }

@@ -63,7 +63,8 @@ namespace ELearning.Data.Migrations
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Cascade,
+                        onUpdate:ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

@@ -1,0 +1,92 @@
+﻿@model int
+<div class="container" style="    margin-top: 80px ">
+    <div class="row mx-0 justify-content-center pt-5">
+        <div class="col-lg-6">
+            <div class="section-title text-center position-relative mb-4">
+                <h1 class="display-4">Lecture Activities</h1>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <a asp-action="LectureContent" asp-controller="Lecture" asp-route-id="@Model" style="padding-left:20px;">
+            <div class="coursescard">
+                <div class="card_image"> <img src="/img/content.jpg" /> </div>
+                <div class="card_title title-white">
+                    
+                </div>
+            </div>
+            <h3 style="margin-left: 95px;">Content</h3>
+
+        </a>
+        <a asp-action="LectureContent" asp-controller="Lecture" asp-route-id="Model" style="padding-left:20px;">
+            <div class="coursescard">
+                <div class="card_image"> <img src="/img/exams.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p>Content</p>
+                </div>
+            </div>
+            <h3 style="margin-left: 95px;">Exams</h3>
+		</a>
+            <a asp-action="LectureContent" asp-controller="Lecture" asp-route-id="Model" style="padding-left:20px;">
+                <div class="coursescard">
+                    <div class="card_image"> <img src="/img/assignmets.jpg" /> </div>
+                    <div class="card_title title-white">
+                        <p>Content</p>
+                    </div>
+                </div>
+            <h3 style="margin-left: 95px;">HomeWrok</h3>
+
+            </a>
+        
+    </div>
+</div>
+
+<style>
+    .cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+    .coursescard {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+ .coursescard .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+  .coursescard .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+  .coursescard .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+  text-decoration:none;
+  color:white;
+}
+
+  .coursescard:hover {
+  transform: scale(1.009);
+
+}
+</style>

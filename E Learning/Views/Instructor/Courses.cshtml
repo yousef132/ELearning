@@ -11,7 +11,49 @@
 </div>
 <div class="container mt-4">
 
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Manage Lectures</th>
+                <th scope="col">Add Exam</th>
+                <th scope="col">Add Assignment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.Name</td>
+                    <td>
+                        <a asp-action="Update" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-success">Update</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-warning">Delete</a>
 
+                    </td>
+                    <td>
+                        <a asp-action="Index" asp-controller="Lecture" asp-route-id="@course.Id" class="btn btn-warning">Manage Lectures</a>
+
+                    </td>
+                    <td>
+                        <a asp-action="Index" asp-controller="Exam" asp-route-id="@course.Id" class="btn btn-warning">Manage Exam</a>
+
+                    </td>
+
+                    <td>
+                        <a asp-action="Index" asp-controller="Assignment" asp-route-id="@course.Id" class="btn btn-warning">Manage Assignemnt</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+@* 
     <div class="row">
         @foreach (var course in Model)
         {
@@ -23,11 +65,11 @@
                         <a asp-action="Update" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-success">Update</a>
                         <a asp-action="Delete" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-warning">Delete</a>
                         <a asp-action="Index" asp-controller="Lecture" asp-route-id="@course.Id" class="btn btn-warning">Manage Lectures</a>
+                        <a asp-action="Index" asp-controller="Exam" asp-route-id="@course.Id" class="btn btn-warning">Manage Lectures</a>
+                        <a asp-action="Index" asp-controller="Assignment" asp-route-id="@course.Id" class="btn btn-warning">Manage Lectures</a>
                     </div>
                 </div>
             </div>
         }
-    </div>
+    </div> *@
 </div>
-
-

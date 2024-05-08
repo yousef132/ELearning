@@ -22,7 +22,19 @@ namespace ELearning.BLL.Specifications.CourseSpecification
         {
             // include instructor
             AddInclude(course => course.User);
-          //  ApplyPgination(specs.PageSize * (specs.PageIndex - 1), specs.PageSize);
+            // sort 
+            if (!String.IsNullOrEmpty(specs.Sort))
+            {
+                switch (specs.Sort)
+                {
+                    case "Price":
+                        AddOrderBy(x => x.Price);
+                        break;
+                    default:
+                        AddOrderBy(x => x.Name);
+                        break;
+                }
+            }
         }
 
         public CourseWithSpecifications(int courseId)
