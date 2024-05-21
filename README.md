@@ -47,8 +47,8 @@ The E-Learning Platform is designed to provide a comprehensive learning experien
 
 ### Architectural Patterns and Concepts
 - **3-Tier Architecture**: The application is divided into three layers - Presentation, Business Logic, and Data Access.
-- **Repository Pattern**
 - **Specification Pattern**: Used for filtering and searching courses. AJAX calls in JavaScript pass the specifications to the backend, which applies these specifications and returns a partial view with the desired courses.
+- **Repository Pattern**
 - **Unit of Work**
 - **AutoMapper**
 - **Generic Repository**
