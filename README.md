@@ -8,11 +8,6 @@ Welcome to the E-Learning Platform, an online education portal similar to Udemy,
   - [Student Features](#student-features)
   - [Instructor Features](#instructor-features)
   - [Admin Features](#admin-features)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [For Students](#for-students)
-  - [For Instructors](#for-instructors)
-  - [For Admins](#for-admins)
 - [Technologies and Concepts](#technologies-and-concepts)
 ## Project Overview
 The E-Learning Platform is designed to provide a comprehensive learning experience, enabling students to browse, enroll, and complete courses. Instructors can create and manage courses, assignments, and exams, while administrators oversee the platform's overall functionality.
