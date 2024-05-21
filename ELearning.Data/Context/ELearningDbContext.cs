@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ELearning.Data.Entities;
 using ELearning.Data.Entities.Question;
+using ELearning.DAL.Entities;
 
 namespace ELearning.Data.Context
 {
@@ -35,7 +36,8 @@ namespace ELearning.Data.Context
         public DbSet<StudentCourse> StudentCourses { get; set; }   
         public DbSet<StudentAssignment> StudentAssignments { get; set; }   
         public DbSet<StudentExam> StudentExams { get; set; }   
-        public DbSet<StudentAnswer> StudentQuestions { get; set; }   
+        public DbSet<StudentAnswer> StudentAnswers { get; set; }   
         public DbSet<Lecture> Lectures { get; set; }   
+        public DbSet<StudentLectureComment> StudentLectureComments { get; set; }   
     }
 }

@@ -9,7 +9,8 @@ namespace ELearning.Data.Entities
         public ApplicationUser User { get; set; }
         public int AssignmentId { get; set; }
         public Assignment Assignment { get; set; }
-        public double Mark {  get; set; }
+        public string Path { get; set; }
+        public double? Mark {  get; set; }
         public DateTime SubmissionDate { get; set; } = DateTime.Now;
     }
 }

@@ -24,7 +24,7 @@ namespace E_Learning.Controllers
 		}
 		private async Task<Cart> GetCart()
 		{
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var cart = await unitOfWork.CartRepository.GetBasketAsync(userId);
 			return cart;
@@ -32,16 +32,25 @@ namespace E_Learning.Controllers
 
 		public async Task<IActionResult> DeleteCartAsync()
 		{
-			 var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+			 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-			 await unitOfWork.CartRepository.DeleteBasketAsync(userId);
+            await unitOfWork.CartRepository.DeleteBasketAsync(userId);
 
 			 return View();
 		}
 
 		public async Task<IActionResult> AddCourse(int courseId)
 		{
-			var cart = await GetCart();
+           
+			var course = await unitOfWork
+                  .Reposirory<Course>()
+                  .GetByIdAsync(courseId);
+
+            if (course == null)
+                return BadRequest();
+
+
+            var cart = await GetCart();
 
 			// check if course in cart
             bool inCart = unitOfWork.CartRepository.InCart(cart,courseId);
@@ -49,11 +58,13 @@ namespace E_Learning.Controllers
             if (inCart)
                 return Json(new { status = false, message = "Course Already In Cart" });
 
-            var course = await unitOfWork
-							  .Reposirory<Course>()
-							  .GetByIdAsync(courseId);
-			if (course == null)
-				return BadRequest();
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            // check if user has bought ccourse
+            bool hasCourse = unitOfWork.studentCourseRepository.HasCourse(userId,courseId);
+			if (hasCourse)
+                return Json(new { status = false, message = "You have already bought this course !" });
+
+
 
 			var cartCourse =  mapper.Map<CartCourse>(course);
 
@@ -68,12 +79,14 @@ namespace E_Learning.Controllers
 		
 		public async Task<IActionResult> DeleteCourse(int courseId)
 		{
-			var cart = await GetCart();
+            var course = await unitOfWork.Reposirory<Course>().GetByIdAsync(courseId);
 
-			var course = await unitOfWork.Reposirory<Course>().GetByIdAsync(courseId);
+            if (course == null)
+                return NotFound();
 
-			if (course == null)
-				return NotFound();
+            var cart = await GetCart();
+
+		
 
 			var cartCourse = mapper.Map<CartCourse>(course);
 

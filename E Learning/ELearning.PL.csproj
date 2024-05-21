@@ -23,6 +23,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\assets\Images\course\" />
     <Folder Include="wwwroot\assets\Images\User\" />
+    <Folder Include="wwwroot\assets\Pdf\" />
     <Folder Include="wwwroot\assets\Videos\Lectures\" />
   </ItemGroup>
 

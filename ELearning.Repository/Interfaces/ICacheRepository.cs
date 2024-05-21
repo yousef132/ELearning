@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ELearning.BLL.Interfaces
 {
-	public interface ICacheRepository<T>
+	public interface ICacheRepository
 	{
-		Task SetCacheResponseAsync(string Key, T response, TimeSpan timeToLive);
-		Task<T> GetCacheResponseAsync(string Key);	
+		Task SetCacheResponseAsync(string Key, object response, TimeSpan timeToLive);
+		Task<string> GetCacheResponseAsync(string Key);	
 	}
 }

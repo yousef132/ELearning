@@ -1,0 +1,33 @@
+﻿@model IReadOnlyList<Assignment>
+@{
+    ViewData["Title"] = "CourseAssignments";
+}
+
+
+<div class="container">
+    @foreach (var ass in Model)
+    {
+        <div style="width:100%;border: solid 1px #bcbbbb;border-radius: 20px;padding:10px;height:150px;margin-bottom:20px;">
+            <div class="d-flex justify-content-between" style="padding-left:20px;padding-right:20px;margin-bottom:10px;">
+                <h3>
+                    @ass.Name
+                </h3>
+                <div>
+
+                    @if (DateTime.Now >= ass.TimedEntity.Open && DateTime.Now <= ass.TimedEntity.Close @* && !exams.Any(e => e.ExamId == exam.Id) *@)
+                    {
+                        <a class="btn btn-primary" asp-action="SubmitAssignments" asp-controller="Assignment" asp-route-assignmentId="@ass.Id">Submit</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" asp-action="Result" asp-controller="Exam" asp-route-id="@ass.Id">Submit</a>
+                    }
+                </div>
+            </div>
+            <div style="background-color:#f8f9fa;padding:10px;">
+                <p style="margin:0px;"><strong>Open</strong>: @ass.TimedEntity.Open</p>
+                <p style="margin:0px;"><strong>Close</strong>: @ass.TimedEntity.Close</p>
+            </div>
+        </div>
+    }
+</div>

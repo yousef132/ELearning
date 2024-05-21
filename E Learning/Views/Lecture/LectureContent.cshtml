@@ -1,56 +1,54 @@
 ﻿@model ICollection<Attachment>
 
-
 @if (Model.Count == 0)
 {
     <img src="/img/noresult.jpg" style="width:400px;height:400px;position:relative;left: 50%;top: 50%;transform: translate(-80%,0%);" />
 }
 
-
-
-<div style="margin-top:100px;">
-    <div class="d-flex justify-content-around">
-
-
-        <div style="width:66%;background-color:#f0f0f3;    padding-left: 20px;padding-top: 20px;" id="content">
-        </div>
-        <div style="width:25%; background-color:#f0f0f3;padding:15px;">
-            <h4 style="margin-bottom:25px;">Lecture Content</h4>
-            @foreach (var item in Model)
-            {
-               @*  <a asp-action="Download" asp-controller="Lecture" asp-route-fileName="@item.Path"></a> *@
-
-                @if(item.Type == ".mp4")
+else
+{
+    var attachments = Model as ICollection<Attachment>;
+    var firstattachment = attachments.FirstOrDefault();
+    <div style="margin-top:100px;">
+        <div class="d-flex justify-content-around">
+            <div style="width:826px;background-color:#f0f0f3;padding:20px;" id="content">
+                  <partial name="OpenAttachment" model="firstattachment" />
+            </div>
+            <div style="width:313px; background-color:#f0f0f3;padding:15px;">
+                <h4 style="margin-bottom:25px;">Lecture Content</h4>
+                @foreach (var item in attachments)
                 {
-                    <a onclick="OpenContent(@item.Id)">
+                    @*  <a asp-action="Download" asp-controller="Lecture" asp-route-fileName="@item.Path"></a> *@
 
-                        <div style="border-bottom:solid 1px;cursor:pointer;margin-top: 10px;">
+                    @if (item.Type != ".pdf")
+                    {
+                        <a onclick="OpenContent(@item.Id)">
 
-                            <h6>@item.Name</h6>
-                            <span class="badge badge-success" style="font-size: 12px;margin-bottom:10px;">@item.Type</span>
+                            <div style="border-bottom:solid 1px;cursor:pointer;margin-top: 10px;">
 
-                        </div>
-                    </a>
+                                <h6>@item.Name</h6>
+                                <span class="badge badge-success" style="font-size: 12px;margin-bottom:10px;">@item.Type</span>
+
+                            </div>
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-action="Download" asp-controller="Lecture" asp-route-fileName="@item.Path">
+
+                            <div style="border-bottom:solid 1px; cursor:pointer;margin-top: 10px;">
+
+                                <h6>@item.Name</h6>
+                                <span class="badge badge-danger" style="font-size: 12px;margin-bottom:10px;">Download</span>
+
+                            </div>
+                        </a>
+                    }
                 }
-                else
-                {
-                    <a asp-action="Download" asp-controller="Lecture" asp-route-fileName="@item.Path" >
-
-                        <div style="border-bottom:solid 1px; cursor:pointer;margin-top: 10px;">
-
-                            <h6>@item.Name</h6>
-                            <span class="badge badge-primary" style="font-size: 12px;margin-bottom:10px;">@item.Type</span>
-
-                        </div>
-                    </a>
-                }
-              
-                
-            }
+            </div>
         </div>
     </div>
-</div>
-
+}
 <script>
     function OpenContent(attachmentId) {
         

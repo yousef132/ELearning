@@ -16,6 +16,7 @@ namespace Store.Repository.Repositories
         public IAttachmentRepository AttachmentRepository { get ; set ; }
         public IExamRepository ExamRepository { get ; set ; }
         public IAssignmentRepository AssignmentRepository { get ; set ; }
+        public IStudentCourseRepository studentCourseRepository { get; set; }
 
         private Hashtable repositories;
 
@@ -23,13 +24,15 @@ namespace Store.Repository.Repositories
 			ICartRepository cartRepository,
             IAttachmentRepository attachmentRepository,
             IExamRepository examRepository,
-            IAssignmentRepository assignmentRepository)
+            IAssignmentRepository assignmentRepository,
+            IStudentCourseRepository studentCourseRepository)
 		{
 			this.context = context;
 			this.CartRepository = cartRepository;
             this.AssignmentRepository = assignmentRepository;
             this.ExamRepository = examRepository;
             this.AttachmentRepository = attachmentRepository;
+            this.studentCourseRepository= studentCourseRepository;
         }
 
 		public async Task<int> CompleteAsync() => await context.SaveChangesAsync();

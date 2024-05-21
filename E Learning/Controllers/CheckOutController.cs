@@ -22,7 +22,7 @@ namespace E_Learning.Controllers
         {
             StripeConfiguration.ApiKey = configuration["Stripe:SecretKey"];
 
-            var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value;
+            var userEmail = User.FindFirstValue(ClaimTypes.Email);
 
             var domain = configuration["BaseUrl"];
             var options = new SessionCreateOptions 
@@ -34,7 +34,7 @@ namespace E_Learning.Controllers
                 CustomerEmail = userEmail
             };
 
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var cart = await unitOfWork.CartRepository.GetBasketAsync(userId);
             var courses = new List<int>();
@@ -63,8 +63,6 @@ namespace E_Learning.Controllers
             Session session = service.Create(options);
             TempData["Session"] = session.Id;
             Response.Headers.Add("Location",session.Url);
-
-
             return new StatusCodeResult(303);
         }
 
@@ -77,7 +75,7 @@ namespace E_Learning.Controllers
 
             if (session.PaymentStatus == "paid")
             {
-                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var courses = TempData[userId] as IEnumerable<int>; ;
 
@@ -93,7 +91,6 @@ namespace E_Learning.Controllers
             }
             return RedirectToAction(nameof(PaymentFailed));
         }
-
         public IActionResult PaymentFailed()
         {
             return View();

@@ -29,13 +29,12 @@ namespace E_Learning
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-            builder.Services.AddScoped(typeof(ICacheRepository<>), typeof(CacheRepository<>));
-
-            //builder.Services.AddScoped<ICacheRepository, CacheRepository>();
+            builder.Services.AddScoped<ICacheRepository, CacheRepository>();
             builder.Services.AddScoped<ICartRepository, CartRepository>();
             builder.Services.AddScoped<IAttachmentRepository, AttachmentRepository>();
             builder.Services.AddScoped<IExamRepository, ExamRepository>();
             builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
+            builder.Services.AddScoped<IStudentCourseRepository, StudentCourseRepository>();
             builder.Services.AddAutoMapper(typeof(InstructorProfile));
 
             builder.Services.AddTransient<IConnectionMultiplexer>(config =>

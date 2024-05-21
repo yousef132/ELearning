@@ -1,5 +1,14 @@
 ﻿@model Attachment
 
-<video src="/assets/Videos/Lectures/@Model.Path" style="width700px;height:440px;" controls >
 
-</video>
+@if(Model.Type == ".mp4")
+{
+	<video src="/assets/Videos/Lectures/@Model.Path" style="width:100%;height:100%;" controls>
+	</video>
+
+}
+else if (Model.Type == ".png" || Model.Type == ".jpg")
+{
+	<img src="/assets/Videos/Lectures/@Model.Path" style="width:100%;height:100%;" />
+}
+@* max-width:700px;height:440px; *@

@@ -400,6 +400,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\Videos\Lectures\36dd291f-0dbf-4cd2-9ffa-4905caccf610-855289-hd_1920_1080_25fps.mp4))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\Videos\Lectures\6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>ELearning.PL</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ELearning.PL</BasePath>
+      <RelativePath>assets/Videos/Lectures/6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\Videos\Lectures\6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\Videos\Lectures\69c6bdc8-5767-4d09-8e4a-d0458df721ca-Screenshot 2024-04-05 144010.png))">
       <SourceType>Package</SourceType>
       <SourceId>ELearning.PL</SourceId>

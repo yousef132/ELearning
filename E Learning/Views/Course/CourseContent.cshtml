@@ -4,18 +4,20 @@
     <nav class="navbar navbar-expand-sm bg-light">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link activelink" asp-controller="course">Content</a>
+                <a class="nav-link activelink pointer" asp-controller="course">Content</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="exams" onclick="SwitchToExams(@Model.Id)">Exams</a>
+                <a class="nav-link pointer" id="exams" onclick="SwitchToExams(@Model.Id)">Exams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Assignments" asp-action="Index">Assignments</a>
+                <a class="nav-link pointer" id="ass" onclick="SwitchToAssignments(@Model.Id)">Assignments</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" id="parts" onclick="SwitchToParticipants(@Model.Id)">Participants</a>
+                <a class="nav-link pointer" id="parts" onclick="SwitchToParticipants(@Model.Id)">Participants</a>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item pointer">
                 <a class="nav-link">Grades</a>
             </li>
         </ul>
@@ -34,7 +36,7 @@
             @foreach (var lecture in Model.Lectures)
             {
 
-                <a asp-action="LectureContent" asp-controller="Lecture" asp-route-id="@lecture.Id">
+                <a asp-action="LectureContent" asp-controller="Lecture" asp-route-lectureId="@lecture.Id">
 
                     <div class="card">
 
@@ -56,6 +58,10 @@
 <style>
     .activelink {
         background-color: #afdfff;
+        
+    }
+    .pointer{
+        cursor: pointer;
     }
 </style>
 
@@ -84,18 +90,39 @@
         });
     }
     function SwitchToParticipants(courseId) {
-        var element = document.getElementById("accordionExample");
         var links = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
+        console.log("Participants");
         links.forEach(function (link) {
             link.classList.remove('activelink');
         });
         var element = document.getElementById("accordionExample");
+
         var link = document.getElementById("parts");
-        console.log(link);
         link.classList.add('activelink');
         console.log("hello");
         $.ajax({
             url: "/Course/GetCoureParticipants",
+            data: { "courseId": courseId },
+            success: function (result) {
+                element.innerHTML = result;
+            }
+        });
+    }
+
+    function SwitchToAssignments(courseId) {
+
+        var links = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
+        links.forEach(function (link) {
+            link.classList.remove('activelink');
+        });
+            console.log("Assignments");
+
+        var element = document.getElementById("accordionExample");
+        var link = document.getElementById("ass");
+        console.log(link);
+        link.classList.add('activelink');
+        $.ajax({
+            url: "/Course/CourseAssignments",
             data: { "courseId": courseId },
             success: function (result) {
                 element.innerHTML = result;

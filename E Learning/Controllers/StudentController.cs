@@ -32,9 +32,10 @@ namespace E_Learning.Controllers
         }
         public async Task<IReadOnlyList<Course>> GetUserCourses(string userId)
         {
-            var specs = new StudentCourseSpecifications(userId);
+            // var specs = new StudentCourseSpecifications(userId);
+            // var courses = await unitOfWork.Reposirory<StudentCourse>().GetWithSpecificationsAllAsync(specs);
 
-            var courses = await unitOfWork.Reposirory<StudentCourse>().GetWithSpecificationsAllAsync(specs);
+            var courses =  unitOfWork.studentCourseRepository.GetAllCourses(userId);
 
             return courses.Select(c => c.Course).ToList();
         }

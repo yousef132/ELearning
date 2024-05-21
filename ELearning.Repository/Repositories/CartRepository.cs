@@ -9,9 +9,9 @@ namespace Store.Repository.BasketRepository
 	public class CartRepository : ICartRepository
 	{
 		private readonly IDatabase database;
-		private readonly ICacheRepository<Cart> cacheRepository;
+		private readonly ICacheRepository cacheRepository;
 
-		public CartRepository(IConnectionMultiplexer redis, ICacheRepository<Cart> cacheRepository)
+		public CartRepository(IConnectionMultiplexer redis, ICacheRepository cacheRepository)
 		{
 			database = redis.GetDatabase();
 			this.cacheRepository = cacheRepository;
@@ -26,8 +26,8 @@ namespace Store.Repository.BasketRepository
 			if (data is null)
 				return new Cart() { Id = id };
 
-			return data;
-		}
+			return  JsonSerializer.Deserialize<Cart>(data);
+        }
 
 		public async Task<Cart> UpdateBasketAsync(Cart cart)
 		{

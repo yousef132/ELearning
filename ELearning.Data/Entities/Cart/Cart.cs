@@ -11,7 +11,5 @@ namespace ELearning.Data.Entities
 		public string Id { get; set; }	
 		public double ShopingPrice { get; set; }
 		public List<CartCourse> Courses { get; set; } = new List<CartCourse>();
-		public string? PaymentIntentId { get; set; }
-		public string? ClientSecret { get; set; }
 	}
 }

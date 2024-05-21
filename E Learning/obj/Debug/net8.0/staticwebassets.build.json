@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IrP+G95pmQpRFy6h218x6vwthm4P5LH7B+/6cF/foIs=",
+  "Hash": "FvXYey9Q+anFvSHkDSorhiJ015VtT4W17vrwMlbwOQY=",
   "Source": "ELearning.PL",
   "BasePath": "_content/ELearning.PL",
   "Mode": "Default",
@@ -528,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\Videos\\Lectures\\36dd291f-0dbf-4cd2-9ffa-4905caccf610-855289-hd_1920_1080_25fps.mp4"
+    },
+    {
+      "Identity": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf",
+      "SourceId": "ELearning.PL",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\project\\E Learning\\E Learning\\wwwroot\\",
+      "BasePath": "_content/ELearning.PL",
+      "RelativePath": "assets/Videos/Lectures/6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\Videos\\Lectures\\6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf"
     },
     {
       "Identity": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\69c6bdc8-5767-4d09-8e4a-d0458df721ca-Screenshot 2024-04-05 144010.png",

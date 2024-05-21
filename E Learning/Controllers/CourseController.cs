@@ -84,9 +84,16 @@ namespace E_Learning.Controllers
 
             var specs = new StudentCourseSpecification() {  CourseId = courseId }; 
             var studentCourseSpecs = new StudentWithCourseWtihSpecification(specs); 
-            var studentCourses =await unitOfWork.Reposirory<StudentCourse>().GetWithSpecificationsAllAsync(studentCourseSpecs);
+            var studentCourses = await unitOfWork.Reposirory<StudentCourse>().GetWithSpecificationsAllAsync(studentCourseSpecs);
  
             return PartialView(studentCourses);
+        }
+
+        public IActionResult CourseAssignments(int courseId)
+        {
+            var assignments = unitOfWork.AssignmentRepository.GetAssignmentsByCourseId(courseId);
+
+            return PartialView(assignments);
         }
 
 

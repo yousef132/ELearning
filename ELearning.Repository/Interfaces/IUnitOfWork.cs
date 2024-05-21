@@ -9,6 +9,7 @@ namespace Store.Repository.Interfaces
 
         IGenericRepository<TEntity> Reposirory<TEntity>() where TEntity : BaseEntity;
 		ICartRepository CartRepository { get; set; }
+        IStudentCourseRepository studentCourseRepository { get; set; }
 
         //ILectureComponentsRepository<TEntity> LectureComponentsRepository where TEntity : BaseEntity; // Read-only
         // ILectureComponentsRepository<BaseEntity> LectureComponentsRepository { get; set; } // Read-only

@@ -1,7 +1,9 @@
-﻿using E_Commerce.Helper;
+﻿using AutoMapper;
+using E_Commerce.Helper;
 using E_Learning.Models;
 using ELearning.BLL.Specifications.CourseSpecification;
 using ELearning.BLL.Specifications.LectureSpecification;
+using ELearning.DAL.Entities;
 using ELearning.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Store.Repository.Interfaces;
@@ -12,10 +14,12 @@ namespace E_Learning.Controllers
 	public class LectureController : Controller
 	{
 		private readonly IUnitOfWork unitOfWork;
+		private readonly IMapper mapper;
 
-		public LectureController(IUnitOfWork unitOfWork)
+		public LectureController(IUnitOfWork unitOfWork,IMapper mapper)
         {
 			this.unitOfWork = unitOfWork;
+			this.mapper = mapper;
 		}
         public async Task<IActionResult> Index(int id)//course id
 		{
@@ -59,15 +63,26 @@ namespace E_Learning.Controllers
 			return View(exams);
 		}
 		
-		public IActionResult LectureContent(int id)//LectureId
+		public IActionResult LectureContent(int lectureId)//LectureId
 		{
 			var content = unitOfWork
 							 .AttachmentRepository
-                             .GetAttachmentsByLectureId(id);
+                             .GetAttachmentsByLectureId(lectureId);
 
 			return View(content);
 		}
 
+        public async Task<IActionResult> AddComment(CommentViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var comment = mapper.Map<StudentLectureComment>(model);
+
+                await unitOfWork.Reposirory<StudentLectureComment>().AddAsync(comment);
+                await unitOfWork.CompleteAsync();
+            }
+            return View(model);
+        }
 
         #region CRUD Operations
         public async Task<IActionResult> Delete(int id)

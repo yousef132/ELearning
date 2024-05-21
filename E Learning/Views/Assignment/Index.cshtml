@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ELearning.Data.Entities.Assignment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_InstructorLayout";
+
+}
+
+<a class="btn btn-primary mb-3" asp-action="Create" asp-route-courseId="@ViewBag.CourseId">Create New Assignment</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                Delete
+            </th>
+            <th>
+                Update
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-courseId="@ViewBag.CourseId">Delete</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-warning" asp-action="Update" asp-route-courseId="@ViewBag.CourseId">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

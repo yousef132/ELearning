@@ -15,19 +15,18 @@ namespace E_Learning.Controllers
     public class ExamController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly ICacheRepository<Exam> cacheRepository;
         private readonly IMapper mapper;
 
-        public ExamController(IUnitOfWork unitOfWork, ICacheRepository<Exam> cacheRepository, IMapper mapper)
+        public ExamController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
-            this.cacheRepository = cacheRepository;
             this.mapper = mapper;
         }
         public IActionResult Index(int id)//courseId
         {
             var exams = unitOfWork.ExamRepository.GetExamsByCourseId(id);
             ViewBag.CourseId = id;
+            TempData["CourseId"] = id;
             return View(exams);
         }
 
@@ -143,6 +142,17 @@ namespace E_Learning.Controllers
             var pointGrade = examGrade / studentAnswer.Count() ;
 
             return (double)pointGrade * correctAnswers;
+        }
+
+
+        public async Task<IActionResult> DeleteExam(int examId)
+        {
+            var exam = await unitOfWork.Reposirory<Exam>().GetByIdAsync(examId);
+            if(exam == null)
+                return NotFound();
+            unitOfWork.Reposirory<Exam>().Delete(exam);
+            await unitOfWork.CompleteAsync();
+            return RedirectToAction(nameof(Index),new {courseId = TempData["CourseId"] });
         }
     }
 }

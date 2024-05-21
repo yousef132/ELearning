@@ -36,7 +36,6 @@ namespace ELearning.BLL.Specifications.CourseSpecification
                 }
             }
         }
-
         public CourseWithSpecifications(int courseId)
             : base(c => c.Id == courseId)
         {

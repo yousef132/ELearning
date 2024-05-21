@@ -7,7 +7,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Store.Repository.Repositories
 {
-	public class CacheRepository<T> : ICacheRepository<T>
+	public class CacheRepository : ICacheRepository
 	{
 		private readonly IConfiguration configuration;
         private readonly IDatabase database;
@@ -16,15 +16,15 @@ namespace Store.Repository.Repositories
 			this.configuration = configuration;
             database = redis.GetDatabase();
 		}
-        public async Task<T> GetCacheResponseAsync(string Key)
+        public async Task<string> GetCacheResponseAsync(string Key)
 		{
-			var cachedResponse = await database.StringGetAsync(Key);
+			string cachedResponse = await database.StringGetAsync(Key);
 
-			return JsonSerializer.Deserialize<T>(cachedResponse);
+			return cachedResponse;
 
 		}
 
-		public async Task SetCacheResponseAsync(string Key, T response, TimeSpan timeToLive)
+		public async Task SetCacheResponseAsync(string Key, object response, TimeSpan timeToLive)
 		{
 			if (response is null)
 				return;

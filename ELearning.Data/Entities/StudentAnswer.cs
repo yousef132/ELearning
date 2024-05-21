@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ELearning.Data.Entities
 {
-    public class StudentAnswer:BaseEntity
+    public class StudentAnswer : BaseEntity
     {
 
         public ApplicationUser User { get; set; }
@@ -17,6 +17,6 @@ namespace ELearning.Data.Entities
         public BaseQuestion BaseQuestion { get; set; }
         public int BaseQuestionId { get; set; }
         // Assignmet With Value Via Mapping Resolver function 
-        public bool AnswerIsCorrect { get; set; }   
+        public bool AnswerIsCorrect { get; set; }
     }
 }
