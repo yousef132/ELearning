@@ -13,10 +13,7 @@ Welcome to the E-Learning Platform, an online education portal similar to Udemy,
   - [For Students](#for-students)
   - [For Instructors](#for-instructors)
   - [For Admins](#for-admins)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-
+- [Technologies and Concepts](#technologies-and-concepts)
 ## Project Overview
 The E-Learning Platform is designed to provide a comprehensive learning experience, enabling students to browse, enroll, and complete courses. Instructors can create and manage courses, assignments, and exams, while administrators oversee the platform's overall functionality.
 
@@ -27,24 +24,37 @@ The E-Learning Platform is designed to provide a comprehensive learning experien
 - **Course Information**: View detailed information about courses and instructors, including their courses, contact details, and images.
 - **Enrollment and Payment**: Add courses to the cart and make payments using Stripe.
 - **My Learning Section**: Access enrolled courses and view lectures with downloadable attachments (PDFs, images, videos).
-- **Exams and Assignments**: Take exams with specific start and end times, submit assignments, and receive grades and feedback.
-- **Performance Tracking**: View grades for exams and assignments, and check standings in the course based on cumulative grades.
+- **Exams and Assignments**: Take exams with specific start and end times. After finishing an exam, receive his grade along with feedback on correct and incorrect answers. Submit assignments and receive grades and feedback as well.
+- **Performance Tracking**: View grades for exams and assignments.
+- **Standings**: View the standings of all students in the course, sorted by their cumulative grades, to see where you rank among your peers.
 
 ### Instructor Features
 - **Course Management**: Add, update, and delete courses.
-- **Lecture Management**: Create, update, and delete lectures, and add attachments (PDFs, images, videos).
-- **Exam Management**: Create, update, and delete exams, manage exam questions.
+- **Lecture Management**: Create, update, and delete lectures, and Manage Lecture attachments (PDFs, images, videos).
+- **Exam Management**: Create, update, delete exams and manage exam questions.
 - **Assignment Management**: Create, update, and delete assignments.
 - **Student Evaluation**: View and evaluate student submissions and assign grades.
 
 ### Admin Features
 - **Instructor Management**: Add and remove instructors.
-- **Platform Analytics**: View total number of students, instructors, and platform income.
+- **Platform Analytics**: View the total number of students, instructors, and platform income.
 
-## Installation
-To get started with the E-Learning Platform, follow these steps:
+## Technologies and Concepts
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/e-learning-platform.git
-   cd e-learning-platform
+### Technologies Used
+- **Backend**: ASP.NET MVC, Entity Framework Core (EF Core), LINQ
+- **Frontend**: HTML, CSS, JavaScript
+- **Database**: SQL Server
+- **Payment Gateway**: Stripe
+- **Caching**: Redis
+- **AJAX Calls**: JavaScript for dynamic content loading and filtering
+- **Authentication and Authorization**: Identity
+
+### Architectural Patterns and Concepts
+- **3-Tier Architecture**: The application is divided into three layers - Presentation, Business Logic, and Data Access.
+- **Repository Pattern**
+- **Specification Pattern**: Used for filtering and searching courses. AJAX calls in JavaScript pass the specifications to the backend, which applies these specifications and returns a partial view with the desired courses.
+- **Unit of Work**
+- **AutoMapper**
+- **Generic Repository**
+
