@@ -38,7 +38,7 @@ The E-Learning Platform is designed to provide a comprehensive learning experien
 
 ### Technologies Used
 - **Backend**: ASP.NET MVC, Entity Framework Core (EF Core), LINQ
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap
 - **Database**: SQL Server
 - **Payment Gateway**: Stripe
 - **Caching**: Redis
