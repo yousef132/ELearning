@@ -10,8 +10,7 @@ namespace ELearning.Data.Configurations
         {
             builder.HasKey(x => new
             {
-                x.UserId,
-                x.AssignmentId,
+                x.Id,
             });
         }
     }

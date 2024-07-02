@@ -27,6 +27,7 @@
                     </select>
                 </div>
             </div>
+
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Language <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box" aria-expanded="true" aria-controls="inner-box" id="out" onclick="outerFilter()"> <span class="fas fa-plus"></span> </button> </div>
                 <div id="inner-box" class="mt-2 mr-1 collapse show" style="height:fit-content;overflow:hidden;">
@@ -36,6 +37,7 @@
                     <div class="my-1"> <label class="tick">Spanish  <input type="checkbox" name="language" value="Spanish" class=""> <span class="check"></span> </label> </div>
                 </div>
             </div>
+
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Level <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box2" aria-expanded="true" aria-controls="inner-box2"><span class="fas fa-plus"></span></button> </div>
                 <div id="inner-box2" class="mt-2 mr-1 collapse show" style="height:fit-content;overflow:hidden;">
@@ -44,6 +46,7 @@
                     <div class="my-1"> <label class="tick">Advanced  <input type="checkbox" name="level" value="Advanced" class=""> <span class="check"></span> </label> </div>
                 </div>
             </div>
+
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">price <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#price" aria-expanded="true" aria-controls="price"><span class="fas fa-plus"></span></button> </div>
                 <div class="d-flex justify-content-around mt-2" style="height:fit-content;overflow:hidden;max-width:90%;" >
@@ -51,9 +54,11 @@
                     <input id="maxPrice" placeholder="max" type="number" class="form-control " style="max-width:40%;" />
                 </div>
             </div>
+
             <div class="box border-bottom" style="position: relative;left: 50%;transform: translateX(-50%); width:fit-content">
                 <label class="btn btn-success form-check-label active"> <input class="form-check-input" type="radio" checked onclick="FilterSearchCourses()">Apply </label>
             </div>
+
         </div>
         <div id="products">
             <partial name="FilterSearchCourses" model="@Model" />

@@ -8,7 +8,7 @@ namespace Store.Repository.Interfaces
     {
 
         IGenericRepository<TEntity> Reposirory<TEntity>() where TEntity : BaseEntity;
-		ICartRepository CartRepository { get; set; }
+        ICartRepository CartRepository { get; set; }
         IStudentCourseRepository studentCourseRepository { get; set; }
 
         //ILectureComponentsRepository<TEntity> LectureComponentsRepository where TEntity : BaseEntity; // Read-only
@@ -17,6 +17,8 @@ namespace Store.Repository.Interfaces
         IAttachmentRepository AttachmentRepository { get; set; }
         IExamRepository ExamRepository { get; set; }
         IAssignmentRepository AssignmentRepository { get; set; }
+
+        ICourseRepository CourseRepository { get; set; }
 
 
         Task<int> CompleteAsync();

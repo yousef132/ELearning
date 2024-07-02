@@ -1,33 +1,72 @@
 ﻿@model IReadOnlyList<Assignment>
 @{
     ViewData["Title"] = "CourseAssignments";
+    var solvedAssignments = ViewBag.solvedAssignments as ICollection<int>;
 }
 
-
 <div class="container">
-    @foreach (var ass in Model)
+    @foreach (var assignment in Model)
     {
-        <div style="width:100%;border: solid 1px #bcbbbb;border-radius: 20px;padding:10px;height:150px;margin-bottom:20px;">
-            <div class="d-flex justify-content-between" style="padding-left:20px;padding-right:20px;margin-bottom:10px;">
-                <h3>
-                    @ass.Name
-                </h3>
-                <div>
-
-                    @if (DateTime.Now >= ass.TimedEntity.Open && DateTime.Now <= ass.TimedEntity.Close @* && !exams.Any(e => e.ExamId == exam.Id) *@)
+        <div class="assignment-card">
+            <div class="card-header">
+                <h3>@assignment.Name</h3>
+                <div class="action-buttons">
+                    @if (DateTime.Now >= assignment.TimedEntity.Open && DateTime.Now <= assignment.TimedEntity.Close)
                     {
-                        <a class="btn btn-primary" asp-action="SubmitAssignments" asp-controller="Assignment" asp-route-assignmentId="@ass.Id">Submit</a>
+                        if (solvedAssignments.Contains(assignment.Id))
+                        {
+                            <span class="badge badge-success">Completed</span>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary btn-sm" asp-action="SubmitAssignments" asp-controller="Assignment" asp-route-assignmentId="@assignment.Id">Submit</a>
+                        }
                     }
                     else
                     {
-                        <a class="btn btn-primary" asp-action="Result" asp-controller="Exam" asp-route-id="@ass.Id">Submit</a>
+                        <span class="badge badge-secondary">Closed</span>
                     }
                 </div>
             </div>
-            <div style="background-color:#f8f9fa;padding:10px;">
-                <p style="margin:0px;"><strong>Open</strong>: @ass.TimedEntity.Open</p>
-                <p style="margin:0px;"><strong>Close</strong>: @ass.TimedEntity.Close</p>
+            <div class="card-body">
+                <p><strong>Open:</strong> @assignment.TimedEntity.Open</p>
+                <p><strong>Close:</strong> @assignment.TimedEntity.Close</p>
             </div>
         </div>
     }
 </div>
+
+<style>
+    .assignment-card {
+        background-color: #f8f9fa; /* Lighter background color */
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+        .assignment-card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+            .assignment-card .card-header h3 {
+                margin: 0;
+            }
+
+        .assignment-card .action-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .assignment-card .card-body {
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+        }
+
+    .badge {
+        margin-left: 10px;
+    }
+</style>

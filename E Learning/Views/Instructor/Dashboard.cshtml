@@ -1,47 +1,65 @@
 ﻿@{
-	Layout = "_InstructorLayout";
+    Layout = "_InstructorLayout";
 }
-<div class="d-flex mt-3" style="width:100%;">
-    <div class="p-4 mr-4" style="width:33%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-       <div class="d-flex justify-content-between">
-            <div class="box">
-                <h1>2194</h1>
-                <h3>Students</h3>
-            </div>
-            <div class="icon-case ">
-                <svg style="width:60px;height:60px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z" /></svg>
+<div class="d-flex mt-3 justify-content-around" style="width:100%;">
 
-            </div>
-       </div>
-    </div>
-    <div class="p-4 mr-4" style="width:33%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-        <div class="d-flex justify-content-between">
-            <div class="box">
-                <h1>2194</h1>
-                <h3>Courses</h3>
-            </div>
-            <div>
-                <i class="fa-brands fa-leanpub"></i>
-            </div>
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+            <h3>Students</h3>
         </div>
     </div>
-    <div class="p-4 mr-4" style="width:33%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-        <div class="d-flex justify-content-between">
-            <div class="box">
-                <h1>2194</h1>
-                <h3>Total Money</h3>
-            </div>
-            <div class="icon-case ">
-                <svg style="width:70px;height:70px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z" /></svg>
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
 
-            </div>
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+            <h3>Courses</h3>
+        </div>
+
+    </div>
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+            <h3>Instructors</h3>
         </div>
     </div>
-    
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+            <h3>Sold Courses</h3>
+        </div>
+    </div>
+
 </div>
 
- <div class ="d-flex mt-3" style="width:100%;">
-     <div>
+@* 
+<div class="row" style="margin-top:40px;">
+    <div class="col-md-12">
+        <div class="table-wrap">
+            <table class="table table-responsive-xl">
+                <thead>
+                    <tr>
 
-     </div>
- </div>
+                        <th>Course </th>
+                        <th>Number Of Selling </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var inst in Model.NumberOfSellingForEachCourse)
+                    {
+                        <tr>
+
+                            <td>
+                                @inst.Item1
+                            </td>
+                            <td>@inst.Item2</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+ *@

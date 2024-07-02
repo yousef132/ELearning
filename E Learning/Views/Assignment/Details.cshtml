@@ -1,0 +1,43 @@
+﻿@model EvaluateAssignmentViewModel
+@{
+    Layout = "_InstructorLayout";
+}
+
+<div class="row justify-content-center" style="margin-top: 50px;">
+    <div class="col-md-8">
+        <form asp-action="EvaluateAssignment" asp-controller="Instructor" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UserId" />
+            <input type="hidden" asp-for="AssignmentId" />
+
+            <div class="form-group">
+                <label asp-for="Mark" class="control-label"></label>
+                <input asp-for="Mark" class="form-control" />
+                <span asp-validation-for="Mark" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <a asp-action="Download" asp-controller="Assignment" asp-route-fileName="@Model.Path">
+                    <div class="download-link" style="border-bottom: solid 1px; cursor: pointer; margin-top: 10px;">
+                        <h6>Download Assignment</h6>
+                        <span class="badge badge-danger" style="font-size: 12px; margin-bottom: 10px;">Download</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .download-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>

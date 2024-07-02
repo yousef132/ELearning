@@ -7,7 +7,6 @@
 <div class="row mx-0 justify-content-center pt-5">
     <div class="col-lg-6">
         <div class="section-title text-center position-relative mb-4">
-            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
             <h1 class="display-4">Add New Course</h1>
         </div>
     </div>
@@ -16,69 +15,67 @@
     <div class="col-md-8">
         <form asp-action="Add" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="form-group row">
                 <div class="col-md-6">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-                
-            </div>
-            <div class="form-group row">
                 <div class="col-md-6">
                     <label asp-for="Price" class="control-label"></label>
                     <input asp-for="Price" class="form-control" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
+            </div>
+
+            <div class="form-group row">
                 <div class="col-md-6">
                     <label asp-for="Description" class="control-label"></label>
                     <input asp-for="Description" class="form-control" />
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
+                <div class="col-md-6">
+                    <label asp-for="Language" class="control-label"></label>
+                    <select asp-for="Language" class="form-control">
+                        <option value="">--Select Language--</option>
+                        <option value="English">English</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                    </select>
+                    <span asp-validation-for="Language" class="text-danger"></span>
+                </div>
             </div>
+
             <div class="form-group row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Language" class="col-for-lable"></label>
-                        <select asp-for="Language" class="form-control">
-                            <option value="">--Select Language--</option>
-                            <option value="English">English</option>
-                            <option value="Arabic">Arabic</option>
-                            <option value="French">French</option>
-                            <option value="Spanish">Spanish</option>
-                        </select>
-                        <span asp-validation-for="Language" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label asp-for="SkillLevel" class="col-for-lable"></label>
+                    <label asp-for="SkillLevel" class="control-label"></label>
                     <select asp-for="SkillLevel" class="form-control">
                         <option value="">--Select Skill Level--</option>
                         <option value="Beginner">Beginner</option>
-                        <option value="Medeuim">Medeuim</option>
+                        <option value="Medium">Medium</option>
                         <option value="Advanced">Advanced</option>
                     </select>
                     <span asp-validation-for="SkillLevel" class="text-danger"></span>
                 </div>
-            </div>
-            <div class="form-group row">
                 <div class="col-md-6">
                     <label asp-for="Image" class="control-label"></label>
                     <input type="file" asp-for="Image" class="form-control" />
                     <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
             </div>
-          
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+@* 
+            <div class="form-group row">
+                <div class="col-md-6 offset-md-6">
+                </div>
+            </div> *@
+            <input type="submit" value="Create" class="btn btn-primary" style="margin-left: 260px;
+    margin-top: 40px;" />
+
         </form>
     </div>
 </div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

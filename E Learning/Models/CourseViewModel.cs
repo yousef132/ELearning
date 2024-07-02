@@ -7,12 +7,14 @@ namespace E_Learning.Models
 
         public string Name { get; set; }
         public double Price { get; set; }
-
+        public string ImagePath { get; set; }
         public string Language { get; set; }
-		[StringLength(100, ErrorMessage = "Description cannot exceed 100 characters.")]
+        [StringLength(100, ErrorMessage = "Description cannot exceed 100 characters.")]
 
-		public string Description { get; set; }
+        public string Description { get; set; }
         public IFormFile? Image { get; set; }
+        public string? UserId { get; set; }
+        public int? Id { get; set; }
 
         public string SkillLevel { get; set; }
     }

@@ -1,128 +1,81 @@
 ﻿@model IReadOnlyList<Course>
 
 <div class="course-container">
-
     @foreach (var course in Model)
     {
-
         <div class="course">
-            <div class="course-preview">
-
-                <img src="/assets/Images/course/@course.ImagePath" style="width:100%;" />
+            <div class="course-image">
+                <img src="/assets/Images/course/@course.ImagePath" alt="@course.Name" />
             </div>
-            <div class="course-info d-flex ">
-                <div style="width:70%;">
-                    <h6>Chapter 4</h6>
-                    <h2>@course.Name</h2>
-                    <h6 class="mt-3">@course.Description</h6>
-                </div>
-                <div>
+            <div class="course-info">
+                <h2>@course.Name</h2>
+                <p>@course.Description</p>
 
-                    <div class="progress-container">
-                        <div class="progress"></div>
-                        <span class="progress-text">
-                            6/9 Challenges
-                        </span>
-                    </div>
-                </div>
-
-                <a asp-action="CourseContent" asp-controller="Course" asp-route-id="@course.Id" class="cutombtn" style="text-decoration: none;
-    color: white;
-}">Continue</a>
-            </div>
-        </div>
-
-    }
-</div>
-@* <div class="course-container">
-    @foreach (var course in Model)
-    {
-        <div class="row">
-            <div class="col-md-6">
-                <div class="course">
-                    <div class="course-preview">
-                        <img src="/assets/Images/course/@course.ImagePath" style="width:100%;" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="course-info d-flex">
-                    <div style="width:70%;">
-                        <h6>Chapter 4</h6>
-                        <h2>@course.Name</h2>
-                        <h6 class="mt-3">@course.Description</h6>
-                    </div>
-                    <div>
-                        <div class="progress-container">
-                            <div class="progress"></div>
-                            <span class="progress-text">
-                                6/9 Challenges
-                            </span>
-                        </div>
-                    </div>
-                    <button class="cutombtn">Continue</button>
-                </div>
+                <a asp-action="CourseContent" asp-controller="Course" asp-route-id="@course.Id" class="custom-btn">Continue</a>
             </div>
         </div>
     }
 </div>
- *@
-
 
 <style>
+    .course-container {
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .course {
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: flex;
-        width: 70%;
-        margin: 20px;
+        flex-direction: column;
+        margin: 15px;
+        width: 300px;
         overflow: hidden;
+        transition: transform 0.2s;
     }
 
-        .course h6 {
-            opacity: 0.6;
-            margin: 0;
-            letter-spacing: 1px;
+        .course:hover {
+            transform: translateY(-5px);
+        }
+
+    .course-image img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .course-info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+        .course-info h6 {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
 
-        .course h2 {
-            letter-spacing: 1px;
-            margin: 10px 0;
+        .course-info h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
         }
 
-    .course-container {
-        margin: 100px;
-    }
-
-    .course-preview {
-        color: #fff;
-        max-width: 250px;
-        max-height: 200px;
-    }
-
-        .course-preview a {
-            color: #fff;
-            display: inline-block;
-            font-size: 12px;
-            opacity: 0.6;
-            margin-top: 30px;
-            text-decoration: none;
+        .course-info p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
         }
-
-    .course-info {
-        padding: 30px;
-        position: relative;
-        width: 100%;
-    }
 
     .progress-container {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        text-align: right;
-        width: 150px;
+        margin-bottom: 15px;
     }
 
     .progress {
@@ -130,6 +83,7 @@
         border-radius: 3px;
         height: 5px;
         width: 100%;
+        position: relative;
     }
 
         .progress::after {
@@ -144,67 +98,26 @@
         }
 
     .progress-text {
-        font-size: 10px;
-        opacity: 0.6;
-        letter-spacing: 1px;
+        font-size: 12px;
+        color: #777;
+        margin-top: 5px;
+        text-align: right;
     }
 
-    .cutombtn {
+    .custom-btn {
         background-color: #2A265F;
-        border: 0;
-        border-radius: 50px;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 5px;
         color: #fff;
-        font-size: 16px;
-        padding: 12px 25px;
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
-        letter-spacing: 1px;
-
-    }
-    .floating-btn {
-        border-radius: 26.5px;
-        background-color: #001F61;
-        border: 1px solid #001F61;
-        box-shadow: 0 16px 22px -17px #03153B;
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        line-height: 20px;
-        padding: 12px 20px;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 999;
-    }
-
-        .floating-btn:hover {
-            background-color: #ffffff;
-            color: #001F61;
-        }
-
-        .floating-btn:focus {
-            outline: none;
-        }
-
-    .floating-text {
-        background-color: #001F61;
-        border-radius: 10px 10px 0 0;
-        color: #fff;
-        font-family: 'Muli';
-        padding: 7px 15px;
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: 14px;
+        padding: 10px 15px;
         text-align: center;
-        z-index: 998;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.2s;
     }
 
-        .floating-text a {
-            color: #FF7500;
-            text-decoration: none;
+        .custom-btn:hover {
+            background-color: #1d1a45;
         }
-
 </style>

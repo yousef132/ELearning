@@ -1,0 +1,26 @@
+﻿@model E_Learning.Models.StudentAssignmentViewModel
+@{
+    Layout = "_Layout";
+}
+<div class="container" style="    width: 56%;
+    margin-top: 100px;">
+            <form asp-action="SubmitAssignments" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input hidden asp-for="AssignmentId"  />
+                <h4>
+                    @Model.Description
+                </h4>
+
+                <div class="form-group mt-4">
+                    <input type="file" asp-for="Assignment" class="form-control" />
+                    <span asp-validation-for="Assignment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

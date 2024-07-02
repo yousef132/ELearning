@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using E_Learning.Models;
-using ELearning.BLL.Interfaces;
 using ELearning.BLL.Specifications.ExamSpecificatoin;
 using ELearning.Data.Entities;
 using ELearning.Data.Entities.Question;
 using Microsoft.AspNetCore.Mvc;
 using Store.Repository.Interfaces;
-using Stripe;
-using System.Net.Mail;
 using System.Security.Claims;
 
 namespace E_Learning.Controllers
@@ -26,7 +23,7 @@ namespace E_Learning.Controllers
         {
             var exams = unitOfWork.ExamRepository.GetExamsByCourseId(id);
             ViewBag.CourseId = id;
-            TempData["CourseId"] = id;
+            HttpContext.Session.SetInt32("CourseId", id);
             return View(exams);
         }
 
@@ -35,6 +32,7 @@ namespace E_Learning.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var examspecs = new ExamSpecifications() { CourseId = courseId };
             var specs = new ExamWithSpecifications(examspecs);
+
             var courseAllExams = await unitOfWork.Reposirory<Exam>().GetWithSpecificationsAllAsync(specs);
             var completedExams = await unitOfWork.Reposirory<StudentExam>().GetAllAsync();
             // completed exams for this user
@@ -43,7 +41,7 @@ namespace E_Learning.Controllers
             return PartialView(courseAllExams);
         }
 
-        public IActionResult Create(int id)//LectureId
+        public IActionResult Create(int id)
         {
             return View(new ExamViewModel { CourseId = id });
         }
@@ -61,8 +59,9 @@ namespace E_Learning.Controllers
                         Open = examModel.Open,
                         Close = examModel.Close,
                         Grade = examModel.Grade,
+                        Duration = examModel.Duration
                     },
-                    CourseId = examModel.CourseId.Value
+                    CourseId = examModel.CourseId.Value,
                 };
                 // create exam
                 await unitOfWork.Reposirory<Exam>().AddAsync(exam);
@@ -85,10 +84,10 @@ namespace E_Learning.Controllers
             if (ModelState.IsValid)
             {
                 var mappedQuestion = mapper.Map<BaseQuestion>(model);
-
+                mappedQuestion.Id = 0;
                 await unitOfWork.Reposirory<BaseQuestion>().AddAsync(mappedQuestion);
                 await unitOfWork.CompleteAsync();
-                return RedirectToAction(nameof(AddQuestion), new { id = mappedQuestion.ExamId });
+                return RedirectToAction(nameof(Update), new { id = mappedQuestion.ExamId });
             }
             return View(model);
         }
@@ -101,6 +100,9 @@ namespace E_Learning.Controllers
             // Get Exam With Included Questions
             var exam = await unitOfWork.Reposirory<Exam>().GetWithSpecificationsByIdAsync(specs);
             TempData["ExamId"] = id;
+            var duration = exam.TimedEntity.Duration.TotalSeconds;
+            // store exam duration in session for security
+            // HttpContext.Session.SetString("duration", duration.ToString());
             ViewBag.Exam = exam;
             return View();
         }
@@ -112,7 +114,8 @@ namespace E_Learning.Controllers
                 var studentAnswer = mapper.Map<List<StudentAnswer>>(model);
                 string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 int examId = (int)TempData["ExamId"];
-                var exam = await unitOfWork.Reposirory<Exam>().GetByIdAsync(examId);  
+                var exam = await unitOfWork.Reposirory<Exam>().GetByIdAsync(examId);
+
 
                 foreach (var sa in studentAnswer)
                 {
@@ -123,36 +126,79 @@ namespace E_Learning.Controllers
                 var studentExam = new StudentExam
                 {
                     UserId = userId,
-                    Grade = CalculateGrade(studentAnswer,exam.TimedEntity.Grade),
+                    Grade = CalculateGrade(studentAnswer, exam.TimedEntity.Grade),
                     SubmittedAt = DateTime.Now,
                     ExamId = examId
                 };
+
+                // update studen exam mark
                 await unitOfWork.Reposirory<StudentExam>().AddAsync(studentExam);
+                await unitOfWork.CompleteAsync();
+
+                // update student course total mark
+                var studentcourse = unitOfWork.studentCourseRepository.GetCourse(userId, exam.CourseId);
+                studentcourse.TotalMark += studentExam.Grade;
                 await unitOfWork.CompleteAsync();
                 return RedirectToAction("Index", "Home");
             }
             return View(model);
         }
-
         private double CalculateGrade(List<StudentAnswer> studentAnswer, double examGrade)
         {
             var correctAnswers = studentAnswer.Count(sa => sa.AnswerIsCorrect == true);
             if (correctAnswers == 0)
                 return 0;
-            var pointGrade = examGrade / studentAnswer.Count() ;
+            var pointGrade = examGrade / studentAnswer.Count();
 
             return (double)pointGrade * correctAnswers;
         }
-
-
         public async Task<IActionResult> DeleteExam(int examId)
         {
             var exam = await unitOfWork.Reposirory<Exam>().GetByIdAsync(examId);
-            if(exam == null)
+            if (exam == null)
                 return NotFound();
             unitOfWork.Reposirory<Exam>().Delete(exam);
             await unitOfWork.CompleteAsync();
-            return RedirectToAction(nameof(Index),new {courseId = TempData["CourseId"] });
+            return RedirectToAction(nameof(Index), new { courseId = TempData["CourseId"] });
+        }
+
+        public IActionResult UpdateQuestion(int id)// questionId
+        {
+            var question = unitOfWork.Reposirory<BaseQuestion>().GetById(id);
+
+            if (question == null)
+                return NotFound();
+
+            var mappedQuestion = mapper.Map<QuestionViewModel>(question);
+
+            return View(mappedQuestion);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateQuestion(QuestionViewModel model)// questionId
+        {
+            if (ModelState.IsValid)
+            {
+                var question = mapper.Map<BaseQuestion>(model);
+
+                unitOfWork.Reposirory<BaseQuestion>().Update(question);
+                await unitOfWork.CompleteAsync();
+
+                return RedirectToAction("Update", "Exam", new { id = model.ExamId });
+            }
+            return View(model);
+        }
+        public IActionResult Update(int id)//ExamId
+        {
+            var questions = unitOfWork.ExamRepository.GetExamQuestions(id);
+            ViewBag.ExamId = id;
+            return View(questions);
+        }
+
+
+        public IActionResult StudentsResult(int id)
+        {
+            var result = unitOfWork.ExamRepository.GetExamStudentsResult(id);
+            return View(result);
         }
     }
 }

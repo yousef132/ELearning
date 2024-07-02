@@ -1,128 +1,122 @@
 ﻿@model Course
 
-<div class="container">
-    <nav class="navbar navbar-expand-sm bg-light">
+<div class="container" style="margin: 10px; min-width: 97% !important; margin-top: 50px; margin-bottom: 150px;">
+    <nav class="navbar navbar-expand-sm bg-light mb-3">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link activelink pointer" asp-controller="course">Content</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="exams" onclick="SwitchToExams(@Model.Id)">Exams</a>
+                <a class="nav-link pointer" id="exams" onclick="switchTab('exams', @Model.Id)">Exams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="ass" onclick="SwitchToAssignments(@Model.Id)">Assignments</a>
+                <a class="nav-link pointer" id="ass" onclick="switchTab('ass', @Model.Id)">Assignments</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link pointer" id="parts" onclick="SwitchToParticipants(@Model.Id)">Participants</a>
+                <a class="nav-link pointer" id="parts" onclick="switchTab('parts', @Model.Id)">Participants</a>
             </li>
-
-            <li class="nav-item pointer">
-                <a class="nav-link">Grades</a>
+            <li class="nav-item">
+                <a class="nav-link pointer" id="grades" onclick="switchTab('grades', @Model.Id)">Grades</a>
             </li>
         </ul>
     </nav>
+
     <br>
+
     @if (Model.Lectures.Count == 0)
     {
-        <img src="/img/nocontent.jpg" style=" position:relative; left: 50%;transform: translateX(-50%);width: 400px;" />
+        <div class="text-center">
+            <img src="/img/nocontent.jpg" style="width: 400px;" />
+        </div>
     }
     else
     {
         <div class="accordion" id="accordionExample">
-            @{
-                var counter = 1;
-            }
-            @foreach (var lecture in Model.Lectures)
-            {
-
-                <a asp-action="LectureContent" asp-controller="Lecture" asp-route-lectureId="@lecture.Id">
-
-                    <div class="card">
-
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    @(counter). @lecture.Name
-                                </button>
-                            </h5>
+            <div class="row">
+                @foreach (var lecture in Model.Lectures)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">@lecture.Name</h5>
+                                <p class="card-text">@lecture.CreatedAt.ToString("MMMM dd, yyyy")</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <a asp-action="LectureContent" asp-controller="Lecture" asp-route-lectureId="@lecture.Id" class="btn btn-sm btn-primary">Enter</a>
+                            </div>
                         </div>
                     </div>
-                </a>
-                counter++;
-            }
+                }
+            </div>
         </div>
     }
-
 </div>
+
 <style>
     .activelink {
         background-color: #afdfff;
-        
     }
-    .pointer{
+
+    .pointer {
         cursor: pointer;
+    }
+    
+
+    .card {
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        margin-bottom: 10px;
+    }
+
+    .card-footer {
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
 </style>
 
-
 <script>
-    function SwitchToExams(courseId) 
-    {
+    function switchTab(tabId, courseId) {
         var element = document.getElementById("accordionExample");
-      
         var links = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
-      
-        console.log(links);
+
         links.forEach(function (link) {
             link.classList.remove('activelink');
         });
-        var link = document.getElementById("exams");
-        console.log(link);
+
+        var link = document.getElementById(tabId);
         link.classList.add('activelink');
 
+        var url = "";
+        switch (tabId) {
+            case "exams":
+                url = "/Exam/CourseExams";
+                break;
+            case "ass":
+                url = "/Course/CourseAssignments";
+                break;
+            case "parts":
+                url = "/Course/GetCoureParticipants";
+                break;
+            case "grades":
+                url = "/Course/Grades";
+                break;
+            default:
+                break;
+        }
+
         $.ajax({
-            url: "/Exam/CourseExams",
-            data: { "courseId": courseId },
-            success: function (result) {
-                element.innerHTML = result;
-            }
-        });
-    }
-    function SwitchToParticipants(courseId) {
-        var links = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
-        console.log("Participants");
-        links.forEach(function (link) {
-            link.classList.remove('activelink');
-        });
-        var element = document.getElementById("accordionExample");
-
-        var link = document.getElementById("parts");
-        link.classList.add('activelink');
-        console.log("hello");
-        $.ajax({
-            url: "/Course/GetCoureParticipants",
-            data: { "courseId": courseId },
-            success: function (result) {
-                element.innerHTML = result;
-            }
-        });
-    }
-
-    function SwitchToAssignments(courseId) {
-
-        var links = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
-        links.forEach(function (link) {
-            link.classList.remove('activelink');
-        });
-            console.log("Assignments");
-
-        var element = document.getElementById("accordionExample");
-        var link = document.getElementById("ass");
-        console.log(link);
-        link.classList.add('activelink');
-        $.ajax({
-            url: "/Course/CourseAssignments",
+            url: url,
             data: { "courseId": courseId },
             success: function (result) {
                 element.innerHTML = result;

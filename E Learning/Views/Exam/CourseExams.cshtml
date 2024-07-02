@@ -6,28 +6,38 @@
 <div class="container">
     @foreach (var exam in Model)
     {
-        <div style="width:100%;border: solid 1px #bcbbbb;border-radius: 20px;padding:10px;height:150px;margin-bottom:20px;">
-            <div class="d-flex justify-content-between" style="padding-left:20px;padding-right:20px;margin-bottom:10px;">
-                <h3>
-                    @exam.Name
-                </h3>
-                <div>
-
-                    @if (DateTime.Now >= exam.TimedEntity.Open && DateTime.Now <= exam.TimedEntity.Close && !exams.Any(e => e.ExamId == exam.Id))
-                    {
-                         
-                        <a class="btn btn-primary" asp-action="StartExam" asp-controller="Exam" asp-route-id="@exam.Id">Start Exam</a>
-                    }
-                    else
-                    {
-                        <a class="btn btn-primary" asp-action="Result" asp-controller="Exam" asp-route-id="@exam.Id">Result</a>
-                    }
-                </div>
+        <div class="card border-info mb-3">
+            <div class="card-header bg-info text-white" style="background-color:#61b5ff!important;color:white!important;">
+                <h3>@exam.Name</h3>
             </div>
-            <div style="background-color:#f8f9fa;padding:10px;">
-                <p style="margin:0px;"><strong>Open</strong>: @exam.TimedEntity.Open</p>
-                <p style="margin:0px;"><strong>Close</strong>: @exam.TimedEntity.Close</p>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Open:</strong> @exam.TimedEntity.Open</p>
+                        <p><strong>Close:</strong> @exam.TimedEntity.Close</p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        @if (DateTime.Now >= exam.TimedEntity.Open && DateTime.Now <= exam.TimedEntity.Close && !exams.Any(e => e.ExamId == exam.Id))
+                        {
+                            <a class="btn btn-success" asp-action="StartExam" asp-controller="Exam" asp-route-id="@exam.Id">Start Exam</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-action="Result" asp-controller="Exam" asp-route-id="@exam.Id">Result</a>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     }
 </div>
+
+<style>
+    .card {
+        background-color: #f0f5f9; /* Light blue background */
+    }
+
+    .card-header {
+        background-color: #90c0db; /* Light blue header */
+    }
+</style>

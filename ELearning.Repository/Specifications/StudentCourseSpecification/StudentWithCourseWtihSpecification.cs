@@ -13,7 +13,7 @@ namespace ELearning.BLL.Specifications.StudentCourseSpecification
         public StudentWithCourseWtihSpecification(StudentCourseSpecification specs)
             : base(sc => (sc.CourseId == specs.CourseId))
         {
-            AddOrderBy(sc => sc.TotalMark);
+            AddOrderByDescending(sc => sc.TotalMark);
             AddInclude(sc => sc.User);
         }
     }

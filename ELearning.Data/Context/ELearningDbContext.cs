@@ -25,8 +25,6 @@ namespace ELearning.Data.Context
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-
         }
         public DbSet<Course> Courses { get; set; }   
         public DbSet<BaseQuestion> BaseQuestions { get; set; }   

@@ -1,0 +1,100 @@
+﻿@model int
+
+@{
+    Layout = "_InstructorLayout";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-4 d-flex justify-content-center">
+            <a asp-action="Index" asp-controller="Exam" asp-route-id ="@Model" class="card-link">
+                <div class="card">
+                    <div class="card-header">Exams</div>
+                    <div class="card-main">
+                        <img src="/assets/Assignments/Exam.png" alt="" class="card-img">
+                        <div class="main-description"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-4 d-flex justify-content-center">
+            <a asp-action="Index" asp-controller="Lecture" asp-route-id="@Model" class="card-link">
+                <div class="card">
+                    <div class="card-header">Lectures</div>
+                    <div class="card-main">
+                        <img src="/assets/Assignments/Lecture.png" alt="" class="card-img">
+                        <div class="main-description"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-4 d-flex justify-content-center">
+            <a asp-action="Index" asp-controller="Assignment" asp-route-courseId="@Model" class="card-link">
+                <div class="card">
+                    <div class="card-header">Assignments</div>
+                    <div class="card-main">
+                        <img src="/assets/Assignments/Assignment.png" alt="" class="card-img">
+                        <div class="main-description"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .card {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #90CAF9; 
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 5px;
+        transition: transform 0.2s; 
+    }
+
+        .card:hover {
+            transform: scale(1.05); 
+        }
+
+    .card-header {
+        color: #1E88E5; 
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        border-bottom: 1px solid #90CAF9; 
+        background-color: #E3F2FD; 
+        padding: 10px;
+    }
+
+    .card-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        flex-grow: 1;
+    }
+
+    .card-img {
+        width: auto;
+        height: 180px; 
+        display: block;
+    }
+
+    .main-description {
+        color: #1E88E5; 
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .card-link {
+        text-decoration: none;
+    }
+</style>

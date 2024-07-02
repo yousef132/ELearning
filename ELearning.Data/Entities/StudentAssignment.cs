@@ -2,7 +2,7 @@
 
 namespace ELearning.Data.Entities
 {
-    public class StudentAssignment
+    public class StudentAssignment:BaseEntity
     {
         // Student Submit Many Assignments & Assignment Submitted By Many Students
         public string UserId { get; set; }

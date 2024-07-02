@@ -3,12 +3,10 @@ using ELearning.DAL.Context.Identity;
 using ELearning.Data.Entities;
 using ELearning.Helper;
 using ELearning.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Store.Repository.Interfaces;
 using System.Diagnostics;
-using System.Security.Claims;
 
 namespace ELearning.Controllers
 {
@@ -18,9 +16,9 @@ namespace ELearning.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IUnitOfWork unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger ,
-            UserManager<ApplicationUser> userManager 
-            ,IUnitOfWork unitOfWork)
+        public HomeController(ILogger<HomeController> logger,
+            UserManager<ApplicationUser> userManager
+            , IUnitOfWork unitOfWork)
         {
             _logger = logger;
             this.userManager = userManager;
@@ -38,19 +36,17 @@ namespace ELearning.Controllers
             var courses = await unitOfWork
                                .Reposirory<Course>()
                                .GetAllAsync();
-           
+
             var HomeViewModel = new HomeViewModel
             {
                 Instructors = instructors,
                 courses = courses,
                 Students = students.Count(),
             };
-            
-
             return View(HomeViewModel);
         }
 
-        public  IActionResult Privacy()
+        public IActionResult Privacy()
         {
 
             return View();

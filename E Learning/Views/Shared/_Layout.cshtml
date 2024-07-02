@@ -36,13 +36,30 @@
                         <a  class="nav-item nav-link" asp-controller="Course" asp-action="Index">Courses</a>
                         @if (User.Identity.IsAuthenticated)
                         {
+
+                            @if (this.User.IsInRole("Admin"))
+                            {
+                                <a class="nav-item nav-link" asp-controller="Admin" asp-action="Dashboard">Dashboard</a>
+                            }
+                            else if (this.User.IsInRole("Instructor"))
+                            {
+                                <a class="nav-item nav-link" asp-controller="Instructor" asp-action="Dashboard">Dashboard</a>
+
+                            }
+                            else
+                            {
                             <a class="nav-item nav-link" asp-controller="Student" asp-action="GetCourses">My Learning</a>
+                            }
 
                         }
                     </div>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a class="nav-item nav-link" asp-controller="Cart" asp-action="Index"><img src="/img/cart.jpg" style="width:60px;height:60px;" /></a>
+
+                        @if (this.User.IsInRole("Student"))
+                        {
+                            <a class="nav-item nav-link" asp-controller="Cart" asp-action="Index"><img src="/img/cart.jpg" style="width:60px;height:60px;" /></a>
+                        }
 
                         <div class="nav-item dropdown" style="border:none;">
                             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
@@ -57,6 +74,8 @@
                                 </a>
                             </div>
                         </div>
+
+                      
                     }
                     else
                     {

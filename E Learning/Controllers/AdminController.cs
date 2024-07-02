@@ -2,16 +2,12 @@
 using E_Commerce.Helper;
 using E_Learning.Models;
 using ELearning.DAL.Context.Identity;
-using ELearning.Data.Context;
 using ELearning.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Mono.TextTemplating;
-using Store.Repository.Repositories;
-using System.Security.Claims;
+using Store.Repository.Interfaces;
 
 namespace E_Learning.Controllers
 {
@@ -20,18 +16,37 @@ namespace E_Learning.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IMapper mapper;
-        private readonly ELearningDbContext context;
+        private readonly IUnitOfWork unitOfWork;
 
         public AdminController(UserManager<ApplicationUser> userManager
-            , IMapper mapper,ELearningDbContext context)
+            , IMapper mapper,
+            IUnitOfWork unitOfWork)
         {
             this.userManager = userManager;
             this.mapper = mapper;
-            this.context = context;
+            this.unitOfWork = unitOfWork;
         }
-        public IActionResult Dashboard()
+        public async Task<IActionResult> Dashboard()
         {
-            return View();
+            // view model to student , courses count , number of sold courses ,
+            // 
+
+            var students = await userManager.GetUsersInRoleAsync(Roles.Student);
+            var Instructors = await userManager.GetUsersInRoleAsync(Roles.Instructor);
+            var NumberOfSoldCourses = unitOfWork.CourseRepository.GetNumberOfSoldCourses();
+            var NumberOfSellingForEachCourse = unitOfWork.CourseRepository.GetNumberOfSellingForEachCourse().ToList();
+
+
+            var dashboard = new DashbordViewModel
+            {
+                NOCourses = unitOfWork.CourseRepository.GetNumberOfCourses(),
+                NOInstructors = Instructors.Count(),
+                NOStudents = students.Count(),
+                NOSoldCourse = NumberOfSoldCourses,
+                NumberOfSellingForEachCourse = NumberOfSellingForEachCourse,
+            };
+            return View(dashboard);
+
         }
         public async Task<IActionResult> Instructors()
         {
@@ -44,7 +59,7 @@ namespace E_Learning.Controllers
         {
             return View();
         }
-     
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddInstructor(CreateInstructorViewModel model)
@@ -87,13 +102,13 @@ namespace E_Learning.Controllers
 
             return RedirectToAction(nameof(Instructors));
         }
-        
+
 
         public async Task<IActionResult> Update(string id)
         {
 
             var instructor = userManager.Users.AsNoTracking().FirstOrDefault(u => u.Id == id);
-            
+
             if (instructor == null)
                 return BadRequest();
 
@@ -107,7 +122,7 @@ namespace E_Learning.Controllers
             if (ModelState.IsValid)
             {
                 var isxist = await userManager.Users.AnyAsync(u => u.Id == model.Id);
-              
+
                 if (!isxist)
                     return BadRequest();
 
@@ -121,7 +136,7 @@ namespace E_Learning.Controllers
                     model.ImagePath = DocumentSetting.UploadFile(model.Image, "Images", "User");// add new image
                 }
 
-                instructor = mapper.Map(model, instructor);   
+                instructor = mapper.Map(model, instructor);
 
                 var res = await userManager.UpdateAsync(instructor);
                 return RedirectToAction(nameof(Instructors));

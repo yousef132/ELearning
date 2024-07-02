@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ELearning.Data.Entities.StudentAssignment>
+
+@{
+    Layout = "_InstructorLayout";
+}
+
+
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.DisplayName)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubmissionDate)
+                </th>
+                <th>
+                    Solutions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.DisplayName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubmissionDate)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Assignment" asp-route-id ="@item.Id">Solution</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

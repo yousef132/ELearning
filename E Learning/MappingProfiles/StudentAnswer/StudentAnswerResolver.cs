@@ -16,8 +16,10 @@ namespace E_Learning.MappingProfiles.StudentAnswer
         }
         public bool Resolve(CompleteExamViewModel source, ELearning.Data.Entities.StudentAnswer destination, bool destMember, ResolutionContext context)
         {
-            var question = unitOfWork.Reposirory<BaseQuestion>().GetById(source.BaseQuestionId);  
+            var question = unitOfWork.Reposirory<BaseQuestion>().GetById(source.BaseQuestionId);
 
+            if (source.AnswerChoice == null)
+                return false;
             if(question.AnswerChoice == source.AnswerChoice)
                 return true;
 

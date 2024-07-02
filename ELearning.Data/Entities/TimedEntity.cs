@@ -4,7 +4,7 @@
     {
         public DateTime Open { get; set; }
         public DateTime Close { get; set; }
-        public TimeSpan Duration => Close.Subtract(Open);
+        public TimeSpan Duration { get; set; }
         public double Grade {  get; set; }
     }
 }

@@ -20,8 +20,16 @@ namespace ELearning.BLL.Repositories
                     .ToList();
 
 
-        public bool HasCourse(string userId, int courseId)
+        public StudentCourse GetCourse(string userId, int courseId)
             => context.StudentCourses
-                      .Any(sc => sc.UserId == userId && sc.CourseId == courseId);
+                      .FirstOrDefault(sc => sc.UserId == userId && sc.CourseId == courseId);
+
+        
+        public double GetStudentCourseGrade(string userId, int courseId)
+        => context.StudentCourses
+                  .Where(sc => sc.UserId == userId && sc.CourseId == courseId)
+                  .Select(x => x.TotalMark)
+                  .FirstOrDefault();
+
     }
 }

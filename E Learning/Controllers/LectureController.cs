@@ -7,40 +7,39 @@ using ELearning.DAL.Entities;
 using ELearning.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Store.Repository.Interfaces;
-using System.Reflection.Metadata;
 
 namespace E_Learning.Controllers
 {
-	public class LectureController : Controller
-	{
-		private readonly IUnitOfWork unitOfWork;
-		private readonly IMapper mapper;
+    public class LectureController : Controller
+    {
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
 
-		public LectureController(IUnitOfWork unitOfWork,IMapper mapper)
+        public LectureController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-			this.unitOfWork = unitOfWork;
-			this.mapper = mapper;
-		}
+            this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
+        }
         public async Task<IActionResult> Index(int id)//course id
-		{
-			var specs = new CourseWithSpecifications(id);
-			// course Data With Included Lectures
-			var course = await unitOfWork.Reposirory<Course>().GetWithSpecificationsByIdAsync(specs);
-			TempData["CourseId"] = id;
+        {
+            var specs = new CourseWithSpecifications(id);
+            // course Data With Included Lectures
+            var course = await unitOfWork.Reposirory<Course>().GetWithSpecificationsByIdAsync(specs);
+            TempData["CourseId"] = id;
 
-			if (course == null)
-				return NotFound();
+            if (course == null)
+                return NotFound();
 
-			return View(course);
-		}
+            return View(course);
+        }
 
         public FileResult Download(string fileName)
         {
             string path = DocumentSetting.GetPath(fileName);
 
-			byte[] bytes = System.IO.File.ReadAllBytes(path);
-            return File(bytes, "application/octet-stream",fileName);		
-		}
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+            return File(bytes, "application/octet-stream", fileName);
+        }
 
         public async Task<IActionResult> OpenAttachment(int attachmentId)
         {
@@ -49,28 +48,28 @@ namespace E_Learning.Controllers
         }
 
         public IActionResult LectureAssignments(int id)//LectureId
-		{
-			var assignments = unitOfWork.AssignmentRepository.GetAssignmentsByCourseId(id);
-						
-			return View(assignments);
-		}
-		public IActionResult lectureExam(int id)//LectureId
-		{
-			var exams = unitOfWork
-							.ExamRepository
-							.GetExamsByCourseId(id);
+        {
+            var assignments = unitOfWork.AssignmentRepository.GetAssignmentsByCourseId(id);
 
-			return View(exams);
-		}
-		
-		public IActionResult LectureContent(int lectureId)//LectureId
-		{
-			var content = unitOfWork
-							 .AttachmentRepository
+            return View(assignments);
+        }
+        public IActionResult lectureExam(int id)//LectureId
+        {
+            var exams = unitOfWork
+                            .ExamRepository
+                            .GetExamsByCourseId(id);
+
+            return View(exams);
+        }
+
+        public IActionResult LectureContent(int lectureId)//LectureId
+        {
+            var content = unitOfWork
+                             .AttachmentRepository
                              .GetAttachmentsByLectureId(lectureId);
 
-			return View(content);
-		}
+            return View(content);
+        }
 
         public async Task<IActionResult> AddComment(CommentViewModel model)
         {
@@ -102,15 +101,32 @@ namespace E_Learning.Controllers
             return RedirectToAction(nameof(Index), new { id = TempData["CourseId"] });
         }
 
-        public async Task<IActionResult> Update(int id)//lecture id
-        {
-            var specs = new LectureWithSpecification(id);
+        //public async Task<IActionResult> Update(int id)//lecture id
+        //{
+        //    // just to add new attachment
+        //    //var specs = new LectureWithSpecification(id);
 
-            var lecture = await unitOfWork.Reposirory<Lecture>().GetWithSpecificationsByIdAsync(specs);
-            if (lecture is null)
-                return BadRequest();
-            return View(lecture);
-        }
+        //    //var lecture = await unitOfWork.Reposirory<Lecture>().GetWithSpecificationsByIdAsync(specs);
+        //    //if (lecture is null)
+        //    //    return BadRequest();
+        //    ViewBag.Id = id;
+        //    return View(new AttachmentViewModel);
+        //}
+        //[HttpPost]
+        //public async Task<IActionResult> Update(AttachmentViewModel model)//lecture id
+        //{
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        int courseId = (int)ViewBag.Id;
+        //        //TODO:  add this file to lecture
+
+
+        //    }
+        //    return View();
+        //}
+
+
 
 
 

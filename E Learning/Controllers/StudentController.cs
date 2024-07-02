@@ -1,7 +1,4 @@
-﻿using ELearning.BLL.Specifications;
-using ELearning.BLL.Specifications.CourseSpecification;
-using ELearning.BLL.Specifications.ExamSpecificatoin;
-using ELearning.Data.Entities;
+﻿using ELearning.Data.Entities;
 using ELearning.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +9,7 @@ namespace E_Learning.Controllers
 {
     [Authorize(Roles = Roles.Student)]
     public class StudentController : Controller, IUser
-	{
+    {
         private readonly IUnitOfWork unitOfWork;
 
         public StudentController(IUnitOfWork unitOfWork)
@@ -21,9 +18,9 @@ namespace E_Learning.Controllers
         }
         [Authorize(Roles = Roles.Admin)]
         public IActionResult Index()
-		{
-			return View();
-		}
+        {
+            return View();
+        }
         public async Task<IActionResult> GetCourses()
         {
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
@@ -35,12 +32,12 @@ namespace E_Learning.Controllers
             // var specs = new StudentCourseSpecifications(userId);
             // var courses = await unitOfWork.Reposirory<StudentCourse>().GetWithSpecificationsAllAsync(specs);
 
-            var courses =  unitOfWork.studentCourseRepository.GetAllCourses(userId);
+            var courses = unitOfWork.studentCourseRepository.GetAllCourses(userId);
 
             return courses.Select(c => c.Course).ToList();
         }
 
-        
+
         //public IActionResult Details()
         //{
         //    var studentCourses = GetCourses();  

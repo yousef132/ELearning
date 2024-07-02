@@ -268,8 +268,11 @@ namespace ELearning.Data.Migrations
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentAssignment", b =>
                 {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AssignmentId")
                         .HasColumnType("int");
@@ -284,9 +287,15 @@ namespace ELearning.Data.Migrations
                     b.Property<DateTime>("SubmissionDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("UserId", "AssignmentId");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("AssignmentId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("StudentAssignments");
                 });
@@ -599,6 +608,9 @@ namespace ELearning.Data.Migrations
                             b1.Property<DateTime>("Close")
                                 .HasColumnType("datetime2");
 
+                            b1.Property<TimeSpan>("Duration")
+                                .HasColumnType("time");
+
                             b1.Property<double>("Grade")
                                 .HasColumnType("float");
 
@@ -656,6 +668,9 @@ namespace ELearning.Data.Migrations
 
                             b1.Property<DateTime>("Close")
                                 .HasColumnType("datetime2");
+
+                            b1.Property<TimeSpan>("Duration")
+                                .HasColumnType("time");
 
                             b1.Property<double>("Grade")
                                 .HasColumnType("float");

@@ -6,12 +6,5 @@ namespace Store.Repository.Interfaces
     {
         ICollection<Attachment> GetAttachmentsByLectureId(int lectureId);
     }
-    public interface IExamRepository
-    {
-        ICollection<Exam> GetExamsByCourseId(int courseId);
-    }
-    public interface IAssignmentRepository
-    {
-        ICollection<Assignment> GetAssignmentsByCourseId(int courseId);
-    }
+
 }

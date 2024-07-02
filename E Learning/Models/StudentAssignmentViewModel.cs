@@ -4,5 +4,6 @@
     {
         public IFormFile Assignment {  get; set; }
         public int AssignmentId { get; set; }
+        public string? Description { get; set; }
     }
 }

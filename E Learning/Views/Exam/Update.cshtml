@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ELearning.Data.Entities.Question.BaseQuestion>
+
+@{
+    Layout = "_InstructorLayout";
+}
+<a asp-action="AddQuestion" asp-controller="Exam"  class="btn btn-success" asp-route-id="@ViewBag.ExamId" >Add Question</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                Update
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Text.Substring(0, Math.Min(15, item.Text.Length))
+                </td>
+                <td>
+                    <a asp-action="UpdateQuestion" asp-controller="Exam" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Exam" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

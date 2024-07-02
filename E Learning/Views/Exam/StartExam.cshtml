@@ -2,43 +2,61 @@
 @model List<CompleteExamViewModel>
 @{
     ViewData["Title"] = "StartExam";
-    ICollection<BaseQuestion> Questions = ViewBag.Exam.BaseQuestions as ICollection<BaseQuestion>;
+    var Exam = ViewBag.Exam as Exam;
 
 }
 <div class="container">
-    <form asp-controller="Exam" asp-action="CompleteExam">
-        @for (var i = 0; i < Questions.Count; i++)
+    <h3>Time Remaining: <span id="timer"></span></h3>
+    <form id="examForm" asp-controller="Exam" asp-action="CompleteExam" method="post">
+        @for (var i = 0; i < Exam.BaseQuestions.Count; i++)
         {
-            var question = Questions.ElementAt(i);
+            var question = Exam.BaseQuestions.ElementAt(i);
             <div class="card mb-3">
                 <div class="card-body">
                     <p class="card-text">@question.Text</p>
                     <input type="hidden" name="model[@i].BaseQuestionId" value="@question.Id">
 
                     <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="model[@i].AnswerChoice"  value="1">
-                            <label class="form-check-label" for="choice1">@question.Choice1</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="model[@i].AnswerChoice" value="2">
-                            <label class="form-check-label" for="choice2">@question.Choice2</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="model[@i].AnswerChoice"  value="3">
-                            <label class="form-check-label" for="choice3">@question.Choice3</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="model[@i].AnswerChoice"  value="4">
-                            <label class="form-check-label" for="choice4">@question.Choice4</label>
-                        </div>
+                        @for (var choiceIndex = 1; choiceIndex <= 4; choiceIndex++)
+                        {
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="model[@i].AnswerChoice" value="@choiceIndex">
+                                <label class="form-check-label" for="choice@choiceIndex">
+                                    @question.GetType().GetProperty($"Choice{choiceIndex}").GetValue(question, null)
+                                </label>
+                            </div>
+                        }
                     </div>
-                    <input type="hidden" name="model[@i].QuestionId" value="@question.Id">
                 </div>
             </div>
         }
+        <input type="hidden" id="duration" value="@Exam.TimedEntity.Duration.TotalSeconds" />
         <button type="submit" class="btn btn-primary">Submit Answers</button>
     </form>
-
-
 </div>
+
+@section Scripts {
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("examForm").submit();
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var durationInSeconds = document.getElementById("duration").value;
+            var display = document.querySelector('#timer');
+            startTimer(durationInSeconds, display);
+        };
+    </script>
+}

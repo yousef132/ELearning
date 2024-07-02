@@ -1,4 +1,3 @@
-using AutoMapper;
 using E_Learning.DataSeeding;
 using E_Learning.Mapper.Instructor;
 using ELearning.BLL.Interfaces;
@@ -11,8 +10,6 @@ using StackExchange.Redis;
 using Store.Repository.BasketRepository;
 using Store.Repository.Interfaces;
 using Store.Repository.Repositories;
-using Stripe;
-using System;
 
 namespace E_Learning
 {
@@ -34,7 +31,10 @@ namespace E_Learning
             builder.Services.AddScoped<IAttachmentRepository, AttachmentRepository>();
             builder.Services.AddScoped<IExamRepository, ExamRepository>();
             builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<IStudentCourseRepository, StudentCourseRepository>();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             builder.Services.AddAutoMapper(typeof(InstructorProfile));
 
             builder.Services.AddTransient<IConnectionMultiplexer>(config =>
@@ -57,7 +57,12 @@ namespace E_Learning
             }).AddEntityFrameworkStores<ELearningDbContext>()
                 .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);
 
-
+            builder.Services.AddSession(o =>
+            {
+                o.IdleTimeout = TimeSpan.FromDays(1);
+                o.Cookie.HttpOnly = true;
+                o.Cookie.IsEssential = true;
+            });
             var app = builder.Build();
             await UserRoleInitializer.Initialize(app);
 
@@ -73,14 +78,12 @@ namespace E_Learning
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
-
+            app.UseSession();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Account}/{action=Login}/{id?}");
-
+                pattern: "{controller=Home}/{action=Index}/{id?}");
             app.Run();
         }
     }
-}   
+}

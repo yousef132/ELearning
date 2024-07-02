@@ -10,7 +10,6 @@ namespace ELearning.BLL.Specifications
     public interface ISpecification<T>
     {
         Expression<Func<T, bool>> Criteria { get; } // where
-
         List<Expression<Func<T, object>>> Includes { get; }//Include
 
         Expression<Func<T, object>> OrderBy { get; }

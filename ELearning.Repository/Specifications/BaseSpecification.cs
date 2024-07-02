@@ -32,6 +32,5 @@ namespace ELearning.BLL.Specifications
             => this.OrderBy = orderBy;
         protected void AddOrderByDescending(Expression<Func<T, object>> OrderByDescending)
             => this.OrderByDescending = OrderByDescending;
-
     }
 }

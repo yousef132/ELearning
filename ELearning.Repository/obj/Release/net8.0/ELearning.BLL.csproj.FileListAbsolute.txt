@@ -1,0 +1,16 @@
+D:\project\E Learning\ELearning.Repository\bin\Release\net8.0\ELearning.BLL.deps.json
+D:\project\E Learning\ELearning.Repository\bin\Release\net8.0\ELearning.BLL.dll
+D:\project\E Learning\ELearning.Repository\bin\Release\net8.0\ELearning.BLL.pdb
+D:\project\E Learning\ELearning.Repository\bin\Release\net8.0\ELearning.DAL.dll
+D:\project\E Learning\ELearning.Repository\bin\Release\net8.0\ELearning.DAL.pdb
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.csproj.AssemblyReference.cache
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.AssemblyInfoInputs.cache
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.AssemblyInfo.cs
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.csproj.CoreCompileInputs.cache
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.sourcelink.json
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearnin.6579CFE9.Up2Date
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.dll
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\refint\ELearning.BLL.dll
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ELearning.BLL.pdb
+D:\project\E Learning\ELearning.Repository\obj\Release\net8.0\ref\ELearning.BLL.dll

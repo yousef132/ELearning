@@ -1,44 +1,54 @@
 ﻿@model IReadOnlyList<StudentCourse>
 
 <div class="container">
-    <table class="table" style="color:black;">
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Total Marks
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                if (item.User.Id == ViewBag.UserId)
-                {
-                    <tr style="background-color:#95dcff;">
-                        <td>
-                            @Html.DisplayFor(modelItem => item.User.UserName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TotalMark)
-                        </td>
-                    </tr>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th> <!-- Column for numbering -->
+                    <th>Name</th>
+                    <th>Total Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var counter = 1; // Initialize counter variable
                 }
-                else
+                @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.User.UserName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TotalMark)
-                        </td>
+                    <tr class="@((item.User.Id == ViewBag.UserId) ? "user-highlight" : "")">
+                        <td>@counter</td> <!-- Display current counter value -->
+                        <td>@Html.DisplayFor(modelItem => item.User.UserName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalMark)</td>
                     </tr>
+                    counter++; // Increment counter for next row
                 }
-               
-            }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<style>
+    .table {
+        border-radius: 10px; /* Rounded corners for the table */
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #ddd; /* Light border for table cells */
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5; /* Light gray background on hover */
+        cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    .thead-light th {
+        background-color: #f0f0f0; /* Light gray background for table header */
+        border-top: none; /* No top border for header */
+    }
+
+    .user-highlight {
+        background-color: #def; /* Custom background color for user row */
+    }
+</style>

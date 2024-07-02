@@ -7,5 +7,6 @@
         public DateTime Open { get; set; }
         public DateTime Close { get; set; }
         public double Grade { get; set; }
+        public TimeSpan Duration { get; set; }
     }
 }

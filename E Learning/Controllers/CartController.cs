@@ -60,8 +60,8 @@ namespace E_Learning.Controllers
 
 			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             // check if user has bought ccourse
-            bool hasCourse = unitOfWork.studentCourseRepository.HasCourse(userId,courseId);
-			if (hasCourse)
+            var hasCourse = unitOfWork.studentCourseRepository.GetCourse(userId,courseId);
+			if (hasCourse !=null)
                 return Json(new { status = false, message = "You have already bought this course !" });
 
 

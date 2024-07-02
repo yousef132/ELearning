@@ -1,3 +1,70 @@
-﻿@{
+﻿@model DashbordViewModel
+
+@{
 	Layout = "_AdminLayout";
 }
+<div class="d-flex mt-3 justify-content-around" style="width:100%;">
+
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+      
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+                <h1>@Model.NOStudents</h1>
+                <h3>Students</h3>
+            </div>
+        </div>
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+                <h1>@Model.NOCourses</h1>
+                <h3>Courses</h3>
+        </div>
+           
+    </div>
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+                <h1>@Model.NOInstructors</h1>
+                <h3>Instructors</h3>
+        </div>
+    </div>
+    <div class=" mr-4 d-flex justify-content-center align-items-center" style="width:20%;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height:143px;">
+
+        <div class="d-inline-flex " style="flex-direction: column;align-items: center;">
+                <h1>@Model.NOSoldCourse</h1>
+                <h3>Sold Courses</h3>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row" style="margin-top:40px;">
+	<div class="col-md-12">
+		<div class="table-wrap">
+			<table class="table table-responsive-xl">
+				<thead>
+					<tr>
+
+						<th>Course </th>
+						<th>Number Of Selling </th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var inst in Model.NumberOfSellingForEachCourse)
+					{
+						<tr>
+
+							<td>
+								@inst.Item1
+							</td>
+							<td>@inst.Item2</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

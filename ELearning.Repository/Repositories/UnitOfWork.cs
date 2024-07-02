@@ -1,41 +1,42 @@
 ﻿using ELearning.BLL.Interfaces;
 using ELearning.Data.Context;
 using ELearning.Data.Entities;
-using Microsoft.EntityFrameworkCore;
 using Store.Repository.BasketRepository;
 using Store.Repository.Interfaces;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Store.Repository.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ELearningDbContext context;
-		public ICartRepository CartRepository { get; set; }
-        public IAttachmentRepository AttachmentRepository { get ; set ; }
-        public IExamRepository ExamRepository { get ; set ; }
-        public IAssignmentRepository AssignmentRepository { get ; set ; }
+        public ICartRepository CartRepository { get; set; }
+        public IAttachmentRepository AttachmentRepository { get; set; }
+        public IExamRepository ExamRepository { get; set; }
+        public IAssignmentRepository AssignmentRepository { get; set; }
         public IStudentCourseRepository studentCourseRepository { get; set; }
+        public ICourseRepository CourseRepository { get; set; }
 
         private Hashtable repositories;
 
         public UnitOfWork(ELearningDbContext context,
-			ICartRepository cartRepository,
+            ICartRepository cartRepository,
             IAttachmentRepository attachmentRepository,
             IExamRepository examRepository,
             IAssignmentRepository assignmentRepository,
-            IStudentCourseRepository studentCourseRepository)
-		{
-			this.context = context;
-			this.CartRepository = cartRepository;
+            IStudentCourseRepository studentCourseRepository,
+            ICourseRepository courseRepository)
+        {
+            this.context = context;
+            this.CartRepository = cartRepository;
             this.AssignmentRepository = assignmentRepository;
             this.ExamRepository = examRepository;
             this.AttachmentRepository = attachmentRepository;
-            this.studentCourseRepository= studentCourseRepository;
+            this.studentCourseRepository = studentCourseRepository;
+            this.CourseRepository = courseRepository;
         }
 
-		public async Task<int> CompleteAsync() => await context.SaveChangesAsync();
+        public async Task<int> CompleteAsync() => await context.SaveChangesAsync();
 
 
         public IGenericRepository<TEntity> Reposirory<TEntity>() where TEntity : BaseEntity

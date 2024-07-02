@@ -8,6 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,6 +24,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\assets\Images\course\" />
     <Folder Include="wwwroot\assets\Images\User\" />
+    <Folder Include="wwwroot\assets\Assignments\" />
     <Folder Include="wwwroot\assets\Pdf\" />
     <Folder Include="wwwroot\assets\Videos\Lectures\" />
   </ItemGroup>

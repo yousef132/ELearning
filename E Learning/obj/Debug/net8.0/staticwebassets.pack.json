@@ -5,6 +5,30 @@
       "PackagePath": "staticwebassets\\ELearning.PL.bundle.scp.css"
     },
     {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Assignments\\1cf77941-77f6-48ed-97b9-2c18231cd2ac-Screenshot 2024-04-17 065927.png",
+      "PackagePath": "staticwebassets\\assets\\Assignments\\1cf77941-77f6-48ed-97b9-2c18231cd2ac-Screenshot 2024-04-17 065927.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Assignments\\90d68b0e-acde-41ae-a52e-9ce4c9026254-solution.txt",
+      "PackagePath": "staticwebassets\\assets\\Assignments\\90d68b0e-acde-41ae-a52e-9ce4c9026254-solution.txt"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Assignments\\Assignment.png",
+      "PackagePath": "staticwebassets\\assets\\Assignments\\Assignment.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Assignments\\Exam.png",
+      "PackagePath": "staticwebassets\\assets\\Assignments\\Exam.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Assignments\\Lecture.png",
+      "PackagePath": "staticwebassets\\assets\\Assignments\\Lecture.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Assignments\\b7d4068b-d8f7-4f6e-84ab-2cefd589e87b-Screenshot 2024-04-05 144010.png",
+      "PackagePath": "staticwebassets\\assets\\Assignments\\b7d4068b-d8f7-4f6e-84ab-2cefd589e87b-Screenshot 2024-04-05 144010.png"
+    },
+    {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\07915e99-1eb6-41da-8b71-c2fce634b296-team-2.jpg",
       "PackagePath": "staticwebassets\\assets\\Images\\User\\07915e99-1eb6-41da-8b71-c2fce634b296-team-2.jpg"
     },
@@ -49,10 +73,6 @@
       "PackagePath": "staticwebassets\\assets\\Images\\User\\bc95a20e-04aa-4795-ae97-3b217c362ba6-testimonial-2.jpg"
     },
     {
-      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\cf8c2d3e-3b9f-48bf-ac4b-fb2b46d32a46-courses-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\Images\\User\\cf8c2d3e-3b9f-48bf-ac4b-fb2b46d32a46-courses-1.jpg"
-    },
-    {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\e78b389f-d5ab-4586-bc8b-d08157cf3327-team-2.jpg",
       "PackagePath": "staticwebassets\\assets\\Images\\User\\e78b389f-d5ab-4586-bc8b-d08157cf3327-team-2.jpg"
     },
@@ -93,8 +113,16 @@
       "PackagePath": "staticwebassets\\assets\\Images\\course\\e991b316-e4cb-4c8a-a4f0-6d0d9aed0e13-data-structures-training-bangalore-jupiter-vidya-430x270 (2).jpg"
     },
     {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\04377506-13cc-43f7-a114-07abe097317e-Screenshot 2024-04-18 103915.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\04377506-13cc-43f7-a114-07abe097317e-Screenshot 2024-04-18 103915.png"
+    },
+    {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\0cb7f1d8-ee80-4d0e-8ade-1ebaf8898072-5e89739d-c220-45b6-b5ea-9d76e7583a8e-Screenshot 2024-04-14 131055 (1).png",
       "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\0cb7f1d8-ee80-4d0e-8ade-1ebaf8898072-5e89739d-c220-45b6-b5ea-9d76e7583a8e-Screenshot 2024-04-14 131055 (1).png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\2c2cb291-487a-429d-a4df-17874353bf27-Screenshot 2024-03-31 062647.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\2c2cb291-487a-429d-a4df-17874353bf27-Screenshot 2024-03-31 062647.png"
     },
     {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\2e4b2144-05e1-45fd-8e8e-4ad38b4e7b1c-856787-hd_1920_1080_30fps.mp4",
@@ -121,12 +149,24 @@
       "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\807c1c70-cb35-468a-b605-936be8b53f5a-bandicam 2024-05-02 23-46-46-028.mp4"
     },
     {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\9a21a7bd-3156-4413-b623-a54c9bec1b23-Screenshot 2024-07-02 155010.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\9a21a7bd-3156-4413-b623-a54c9bec1b23-Screenshot 2024-07-02 155010.png"
+    },
+    {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\a34d9a2b-a760-4250-815e-bd28f1e9732e-856787-hd_1920_1080_30fps.mp4",
       "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\a34d9a2b-a760-4250-815e-bd28f1e9732e-856787-hd_1920_1080_30fps.mp4"
     },
     {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\af990693-c4e8-48ff-9c8e-5f78c60a75ff-8033a11e-0335-41af-8979-2bcf96bff98a-Screenshot 2024-04-05 144010.png",
       "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\af990693-c4e8-48ff-9c8e-5f78c60a75ff-8033a11e-0335-41af-8979-2bcf96bff98a-Screenshot 2024-04-05 144010.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\d37fc2a9-c1e9-466b-9dae-69e569b73bfc-Screenshot 2024-04-27 122505.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\d37fc2a9-c1e9-466b-9dae-69e569b73bfc-Screenshot 2024-04-27 122505.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\f1f11f20-2cbc-4bbd-a43b-cac93b585a63-stringtricks.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\f1f11f20-2cbc-4bbd-a43b-cac93b585a63-stringtricks.png"
     },
     {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\bootstrap\\css\\bootstrap.min.css",
@@ -153,6 +193,10 @@
       "PackagePath": "staticwebassets\\img\\CartIcon.png"
     },
     {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\NoData.png",
+      "PackagePath": "staticwebassets\\img\\NoData.png"
+    },
+    {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\assignmets.jpg",
       "PackagePath": "staticwebassets\\img\\assignmets.jpg"
     },
@@ -167,6 +211,14 @@
     {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\content.jpg",
       "PackagePath": "staticwebassets\\img\\content.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\correct_4204493.png",
+      "PackagePath": "staticwebassets\\img\\correct_4204493.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\delete_14025328.png",
+      "PackagePath": "staticwebassets\\img\\delete_14025328.png"
     },
     {
       "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\empty-cart.png",

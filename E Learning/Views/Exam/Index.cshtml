@@ -16,17 +16,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-
-            <th>
-                Add Question
-            </th>
-
             <th>
                 Update
             </th>
-
             <th>
                 Delete
+            </th>
+
+            <th>
+                Results
             </th>
         </tr>
     </thead>
@@ -34,18 +32,18 @@
         @foreach (var item in Model)
         {
             <tr>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    <a asp-action="AddQuestion" asp-controller="Exam" asp-route-id="@item.Id" class="btn btn-primary">Add Question</a>
-                </td>>
-                <td>
-                    <a asp-action="Update" asp-controller="Exam" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
-                </td>>
+                    <a asp-action="Update" asp-controller="Exam" asp-route-id="@item.Id" class="btn btn-primary"> Update</a>
+                </td>
+
                 <td>
                     <a asp-action="DeleteExam" asp-controller="Exam" asp-route-examId="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <a asp-action="StudentsResult" asp-controller="Exam" asp-route-id="@item.Id" class="btn btn-success">Results</a>
                 </td>
             </tr>
         }

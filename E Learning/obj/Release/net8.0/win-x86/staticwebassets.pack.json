@@ -1,0 +1,881 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\obj\\Release\\net8.0\\win-x86\\scopedcss\\projectbundle\\ELearning.PL.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ELearning.PL.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\07915e99-1eb6-41da-8b71-c2fce634b296-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\07915e99-1eb6-41da-8b71-c2fce634b296-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\0d66a9a1-1467-4ae4-8ded-53f53839654f-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\0d66a9a1-1467-4ae4-8ded-53f53839654f-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\16ba344d-9f5d-43a3-8b5d-8d642d734a73-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\16ba344d-9f5d-43a3-8b5d-8d642d734a73-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\2ad60dcf-6315-468f-aa93-6e06e0b3b4c6-team-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\2ad60dcf-6315-468f-aa93-6e06e0b3b4c6-team-4.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\30a93759-7b05-437b-8cd0-25f17bcb4a76-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\30a93759-7b05-437b-8cd0-25f17bcb4a76-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\501bb7e5-f732-4488-b348-50dafcd8a3e2-courses-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\501bb7e5-f732-4488-b348-50dafcd8a3e2-courses-6.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\664fd1d0-f687-42f4-a780-57abef218306-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\664fd1d0-f687-42f4-a780-57abef218306-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\665d9407-a287-4c5a-9c99-8d83421376dd-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\665d9407-a287-4c5a-9c99-8d83421376dd-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\ab1908a5-d8e6-4b5b-b467-f7e78a814860-courses-80x80.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\ab1908a5-d8e6-4b5b-b467-f7e78a814860-courses-80x80.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\b2b0f708-e490-47de-9b0b-ac1fe4532362-courses-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\b2b0f708-e490-47de-9b0b-ac1fe4532362-courses-1.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\bc95a20e-04aa-4795-ae97-3b217c362ba6-testimonial-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\bc95a20e-04aa-4795-ae97-3b217c362ba6-testimonial-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\cf8c2d3e-3b9f-48bf-ac4b-fb2b46d32a46-courses-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\cf8c2d3e-3b9f-48bf-ac4b-fb2b46d32a46-courses-1.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\e78b389f-d5ab-4586-bc8b-d08157cf3327-team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\e78b389f-d5ab-4586-bc8b-d08157cf3327-team-2.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\efd9c421-35ef-4c2f-b2cc-a701884225c0-linkedin.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\efd9c421-35ef-4c2f-b2cc-a701884225c0-linkedin.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\f930d17d-29c7-404c-9339-73341dce93bd-courses-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\f930d17d-29c7-404c-9339-73341dce93bd-courses-3.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\User\\fe076251-238b-46b9-b938-05e5ad5af26e-courses-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\User\\fe076251-238b-46b9-b938-05e5ad5af26e-courses-1.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\course\\3e32904d-2110-4e9b-b843-5fb0d79d2abb-git-github.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\course\\3e32904d-2110-4e9b-b843-5fb0d79d2abb-git-github.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\course\\40eb4ce4-df28-4f41-961e-403a770f1df0-1661349251079.png",
+      "PackagePath": "staticwebassets\\assets\\Images\\course\\40eb4ce4-df28-4f41-961e-403a770f1df0-1661349251079.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\course\\85be2069-cefd-4e2d-91d9-a27a53f6d7d0-download.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\course\\85be2069-cefd-4e2d-91d9-a27a53f6d7d0-download.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\course\\a77367e9-5a69-429d-ae7d-faa5a0cd9b82-courses-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\course\\a77367e9-5a69-429d-ae7d-faa5a0cd9b82-courses-6.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\course\\cdc6e727-9ab1-4783-9f13-8dba07464154-1_4ZcW5tSdizlbtDQyVpRTuA.jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\course\\cdc6e727-9ab1-4783-9f13-8dba07464154-1_4ZcW5tSdizlbtDQyVpRTuA.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Images\\course\\e991b316-e4cb-4c8a-a4f0-6d0d9aed0e13-data-structures-training-bangalore-jupiter-vidya-430x270 (2).jpg",
+      "PackagePath": "staticwebassets\\assets\\Images\\course\\e991b316-e4cb-4c8a-a4f0-6d0d9aed0e13-data-structures-training-bangalore-jupiter-vidya-430x270 (2).jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\0cb7f1d8-ee80-4d0e-8ade-1ebaf8898072-5e89739d-c220-45b6-b5ea-9d76e7583a8e-Screenshot 2024-04-14 131055 (1).png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\0cb7f1d8-ee80-4d0e-8ade-1ebaf8898072-5e89739d-c220-45b6-b5ea-9d76e7583a8e-Screenshot 2024-04-14 131055 (1).png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\2e4b2144-05e1-45fd-8e8e-4ad38b4e7b1c-856787-hd_1920_1080_30fps.mp4",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\2e4b2144-05e1-45fd-8e8e-4ad38b4e7b1c-856787-hd_1920_1080_30fps.mp4"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\36dd291f-0dbf-4cd2-9ffa-4905caccf610-855289-hd_1920_1080_25fps.mp4",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\36dd291f-0dbf-4cd2-9ffa-4905caccf610-855289-hd_1920_1080_25fps.mp4"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\6983a467-0435-4f37-9b6b-b20175632b56-Yousef_Saad_Rusume.pdf"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\69c6bdc8-5767-4d09-8e4a-d0458df721ca-Screenshot 2024-04-05 144010.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\69c6bdc8-5767-4d09-8e4a-d0458df721ca-Screenshot 2024-04-05 144010.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\8033a11e-0335-41af-8979-2bcf96bff98a-Screenshot 2024-04-05 144010.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\8033a11e-0335-41af-8979-2bcf96bff98a-Screenshot 2024-04-05 144010.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\807c1c70-cb35-468a-b605-936be8b53f5a-bandicam 2024-05-02 23-46-46-028.mp4",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\807c1c70-cb35-468a-b605-936be8b53f5a-bandicam 2024-05-02 23-46-46-028.mp4"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\a34d9a2b-a760-4250-815e-bd28f1e9732e-856787-hd_1920_1080_30fps.mp4",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\a34d9a2b-a760-4250-815e-bd28f1e9732e-856787-hd_1920_1080_30fps.mp4"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\assets\\Videos\\Lectures\\af990693-c4e8-48ff-9c8e-5f78c60a75ff-8033a11e-0335-41af-8979-2bcf96bff98a-Screenshot 2024-04-05 144010.png",
+      "PackagePath": "staticwebassets\\assets\\Videos\\Lectures\\af990693-c4e8-48ff-9c8e-5f78c60a75ff-8033a11e-0335-41af-8979-2bcf96bff98a-Screenshot 2024-04-05 144010.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\css\\style.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\CartIcon.png",
+      "PackagePath": "staticwebassets\\img\\CartIcon.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\assignmets.jpg",
+      "PackagePath": "staticwebassets\\img\\assignmets.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\bg-image.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-image.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\cart.jpg",
+      "PackagePath": "staticwebassets\\img\\cart.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\content.jpg",
+      "PackagePath": "staticwebassets\\img\\content.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\empty-cart.png",
+      "PackagePath": "staticwebassets\\img\\empty-cart.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\exams.jpg",
+      "PackagePath": "staticwebassets\\img\\exams.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\header.jpg",
+      "PackagePath": "staticwebassets\\img\\header.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\nocontent.jpg",
+      "PackagePath": "staticwebassets\\img\\nocontent.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\noresult.jpg",
+      "PackagePath": "staticwebassets\\img\\noresult.jpg"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\overlay-bottom.png",
+      "PackagePath": "staticwebassets\\img\\overlay-bottom.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\img\\overlay-top.png",
+      "PackagePath": "staticwebassets\\img\\overlay-top.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\counterup\\counterup.min.js",
+      "PackagePath": "staticwebassets\\lib\\counterup\\counterup.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\links.php"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\lib\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_code.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_code.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_custom-forms.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_input-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_jumbotron.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_media.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_media.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_print.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_print.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_float.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_size.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_align.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_background.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_display.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_float.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_interactions.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_position.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_text.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "D:\\project\\E Learning\\E Learning\\wwwroot\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\scss\\style.scss"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.ELearning.PL.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.build.ELearning.PL.props",
+      "PackagePath": "build\\ELearning.PL.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.buildMultiTargeting.ELearning.PL.props",
+      "PackagePath": "buildMultiTargeting\\ELearning.PL.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.buildTransitive.ELearning.PL.props",
+      "PackagePath": "buildTransitive\\ELearning.PL.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

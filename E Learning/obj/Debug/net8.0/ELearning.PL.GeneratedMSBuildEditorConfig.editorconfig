@@ -66,8 +66,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/project/E Learning/E Learning/Views/Assignment/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/project/E Learning/E Learning/Views/Assignment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/E Learning/E Learning/Views/Assignment/Submissions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxTdWJtaXNzaW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/E Learning/E Learning/Views/Assignment/SubmitAssignments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxTdWJtaXRBc3NpZ25tZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/E Learning/E Learning/Views/Assignment/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/project/E Learning/E Learning/Views/Attachment/Create.cshtml]
@@ -122,6 +138,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/project/E Learning/E Learning/Views/Course/Manage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXE1hbmFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/project/E Learning/E Learning/Views/Course/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -144,6 +164,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/project/E Learning/E Learning/Views/Exam/StartExam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxTdGFydEV4YW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/E Learning/E Learning/Views/Exam/StudentsResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxTdHVkZW50c1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/E Learning/E Learning/Views/Exam/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/E Learning/E Learning/Views/Exam/UpdateQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxVcGRhdGVRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/project/E Learning/E Learning/Views/Home/Index.cshtml]

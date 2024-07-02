@@ -10,6 +10,7 @@ namespace ELearning.BLL.Interfaces
     public interface IStudentCourseRepository
     {
         IReadOnlyList<StudentCourse> GetAllCourses(string userId);
-        bool HasCourse(string userId, int courseId);
+        StudentCourse GetCourse(string userId, int courseId);
+        double GetStudentCourseGrade(string userId, int courseId);
     }
 }

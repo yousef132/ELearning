@@ -14,12 +14,15 @@ namespace ELearning.BLL.Specifications
             var query = inputQuery;
 
             //q1 + where
-            if (specs is not null)
+            if (specs?.Criteria is not null)
                 query = query.Where(specs.Criteria);
+
             if (specs.OrderBy is not null)
                 query = query.OrderBy(specs.OrderBy);
+
             if (specs.OrderByDescending is not null)
                 query = query.OrderByDescending(specs.OrderByDescending);
+
             if(specs.IsPaginated)
                 query = query.Skip(specs.Skip).Take(specs.Take);
 

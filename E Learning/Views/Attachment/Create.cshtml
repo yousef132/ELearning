@@ -1,39 +1,68 @@
 ﻿@model E_Learning.Models.AttachmentViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = "_InstructorLayout";
 }
 
-<h1>Create</h1>
-
-<h4>AttachmentViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Add Attachment</h2>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <input asp-for="LectureId" hidden />
+                        <div class="form-group">
+                            <label asp-for="Attachment" class="control-label"></label>
+                            <input type="file" asp-for="Attachment" class="form-control-file" />
+                            <span asp-validation-for="Attachment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <input asp-for="LectureId" hidden />
-            <div class="form-group">
-                <label asp-for="Attachment" class="control-label"></label>
-                <input type="file" asp-for="Attachment" class="form-control" />
-                <span asp-validation-for="Attachment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .form-control-file {
+        border-radius: 5px;
+    }
+</style>
