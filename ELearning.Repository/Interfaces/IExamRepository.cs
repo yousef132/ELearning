@@ -11,6 +11,8 @@ namespace Store.Repository.Interfaces
 
         ICollection<StudentExam> GetExamStudentsResult(int examId);
 
+        public ICollection<StudentExam> GetGrades(string userId);
+
     }
 
 }

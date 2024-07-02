@@ -1,16 +1,16 @@
 ﻿@model Course
 
-
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="row">
+
             <div class="col-lg-8">
                 <div class="mb-5">
                     <div class="section-title position-relative mb-5">
                         <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Course Detail</h6>
                         <h1 class="display-4">@Model.Name</h1>
                     </div>
-                    <img src="~/assets/Images/course/@Model.ImagePath" alt="Image" width="600px;" height="300px;">
+                    <img src="~/assets/Images/course/@Model.ImagePath" alt="Image" width="600px;" height="300px;" style="object-fit: cover; border-radius: 10px;">
                     <h5 style="margin-top:30px;">
                         @Model.Description
                     </h5>
@@ -18,7 +18,7 @@
             </div>
 
             <div class="col-lg-4 mt-5 mt-lg-0">
-                <div class="bg-primary mb-5 py-3">
+                <div class="bg-primary mb-5 py-3" style="border-radius: 10px;">
                     <h3 class="text-white py-3 px-4 m-0">Course Features</h3>
                     <div class="d-flex justify-content-between border-bottom px-4">
                         <h6 class="text-white my-3">Instructor</h6>
@@ -42,34 +42,47 @@
                         <h6 class="text-white my-3">@Model.Language</h6>
                     </div>
                     <h5 class="text-white py-3 px-4 m-0">Course Price: $@Model.Price</h5>
-                    <div class="py-3 px-4">
-                        <a class="btn btn-block btn-secondary py-3 px-5" onclick="AddToCart(@Model.Id)" >Add To Cart</a>
-                    </div>
                 </div>
             </div>
+
         </div>
+
+        <div class="mb-5 lectures-section" style="background-color: #E8EFFF; border-radius: 10px; padding: 20px;">
+            <h2 class="mb-3">Lectures</h2>
+            <ul class="list-group list-group-flush">
+                @if (Model.Lectures.Count() != 0)
+                {
+                    var counter = 1;
+                    @foreach (var lecture in Model.Lectures)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0 lecture-item" style="background-color:transparent;">
+                            <a href="#" class="text-decoration-none h6 m-0">@counter. @lecture.Name</a>
+                        </li>
+                        counter++;
+                    }
+                }
+                else
+                {
+                    <li class="list-group-item">No lectures available.</li>
+                }
+            </ul>
+        </div>
+
     </div>
 </div>
 
-@section Scripts
-{
-    <script>
-        function AddToCart(courseId) {
-            $.ajax({
-                url: "/cart/AddCourse",
-                data: { "CourseId": courseId },
-                success: function (result) {
-                    console.log(result.status);
-
-                    if (result.status === true) {
-                        toastr.success(result.message, 'Success Alert', { timeOut: 3000 });
-                    }
-                    else {
-                        toastr.error(result.message, 'Error', { timeOut: 3000 });
-                    }
-                }
-            });
-        }
-        </script>
-
+<style>
+    .section-title {
+        margin-bottom: 40px;
     }
+
+    .lectures-section {
+        background-color: #E8EFFF;
+    }
+
+    .lecture-item {
+        background-color: #ffffff; /* White background for each lecture item */
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+</style>

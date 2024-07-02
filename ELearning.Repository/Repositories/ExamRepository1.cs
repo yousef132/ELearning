@@ -26,5 +26,9 @@ namespace ELearning.BLL.Repositories
                        .Where(se => se.ExamId == examId)
                        .OrderBy(se => se.Grade)
                        .ToList();
+
+        public ICollection<StudentExam> GetGrades(string userId)
+            => context.StudentExams.Include(e => e.Exam).Where(e => e.UserId == userId).ToList();
+
     }
 }

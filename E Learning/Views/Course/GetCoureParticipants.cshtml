@@ -19,7 +19,7 @@
                     <tr class="@((item.User.Id == ViewBag.UserId) ? "user-highlight" : "")">
                         <td>@counter</td> <!-- Display current counter value -->
                         <td>@Html.DisplayFor(modelItem => item.User.UserName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.TotalMark)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalMark)</td>  
                     </tr>
                     counter++; // Increment counter for next row
                 }

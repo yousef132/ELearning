@@ -4,19 +4,19 @@
     <nav class="navbar navbar-expand-sm bg-light mb-3">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link activelink pointer" asp-controller="course">Content</a>
+                <a class="nav-link activelink pointer" asp-controller="course" style="font-size: 18px;">Content</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="exams" onclick="switchTab('exams', @Model.Id)">Exams</a>
+                <a class="nav-link pointer" id="exams" onclick="switchTab('exams', @Model.Id)" style="font-size: 18px;">Exams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="ass" onclick="switchTab('ass', @Model.Id)">Assignments</a>
+                <a class="nav-link pointer" id="ass" onclick="switchTab('ass', @Model.Id)" style="font-size: 18px;">Assignments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="parts" onclick="switchTab('parts', @Model.Id)">Participants</a>
+                <a class="nav-link pointer" id="parts" onclick="switchTab('parts', @Model.Id)" style="font-size: 18px;">Participants</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="grades" onclick="switchTab('grades', @Model.Id)">Grades</a>
+                <a class="nav-link pointer" id="grades" onclick="switchTab('grades', @Model.Id)" style="font-size: 18px;">Grades</a>
             </li>
         </ul>
     </nav>
@@ -60,7 +60,7 @@
     .pointer {
         cursor: pointer;
     }
-    
+
 
     .card {
         border: 1px solid #dee2e6;

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ELearning.Data.Entities.StudentExam>
+
+@{
+    Layout = null;
+}
+
+<style>
+    .table {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 100%; /* Ensure table fills the container width */
+        max-width: none; /* Remove max-width constraint */
+    }
+
+        .table th {
+            background-color: #2878EB;
+            color: #ffffff;
+            border-color: #2878EB;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .table td,
+        .table th {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #dee2e6;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <!-- Increased column size to 12 for wider table -->
+            <h2 class="text-center mb-4">Your Exams Results</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Exams</th>
+                            <th scope="col">Submitted At</th>
+                            <th scope="col">Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Exam.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.SubmittedAt)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Grade)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -103,11 +103,14 @@ namespace E_Learning.Controllers
         }
 
 
-        //public IActionResult Grades (int courseId)
-        //{
-        //    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        public IActionResult Grades()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var results = unitOfWork.ExamRepository.GetGrades(userId);
+            return View(results);
 
-        //}
+
+        }
 
 
         #region CRUD Operations
