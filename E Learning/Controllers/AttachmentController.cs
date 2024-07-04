@@ -2,11 +2,15 @@
 using E_Commerce.Helper;
 using E_Learning.Models;
 using ELearning.Data.Entities;
+using ELearning.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Store.Repository.Interfaces;
 
 namespace E_Learning.Controllers
 {
+    [Authorize(Roles = Roles.Instructor)]
+
     public class AttachmentController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
@@ -23,12 +27,14 @@ namespace E_Learning.Controllers
 
             return View(attachments);
         }
+
         public IActionResult Create(int id)//lectureId
         {
             return View(new AttachmentViewModel { LectureId = id });
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Create(AttachmentViewModel attachmentModel)
         {
             if (ModelState.IsValid)
@@ -43,21 +49,25 @@ namespace E_Learning.Controllers
                 };
                 await unitOfWork.Reposirory<Attachment>().AddAsync(attachment);
                 await unitOfWork.CompleteAsync();
+
                 return RedirectToAction("Index", "Lecture", new { id = TempData["CourseId"] });
             }
             return View(attachmentModel);
         }
+
+
         public async Task<IActionResult> Delete(int id)
         {
 
             var attachment = await unitOfWork.Reposirory<Attachment>().GetByIdAsync(id);
             if (attachment is null)
                 return BadRequest();
+
             unitOfWork.Reposirory<Attachment>().Delete(attachment);
             await unitOfWork.CompleteAsync();
+            DocumentSetting.DeleteFile("Videos", "Lectures", attachment.Name);
             return RedirectToAction("Update", "Lecture");
         }
-
         public async Task<IActionResult> Update(int id)//AttachmentId
         {
             var attachment = await unitOfWork.Reposirory<Attachment>().GetByIdAsync(id);

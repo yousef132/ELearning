@@ -5,35 +5,49 @@
 }
 
 <div class="container">
-    @foreach (var assignment in Model)
+
+
+    @if(Model.Count() == 0)
     {
-        <div class="assignment-card">
-            <div class="card-header">
-                <h3>@assignment.Name</h3>
-                <div class="action-buttons">
-                    @if (DateTime.Now >= assignment.TimedEntity.Open && DateTime.Now <= assignment.TimedEntity.Close)
-                    {
-                        if (solvedAssignments.Contains(assignment.Id))
+        
+        <div class="text-center" id="empty">
+                <img src="/img/nocontent.jpg" style="width: 400px;" />
+        </div>
+
+    }
+    else
+    {
+        @foreach (var assignment in Model)
+        {
+            <div class="assignment-card">
+                <div class="card-header">
+                    <h3>@assignment.Name</h3>
+                    <div class="action-buttons">
+                        @if (DateTime.Now >= assignment.TimedEntity.Open && DateTime.Now <= assignment.TimedEntity.Close)
                         {
-                            <span class="badge badge-success">Completed</span>
+                            if (solvedAssignments.Contains(assignment.Id))
+                            {
+                                <span class="badge badge-success">Completed</span>
+                            }
+                            else
+                            {
+                                <a class="btn btn-primary btn-sm" asp-action="SubmitAssignments" asp-controller="Assignment" asp-route-assignmentId="@assignment.Id">Submit</a>
+                            }
                         }
                         else
                         {
-                            <a class="btn btn-primary btn-sm" asp-action="SubmitAssignments" asp-controller="Assignment" asp-route-assignmentId="@assignment.Id">Submit</a>
+                            <span class="badge badge-secondary">Closed</span>
                         }
-                    }
-                    else
-                    {
-                        <span class="badge badge-secondary">Closed</span>
-                    }
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p><strong>Open:</strong> @assignment.TimedEntity.Open</p>
+                    <p><strong>Close:</strong> @assignment.TimedEntity.Close</p>
                 </div>
             </div>
-            <div class="card-body">
-                <p><strong>Open:</strong> @assignment.TimedEntity.Open</p>
-                <p><strong>Close:</strong> @assignment.TimedEntity.Close</p>
-            </div>
-        </div>
+        }
     }
+    
 </div>
 
 <style>

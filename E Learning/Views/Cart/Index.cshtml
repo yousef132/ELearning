@@ -27,7 +27,7 @@
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0" style="margin-top:20px;">
                                         <!-- Data -->
                                         <h5><strong>@course.Name</strong></h5>
-                                        <p>@course.Description</p>
+                                        <p>@course.Description.Substring(0,Math.Min(100,course.Description.Length))...</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 " style="margin-top:20px;">

@@ -12,6 +12,10 @@ namespace ELearning.Data.Configurations
             {
                 c.WithOwner();
             });
+
+            builder.HasMany(a => a.StudentAssignments)
+                .WithOne(sa => sa.Assignment)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

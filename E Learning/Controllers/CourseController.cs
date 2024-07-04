@@ -150,6 +150,8 @@ namespace E_Learning.Controllers
             DocumentSetting.DeleteFile("Images", "course", course.ImagePath);
             unitOfWork.Reposirory<Course>().Delete(course);
             await unitOfWork.CompleteAsync();
+
+            DocumentSetting.DeleteFile("Images", "course", course.ImagePath);
             return RedirectToAction("Courses", "Instructor");
         }
         [Authorize(Roles = Roles.Instructor)]

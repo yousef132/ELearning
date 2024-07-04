@@ -8,7 +8,7 @@ using System.Security.Claims;
 namespace E_Learning.Controllers
 {
     [Authorize(Roles = Roles.Student)]
-    public class StudentController : Controller, IUser
+    public class StudentController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
 

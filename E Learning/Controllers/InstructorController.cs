@@ -12,7 +12,7 @@ using System.Security.Claims;
 namespace E_Learning.Controllers
 {
     [Authorize(Roles = Roles.Instructor)]
-    public class InstructorController : Controller, IUser
+    public class InstructorController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly UserManager<ApplicationUser> userManager;

@@ -4,32 +4,44 @@
     var exams = ViewBag.completedExams as IReadOnlyList<StudentExam>;
 }
 <div class="container">
-    @foreach (var exam in Model)
+    @if (Model.Count() == 0)
     {
-        <div class="card border-info mb-3">
-            <div class="card-header bg-info text-white" style="background-color:#61b5ff!important;color:white!important;">
-                <h3>@exam.Name</h3>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p><strong>Open:</strong> @exam.TimedEntity.Open</p>
-                        <p><strong>Close:</strong> @exam.TimedEntity.Close</p>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        @if (DateTime.Now >= exam.TimedEntity.Open && DateTime.Now <= exam.TimedEntity.Close && !exams.Any(e => e.ExamId == exam.Id))
-                        {
-                            <a class="btn btn-success" asp-action="StartExam" asp-controller="Exam" asp-route-id="@exam.Id">Start Exam</a>
-                        }
-                        else
-                        {
-                            <a class="btn btn-primary" asp-action="Result" asp-controller="Exam" asp-route-id="@exam.Id">Result</a>
-                        }
+
+        <div class="text-center" id="empty">
+            <img src="/img/nocontent.jpg" style="width: 400px;" />
+        </div>
+
+    }
+    else
+    {
+        @foreach (var exam in Model)
+        {
+            <div class="card border-info mb-3">
+                <div class="card-header bg-info text-white" style="background-color:#61b5ff!important;color:white!important;">
+                    <h3>@exam.Name</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Open:</strong> @exam.TimedEntity.Open</p>
+                            <p><strong>Close:</strong> @exam.TimedEntity.Close</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            @if (DateTime.Now >= exam.TimedEntity.Open && DateTime.Now <= exam.TimedEntity.Close && !exams.Any(e => e.ExamId == exam.Id))
+                            {
+                                <a class="btn btn-success" asp-action="StartExam" asp-controller="Exam" asp-route-id="@exam.Id">Start Exam</a>
+                            }
+                            else
+                            {
+                                <span class="badge badge-primary">Completed</span>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
     }
+    
 </div>
 
 <style>

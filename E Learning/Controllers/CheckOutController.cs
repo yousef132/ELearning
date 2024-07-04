@@ -1,6 +1,5 @@
 ﻿using ELearning.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Store.Repository.Interfaces;
 using Stripe;
 using Stripe.Checkout;
@@ -13,7 +12,7 @@ namespace E_Learning.Controllers
         private readonly IConfiguration configuration;
         private readonly IUnitOfWork unitOfWork;
 
-        public CheckOutController(IConfiguration configuration,IUnitOfWork unitOfWork)
+        public CheckOutController(IConfiguration configuration, IUnitOfWork unitOfWork)
         {
             this.configuration = configuration;
             this.unitOfWork = unitOfWork;
@@ -25,12 +24,14 @@ namespace E_Learning.Controllers
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
 
             var domain = configuration["BaseUrl"];
-            var options = new SessionCreateOptions 
+            var options = new SessionCreateOptions
             {
+                //  SuccessUrl = domain + "https://localhost:7122/CheckOut/OrderConfirmation",
                 SuccessUrl = domain + "CheckOut/OrderConfirmation",
+                //  CancelUrl = domain + "https://localhost:7122/CheckOut/PaymentFailed",
                 CancelUrl = domain + "CheckOut/PaymentFailed",
                 LineItems = new List<SessionLineItemOptions>(),
-                Mode= "payment",
+                Mode = "payment",
                 CustomerEmail = userEmail
             };
 
@@ -44,15 +45,14 @@ namespace E_Learning.Controllers
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                        UnitAmount = (long) cartItem.Price * 100,
+                        UnitAmount = (long)cartItem.Price * 100,
                         Currency = "usd",
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
-                            Name = cartItem.Name,
-                            Images = new List<string> { cartItem.ImagePath },
+                            Name = cartItem.Name
                         }
                     },
-                    Quantity =1 ,
+                    Quantity = 1,
                 };
                 options.LineItems.Add(sessionLineItem);
                 courses.Add(cartItem.Id);
@@ -62,7 +62,7 @@ namespace E_Learning.Controllers
             var service = new SessionService();
             Session session = service.Create(options);
             TempData["Session"] = session.Id;
-            Response.Headers.Add("Location",session.Url);
+            Response.Headers.Add("Location", session.Url);
             return new StatusCodeResult(303);
         }
 
@@ -70,7 +70,8 @@ namespace E_Learning.Controllers
         public async Task<IActionResult> OrderConfirmation()
         {
             var service = new SessionService();
-            Session session = service.Get(TempData["Session"].ToString());
+            string id = TempData["Session"].ToString();
+            Session session = service.Get(id);
 
 
             if (session.PaymentStatus == "paid")
@@ -84,7 +85,7 @@ namespace E_Learning.Controllers
                     await unitOfWork.Reposirory<StudentCourse>().AddAsync(new StudentCourse { CourseId = courseId, UserId = userId });
                     await unitOfWork.CompleteAsync();
                 }
-                
+
                 await unitOfWork.CartRepository.DeleteBasketAsync(userId);
 
                 return View();

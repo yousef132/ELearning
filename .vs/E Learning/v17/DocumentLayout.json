@@ -1,36 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\project\\E Learning\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\course\\getcoureparticipants.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\course\\getcoureparticipants.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\course\\coursecontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\course\\coursecontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\views\\course\\grades.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\views\\course\\grades.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C63491D2-7FD9-4ABD-A725-19B9DE047693}|ELearning.Repository\\ELearning.BLL.csproj|d:\\project\\e learning\\elearning.repository\\repositories\\examrepository1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C63491D2-7FD9-4ABD-A725-19B9DE047693}|ELearning.Repository\\ELearning.BLL.csproj|solutionrelative:elearning.repository\\repositories\\examrepository1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|d:\\project\\e learning\\e learning\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFC83B36-33D0-4F40-AC02-B54356B39DBE}|E Learning\\ELearning.PL.csproj|solutionrelative:e learning\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C63491D2-7FD9-4ABD-A725-19B9DE047693}|ELearning.Repository\\ELearning.BLL.csproj|d:\\project\\e learning\\elearning.repository\\interfaces\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C63491D2-7FD9-4ABD-A725-19B9DE047693}|ELearning.Repository\\ELearning.BLL.csproj|solutionrelative:elearning.repository\\interfaces\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -38,99 +9,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GetCoureParticipants.cshtml",
-              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Course\\GetCoureParticipants.cshtml",
-              "RelativeDocumentMoniker": "E Learning\\Views\\Course\\GetCoureParticipants.cshtml",
-              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Course\\GetCoureParticipants.cshtml",
-              "RelativeToolTip": "E Learning\\Views\\Course\\GetCoureParticipants.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-02T22:14:50.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CourseContent.cshtml",
-              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Course\\CourseContent.cshtml",
-              "RelativeDocumentMoniker": "E Learning\\Views\\Course\\CourseContent.cshtml",
-              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Course\\CourseContent.cshtml",
-              "RelativeToolTip": "E Learning\\Views\\Course\\CourseContent.cshtml",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGwAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-02T22:14:40.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Grades.cshtml",
-              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Views\\Course\\Grades.cshtml",
-              "RelativeDocumentMoniker": "E Learning\\Views\\Course\\Grades.cshtml",
-              "ToolTip": "D:\\project\\E Learning\\E Learning\\Views\\Course\\Grades.cshtml",
-              "RelativeToolTip": "E Learning\\Views\\Course\\Grades.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-02T21:55:50.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "E Learning\\Controllers\\CourseController.cs",
-              "ToolTip": "D:\\project\\E Learning\\E Learning\\Controllers\\CourseController.cs",
-              "RelativeToolTip": "E Learning\\Controllers\\CourseController.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAawGwAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T21:54:09.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExamController.cs",
-              "DocumentMoniker": "D:\\project\\E Learning\\E Learning\\Controllers\\ExamController.cs",
-              "RelativeDocumentMoniker": "E Learning\\Controllers\\ExamController.cs",
-              "ToolTip": "D:\\project\\E Learning\\E Learning\\Controllers\\ExamController.cs",
-              "RelativeToolTip": "E Learning\\Controllers\\ExamController.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAlwDwAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T21:53:15.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IExamRepository.cs",
-              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Repository\\Interfaces\\IExamRepository.cs",
-              "RelativeDocumentMoniker": "ELearning.Repository\\Interfaces\\IExamRepository.cs",
-              "ToolTip": "D:\\project\\E Learning\\ELearning.Repository\\Interfaces\\IExamRepository.cs",
-              "RelativeToolTip": "ELearning.Repository\\Interfaces\\IExamRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T21:52:20.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ExamRepository1.cs",
-              "DocumentMoniker": "D:\\project\\E Learning\\ELearning.Repository\\Repositories\\ExamRepository1.cs",
-              "RelativeDocumentMoniker": "ELearning.Repository\\Repositories\\ExamRepository1.cs",
-              "ToolTip": "D:\\project\\E Learning\\ELearning.Repository\\Repositories\\ExamRepository1.cs",
-              "RelativeToolTip": "ELearning.Repository\\Repositories\\ExamRepository1.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAYwB4AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T21:51:53.621Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -162,10 +42,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

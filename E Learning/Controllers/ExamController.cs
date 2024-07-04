@@ -9,6 +9,8 @@ using System.Security.Claims;
 
 namespace E_Learning.Controllers
 {
+
+
     public class ExamController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
@@ -34,7 +36,7 @@ namespace E_Learning.Controllers
             var specs = new ExamWithSpecifications(examspecs);
 
             var courseAllExams = await unitOfWork.Reposirory<Exam>().GetWithSpecificationsAllAsync(specs);
-            var completedExams = await unitOfWork.Reposirory<StudentExam>().GetAllAsync();
+            var completedExams = await unitOfWork.Reposirory<StudentExam>().GetAllAsync();//on specific course
             // completed exams for this user
             completedExams = completedExams.Where(se => se.UserId == userId).ToList();
             ViewBag.completedExams = completedExams;
@@ -107,6 +109,7 @@ namespace E_Learning.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CompleteExam(List<CompleteExamViewModel> model)
         {
             if (ModelState.IsValid)
@@ -139,7 +142,7 @@ namespace E_Learning.Controllers
                 var studentcourse = unitOfWork.studentCourseRepository.GetCourse(userId, exam.CourseId);
                 studentcourse.TotalMark += studentExam.Grade;
                 await unitOfWork.CompleteAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("GetCourses", "Student");
             }
             return View(model);
         }
@@ -157,9 +160,11 @@ namespace E_Learning.Controllers
             var exam = await unitOfWork.Reposirory<Exam>().GetByIdAsync(examId);
             if (exam == null)
                 return NotFound();
+
             unitOfWork.Reposirory<Exam>().Delete(exam);
             await unitOfWork.CompleteAsync();
-            return RedirectToAction(nameof(Index), new { courseId = TempData["CourseId"] });
+
+            return RedirectToAction(nameof(Index), new { id = HttpContext.Session.GetInt32("CourseId") });
         }
 
         public IActionResult UpdateQuestion(int id)// questionId
@@ -193,7 +198,6 @@ namespace E_Learning.Controllers
             ViewBag.ExamId = id;
             return View(questions);
         }
-
 
         public IActionResult StudentsResult(int id)
         {

@@ -1,5 +1,18 @@
 ﻿@model IReadOnlyList<Course>
 
+<div class="row mx-0 justify-content-center pt-5">
+    <div class="col-lg-6">
+        <div class="section-title text-center position-relative mb-4">
+            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">
+                 Your
+                Enrolled courses
+            </h6>
+            <h1 class="display-4">
+                Enrolled courses
+            </h1>
+        </div>
+    </div>
+</div>
 <div class="course-container">
     @foreach (var course in Model)
     {
@@ -9,7 +22,7 @@
             </div>
             <div class="course-info">
                 <h2>@course.Name</h2>
-                <p>@course.Description</p>
+                <p>@course.Description.Substring(0,100)....</p>
 
                 <a asp-action="CourseContent" asp-controller="Course" asp-route-id="@course.Id" class="custom-btn">Continue</a>
             </div>

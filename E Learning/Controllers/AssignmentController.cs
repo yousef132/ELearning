@@ -2,6 +2,8 @@
 using E_Commerce.Helper;
 using E_Learning.Models;
 using ELearning.Data.Entities;
+using ELearning.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Store.Repository.Interfaces;
 using System.Security.Claims;
@@ -32,6 +34,9 @@ namespace E_Learning.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Instructor)]
+
+
         public async Task<IActionResult> Create(AssignmentViewModel model)
         {
             if (ModelState.IsValid)
@@ -68,7 +73,6 @@ namespace E_Learning.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-
         public IActionResult Update(int id)
         {
             var assignment = unitOfWork.Reposirory<Assignment>().GetById(id);
@@ -79,6 +83,9 @@ namespace E_Learning.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = Roles.Instructor)]
+
+
         public async Task<IActionResult> Update(AssignmentViewModel model)
         {
 
@@ -92,6 +99,8 @@ namespace E_Learning.Controllers
             }
             return View();
         }
+        [Authorize(Roles = Roles.Instructor)]
+
 
         public async Task<IActionResult> Delete(int id, int courseId)
         {

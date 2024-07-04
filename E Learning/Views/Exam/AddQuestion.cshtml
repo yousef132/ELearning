@@ -9,7 +9,6 @@
     <form asp-action="AddQuestion">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input hidden asp-for="ExamId" class="form-control" />
-        <h1>@Model.Id</h1>
         <div class="form-group">
             <label asp-for="Text" class="control-label"></label>
             <input asp-for="Text" class="form-control" />

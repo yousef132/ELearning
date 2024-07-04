@@ -4,73 +4,75 @@
     Layout = "_InstructorLayout";
 }
 
-<div class="row justify-content-center" style="margin-top:50px;">
-    <div class="col-md-8">
-        <form asp-action="Update" asp-controller="Course" enctype="multipart/form-data">
-            <div asp-validation-summary="All" class="text-danger"></div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Update Course</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Update" asp-controller="Course" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
 
-            <input type="hidden" asp-for="ImagePath" />
-            <input type="hidden" asp-for="UserId" />
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="col-md-6">
-                    <label asp-for="Description" class="control-label"></label>
-                    <input asp-for="Description" class="form-control" />
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-                
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
+                <input type="hidden" asp-for="ImagePath" />
+                <input type="hidden" asp-for="UserId" />
+
+                <div class="row">
                     <div class="col-md-6">
-                        <label asp-for="SkillLevel" class="col-for-lable"></label>
-                        <select asp-for="SkillLevel" class="form-control">
-                            <option value="">--Select Skill Level--</option>
-                            <option value="Beginner">Beginner</option>
-                            <option value="Medeuim">Medeuim</option>
-                            <option value="Advanced">Advanced</option>
-                        </select>
-                        <span asp-validation-for="SkillLevel" class="text-danger"></span>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">Course Name</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label">Description</label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <label asp-for="Price" class="control-label"></label>
-                    <input asp-for="Price" class="form-control" />
-                    <span asp-validation-for="Price" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Language" class="col-for-lable"></label>
-                        <select asp-for="Language" class="form-control">
-                            <option value="">--Select Language--</option>
-                            <option value="English">English</option>
-                            <option value="Arabic">Arabic</option>
-                            <option value="French">French</option>
-                            <option value="Spanish">Spanish</option>
-                        </select>
-                        <span asp-validation-for="Language" class="text-danger"></span>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="SkillLevel" class="control-label">Skill Level</label>
+                            <select asp-for="SkillLevel" class="form-control">
+                                <option value="">--Select Skill Level--</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                            <span asp-validation-for="SkillLevel" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Price" class="control-label">Price</label>
+                            <input asp-for="Price" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
-                
-            </div>
 
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Language" class="control-label">Language</label>
+                            <select asp-for="Language" class="form-control" >
+                                <option value="">--Select Language--</option>
+                                <option value="English">English</option>
+                                <option value="Arabic">Arabic</option>
+                                <option value="French">French</option>
+                                <option value="Spanish">Spanish</option>
+                            </select>
+                            <span asp-validation-for="Language" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-
-
-<!--Begin Lectures-->
-
-
-

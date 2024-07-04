@@ -50,7 +50,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("StudentLectureComments");
+                    b.ToTable("StudentLectureComments", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Assignment", b =>
@@ -76,7 +76,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Assignments");
+                    b.ToTable("Assignments", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Attachment", b =>
@@ -106,7 +106,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("LectureId");
 
-                    b.ToTable("Attachments");
+                    b.ToTable("Attachments", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Course", b =>
@@ -148,7 +148,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Exam", b =>
@@ -170,7 +170,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Exams");
+                    b.ToTable("Exams", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Lecture", b =>
@@ -195,7 +195,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Lectures");
+                    b.ToTable("Lectures", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.Question.BaseQuestion", b =>
@@ -236,7 +236,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("ExamId");
 
-                    b.ToTable("BaseQuestions");
+                    b.ToTable("BaseQuestions", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentAnswer", b =>
@@ -263,7 +263,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("StudentAnswers");
+                    b.ToTable("StudentAnswers", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentAssignment", b =>
@@ -297,7 +297,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("StudentAssignments");
+                    b.ToTable("StudentAssignments", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentCourse", b =>
@@ -324,7 +324,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("StudentCourses");
+                    b.ToTable("StudentCourses", (string)null);
                 });
 
             modelBuilder.Entity("ELearning.Data.Entities.StudentExam", b =>
@@ -348,7 +348,7 @@ namespace ELearning.Data.Migrations
 
                     b.HasIndex("ExamId");
 
-                    b.ToTable("StudentExams");
+                    b.ToTable("StudentExams", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -600,7 +600,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
+                    b.OwnsOne("ELearning.Data.Entities.Assignment.TimedEntity#ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
                         {
                             b1.Property<int>("AssignmentId")
                                 .HasColumnType("int");
@@ -619,7 +619,7 @@ namespace ELearning.Data.Migrations
 
                             b1.HasKey("AssignmentId");
 
-                            b1.ToTable("Assignments");
+                            b1.ToTable("Assignments", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("AssignmentId");
@@ -661,7 +661,7 @@ namespace ELearning.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
+                    b.OwnsOne("ELearning.Data.Entities.Exam.TimedEntity#ELearning.Data.Entities.TimedEntity", "TimedEntity", b1 =>
                         {
                             b1.Property<int>("ExamId")
                                 .HasColumnType("int");
@@ -680,7 +680,7 @@ namespace ELearning.Data.Migrations
 
                             b1.HasKey("ExamId");
 
-                            b1.ToTable("Exams");
+                            b1.ToTable("Exams", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("ExamId");

@@ -11,9 +11,14 @@
                         <h1 class="display-4">@Model.Name</h1>
                     </div>
                     <img src="~/assets/Images/course/@Model.ImagePath" alt="Image" width="600px;" height="300px;" style="object-fit: cover; border-radius: 10px;">
-                    <h5 style="margin-top:30px;">
-                        @Model.Description
-                    </h5>
+                    <h3 class="mt-4">Overview</h3>
+                    <hr />
+                    <div style="margin-top: 30px; line-height: 1.8; color: #333;">
+                        <p style="font-size: 16px;">
+                            @Model.Description
+                        </p>
+                    </div>
+
                 </div>
             </div>
 

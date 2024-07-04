@@ -56,7 +56,7 @@ else
 
                             <h4>@course.Name</h4>
                         </a>
-                        <p class="mt-1">@course.Description</p>
+                        <p class="mt-1">@course.Description.Substring(0,Math.Min(100,course.Description.Length))</p>
                         <span class="badge badge-success" style="font-size: 17px;position:relative;bottom: -20px;">@course.SkillLevel</span>
                         <span class="badge badge-primary" style="font-size: 17px;position:relative;bottom: -20px;">@course.Language</span>
                     </div>

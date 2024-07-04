@@ -13,7 +13,7 @@
                 <a class="nav-link pointer" id="ass" onclick="switchTab('ass', @Model.Id)" style="font-size: 18px;">Assignments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pointer" id="parts" onclick="switchTab('parts', @Model.Id)" style="font-size: 18px;">Participants</a>
+                <a class="nav-link pointer" id="parts" onclick="switchTab('parts', @Model.Id)" style="font-size: 18px;">Standing</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pointer" id="grades" onclick="switchTab('grades', @Model.Id)" style="font-size: 18px;">Grades</a>
@@ -22,16 +22,16 @@
     </nav>
 
     <br>
+    <div class="accordion" id="accordionExample">
+        @if (Model.Lectures.Count == 0)
+        {
+            <div class="text-center" id="empty">
+                <img src="/img/nocontent.jpg" style="width: 400px;" />
+            </div>
+        }
+        else
+        {
 
-    @if (Model.Lectures.Count == 0)
-    {
-        <div class="text-center">
-            <img src="/img/nocontent.jpg" style="width: 400px;" />
-        </div>
-    }
-    else
-    {
-        <div class="accordion" id="accordionExample">
             <div class="row">
                 @foreach (var lecture in Model.Lectures)
                 {
@@ -48,8 +48,9 @@
                     </div>
                 }
             </div>
-        </div>
-    }
+
+        }
+    </div>
 </div>
 
 <style>
@@ -119,7 +120,7 @@
             url: url,
             data: { "courseId": courseId },
             success: function (result) {
-                element.innerHTML = result;
+                    element.innerHTML = result;
             }
         });
     }
